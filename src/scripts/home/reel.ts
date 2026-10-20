@@ -26,6 +26,8 @@ export function initReel(): void {
     start: 'top top',
     end: () => `+=${distance()}`,
     pin: true,
+    // Pins refresh first so triggers further down measure the added scroll distance.
+    refreshPriority: 1,
     anticipatePin: 1,
     scrub: 0.6,
     animation: tween,

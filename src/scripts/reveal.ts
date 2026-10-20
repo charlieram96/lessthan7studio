@@ -10,12 +10,13 @@ export function initReveals(): void {
 
   const lines = gsap.utils.toArray<HTMLElement>('[data-split-line]');
   if (lines.length && !rm) {
-    gsap.set(lines, { yPercent: 105 });
+    // GSAP reads the CSS starting transform into `y`; zero it so only yPercent moves the line.
+    gsap.set(lines, { y: 0, yPercent: 105 });
     ScrollTrigger.batch(lines, {
       start: 'top 92%',
       once: true,
       onEnter: (batch) =>
-        gsap.to(batch, { yPercent: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08, overwrite: true }),
+        gsap.to(batch, { y: 0, yPercent: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08, overwrite: true }),
     });
   }
 

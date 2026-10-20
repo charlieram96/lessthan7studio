@@ -1,9 +1,9 @@
 {
   "slug": "marketink",
-  "name": "Marketink Strategies",
+  "name": "Market Ink Strategies",
   "captureUrl": "https://www.marketinkstrategies.com/",
   "liveUrl": "https://www.marketinkstrategies.com/",
-  "auditedAt": "2026-10-20T22:08:25.311Z",
+  "auditedAt": "2026-10-20T22:41:46.874Z",
   "finalUrl": "https://www.marketinkstrategies.com/",
   "status": 200,
   "redirects": [],
@@ -14,9 +14,7 @@
   "ogImage": null,
   "favicon": "https://www.marketinkstrategies.com/favicon.svg",
   "headings": {
-    "h1": [
-      "Leave your mark on the market"
-    ],
+    "h1": [],
     "h2": [
       "Ten disciplines. One atelier.",
       "Imagine it's your brand.",
@@ -40,16 +38,15 @@
     ]
   },
   "navLabels": [
-    "Let's talk Let's talk",
-    "Menu Close"
+    "Let's talk",
+    "Menu"
   ],
   "ctas": [
-    "Let's talk Let's talk",
-    "Menu Close",
-    "Start a project Start a project",
-    "See the work See the work",
-    "Let's talk strategy Let's talk strategy",
-    "Send message Send message",
+    "Let's talk",
+    "Start a project",
+    "See the work",
+    "Let's talk strategy",
+    "Send message",
     "Back to top"
   ],
   "contact": {
@@ -145,28 +142,28 @@
       "primaryButton": {
         "background": "#0c0c10",
         "text": "#f2eee6",
-        "label": "Start a project Start a project"
+        "label": "Start a project"
       },
       "link": {
         "text": "#f2eee6",
-        "label": "Start a project Start a project"
+        "label": "Start a project"
       }
     },
     "palette": [
-      "#efebe4",
-      "#434593",
-      "#c1c1cf",
-      "#7174bd",
-      "#9a9cc5",
-      "#13131a"
+      "#eeeae3",
+      "#bab9cc",
+      "#6a6dbe",
+      "#9697cb",
+      "#4a4c95",
+      "#121217"
     ],
     "paletteShare": [
-      0.521,
-      0.153,
-      0.082,
-      0.074,
-      0.066,
-      0.058
+      0.477,
+      0.125,
+      0.115,
+      0.096,
+      0.081,
+      0.054
     ],
     "cssColorTokens": {
       "--ink": "#0c0c10",
@@ -200,7 +197,7 @@
     "hsts": true,
     "headers": {
       "server": "Netlify",
-      "x-nf-request-id": "01M5DNM8THY7ZJRFZVQ58JW613",
+      "x-nf-request-id": "01M5DQHJ27DVZ0J36WCZK3BZS6",
       "strict-transport-security": "max-age=31536000",
       "cache-control": "public,max-age=0,must-revalidate",
       "content-encoding": "br"
@@ -249,13 +246,13 @@
     }
   },
   "perf": {
-    "transferBytes": 208268,
+    "transferBytes": 208225,
     "requests": 8,
-    "ttfbMs": 441,
-    "serverResponseMs": 103,
-    "domContentLoadedMs": 808,
-    "loadMs": 830,
-    "documentTransferBytes": 10783,
+    "ttfbMs": 999,
+    "serverResponseMs": 549,
+    "domContentLoadedMs": 1543,
+    "loadMs": 1545,
+    "documentTransferBytes": 10810,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
   "lighthouse": {
@@ -370,6 +367,7 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -382,55 +380,59 @@
   },
   "screenshots": {
     "pageHeight": {
-      "desktop": 11170,
-      "mobile": 11981
+      "desktop": 13764,
+      "mobile": 16806
     },
     "modes": {
-      "full": "reduced",
+      "full": "forced",
       "hero": "normal",
       "mobile": "normal",
-      "mobileFull": "reduced"
+      "mobileFull": "forced"
     },
     "hiddenBlocks": {
-      "full": 2,
+      "full": 0,
       "hero": 0,
       "mobile": 0,
       "mobileFull": 0
+    },
+    "blankShare": {
+      "full": 0.142,
+      "mobileFull": 0.5
     },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 113218,
+        "bytes": 125166,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 46204,
+        "bytes": 50384,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 7200,
-        "bytes": 267618,
+        "bytes": 230786,
         "quality": 72,
         "sourceHeight": 8640
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 87850,
+        "bytes": 86856,
         "quality": 78,
         "sourceHeight": 2532
       },
       "mobile-full.webp": {
         "width": 600,
         "height": 6000,
-        "bytes": 144290,
+        "bytes": 88626,
         "quality": 70,
         "sourceHeight": 7800
       }

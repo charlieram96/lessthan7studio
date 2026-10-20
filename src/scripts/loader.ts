@@ -38,12 +38,16 @@ export default function initLoader(): void {
   const skip = q<HTMLButtonElement>('[data-loader-skip]');
   const panels = qa<HTMLElement>('.loader__panel');
 
-  /* ---------- The stopwatch: real time since navigation start, frozen at `load` ---------- */
+  /* ---------- The stopwatch ----------
+   * While the page loads it runs in slow motion (a quarter of real time), so it always
+   * stays below the real load time; once `load` fires it eases onto the measured value. */
   let frozen = false;
   let raf = 0;
+  const shown = { v: 0 };
   const tick = () => {
     if (frozen) return;
-    num.textContent = formatSeconds(performance.now() / 1000);
+    shown.v = (performance.now() / 1000) * 0.25;
+    num.textContent = formatSeconds(shown.v);
     raf = requestAnimationFrame(tick);
   };
   tick();
@@ -51,7 +55,14 @@ export default function initLoader(): void {
   const freeze = (seconds: number, done: boolean) => {
     frozen = true;
     cancelAnimationFrame(raf);
-    num.textContent = formatSeconds(seconds);
+    gsap.to(shown, {
+      v: seconds,
+      duration: 0.9,
+      ease: 'power2.out',
+      onUpdate: () => {
+        num.textContent = formatSeconds(shown.v);
+      },
+    });
     caption.innerHTML = !done
       ? 'Still loading. <b>Come on in.</b>'
       : seconds < 7
@@ -66,6 +77,7 @@ export default function initLoader(): void {
     .then(() => freeze(loadSeconds() ?? performance.now() / 1000, true));
 
   /* ---------- Construction ---------- */
+  gsap.set(cells, { opacity: 1, scale: 0, transformOrigin: '50% 50%' });
   const angle = { v: 0 };
   const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
   tl.to(glow, { opacity: 1, duration: 1.4, ease: 'power2.out' }, 0)

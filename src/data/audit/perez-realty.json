@@ -1,0 +1,447 @@
+{
+  "slug": "perez-realty",
+  "name": "Perez Realty Team",
+  "captureUrl": "https://perezrealtyteam.com/",
+  "liveUrl": "https://perezrealtyteam.com/",
+  "auditedAt": "2026-10-20T22:36:02.973Z",
+  "finalUrl": "https://perezrealtyteam.com/",
+  "status": 200,
+  "redirects": [],
+  "title": "Perez Realty Team — Miami REALTORS® since 2006",
+  "metaDescription": "A family of licensed Miami REALTORS® who have spent 20 years growing entirely on referrals. Search every listing in Miami-Dade and Broward, or ask us what your home is worth.",
+  "canonical": "https://www.perezrealtyteam.com/",
+  "htmlLang": "en",
+  "ogImage": null,
+  "favicon": "https://perezrealtyteam.com/favicon.ico?favicon.3fpu2ql9ns1a0.ico",
+  "headings": {
+    "h1": [
+      "Where in Miami?"
+    ],
+    "h2": [
+      "Homes we are showing now",
+      "A family business that grew because you talked about it.",
+      "Three ways we work with you",
+      "Miami, block by block",
+      "Homes we handed over.",
+      "The people who sent us the next family",
+      "Tell us what you're looking for.",
+      "Explore",
+      "Work with us",
+      "Legal"
+    ],
+    "h3": [
+      "Search every listing in Miami-Dade and Broward",
+      "Buying",
+      "Selling",
+      "Mortgage"
+    ]
+  },
+  "navLabels": [
+    "Perez Realty Team Perez Realty Team",
+    "Search homes",
+    "Buy",
+    "Sell",
+    "Mortgage",
+    "Our team",
+    "About",
+    "ES Ver en español",
+    "305-781-8552"
+  ],
+  "ctas": [
+    "ES Ver en español",
+    "Tell us what you want",
+    "Meet the family",
+    "Start the conversation"
+  ],
+  "contact": {
+    "phones": [
+      "305-781-8552"
+    ],
+    "emails": [
+      "contact@perezrealtyteam.com"
+    ],
+    "address": [
+      "135 Cadima Ave, Coral Gables, FL 33134",
+      "13710 SW 32nd St, Miami, FL 33175",
+      "19230 SW 2nd St, Pembroke Pines, FL 33029"
+    ],
+    "social": [
+      "https://www.instagram.com/perezrealtyteam/",
+      "https://www.facebook.com/perezrealtyteam21/"
+    ],
+    "mapLinks": []
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "Archivo, \"Archivo Fallback\"",
+      "body": {
+        "family": "Archivo, \"Archivo Fallback\"",
+        "weight": "400",
+        "size": "15.2px",
+        "lineHeight": "24.7px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Archivo SemiBold"
+        ]
+      },
+      "h1": {
+        "family": "\"Bodoni Moda\", \"Bodoni Moda Fallback\"",
+        "weight": "500",
+        "size": "86.4px",
+        "lineHeight": "83.808px",
+        "letterSpacing": "-0.432px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Bodoni Moda"
+        ]
+      },
+      "h2": {
+        "family": "\"Bodoni Moda\", \"Bodoni Moda Fallback\"",
+        "weight": "500",
+        "size": "41.6px",
+        "lineHeight": "44.096px",
+        "letterSpacing": "0.3328px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Bodoni Moda"
+        ]
+      },
+      "button": {
+        "family": "Archivo, \"Archivo Fallback\"",
+        "weight": "700",
+        "size": "11.52px",
+        "lineHeight": "17.28px",
+        "letterSpacing": "1.9584px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Archivo SemiBold"
+        ]
+      }
+    },
+    "loadedFonts": [
+      "Bodoni Moda",
+      "Archivo"
+    ],
+    "googleFonts": [],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "body": {
+        "background": "#fcfbf8",
+        "text": "#3e4542"
+      },
+      "header": {
+        "background": "transparent",
+        "text": "#3e4542"
+      },
+      "primaryButton": {
+        "background": "#0a5a67",
+        "text": "#ffffff",
+        "label": "Tell us what you want"
+      },
+      "link": {
+        "text": "#0a5a67",
+        "label": "Search every listing"
+      }
+    },
+    "palette": [
+      "#fbfaf8",
+      "#484844",
+      "#23241d",
+      "#74736c",
+      "#244959",
+      "#404522"
+    ],
+    "paletteShare": [
+      0.229,
+      0.191,
+      0.143,
+      0.13,
+      0.104,
+      0.089
+    ],
+    "cssColorTokens": {}
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [
+      "Next.js",
+      "React"
+    ],
+    "libraries": [
+      "Tailwind CSS"
+    ],
+    "hosting": [
+      "Vercel"
+    ],
+    "services": [],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Vercel",
+      "x-powered-by": "Next.js",
+      "x-vercel-id": "iad1::iad1::q2mzh-1792535713488-08e264129421",
+      "x-vercel-cache": "STALE",
+      "strict-transport-security": "max-age=63072000",
+      "x-frame-options": "SAMEORIGIN",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": []
+  },
+  "seo": {
+    "jsonLdTypes": [
+      "RealEstateAgent",
+      "Place",
+      "PostalAddress",
+      "Person"
+    ],
+    "jsonLdBlocks": 1,
+    "jsonLdParseErrors": 0,
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://www.perezrealtyteam.com/"
+      },
+      {
+        "lang": "es",
+        "href": "https://www.perezrealtyteam.com/es"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://www.perezrealtyteam.com/"
+      }
+    ],
+    "robotsMeta": "index, follow",
+    "viewport": "width=device-width, initial-scale=1",
+    "ogTitle": true,
+    "ogDescription": true,
+    "ogImage": false,
+    "twitterCard": "summary",
+    "images": {
+      "count": 5,
+      "withAlt": 5,
+      "emptyAlt": 0,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 61,
+      "internal": 52,
+      "internalUnique": 23,
+      "external": 2
+    },
+    "robotsTxt": {
+      "present": true,
+      "status": 200,
+      "sitemaps": [
+        "https://www.perezrealtyteam.com/sitemap.xml"
+      ],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": true,
+      "url": "https://perezrealtyteam.com/sitemap.xml",
+      "sitemapXmlStatus": 200,
+      "isIndex": false,
+      "locCount": 62,
+      "urlCount": 62
+    }
+  },
+  "perf": {
+    "transferBytes": 791587,
+    "requests": 70,
+    "ttfbMs": 298,
+    "serverResponseMs": 45,
+    "domContentLoadedMs": 1141,
+    "loadMs": 1144,
+    "documentTransferBytes": 23735,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 84,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 92,
+      "lcp": "4.2 s",
+      "cls": "0",
+      "tbt": "70 ms",
+      "fcp": "2.0 s",
+      "speedIndex": "2.4 s",
+      "totalByteWeight": 552650,
+      "requests": 25,
+      "serverResponseMs": 49,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [],
+        "seo": [
+          "canonical"
+        ]
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://perezrealtyteam.com/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 98,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 92,
+      "lcp": "1.0 s",
+      "cls": "0",
+      "tbt": "0 ms",
+      "fcp": "0.6 s",
+      "speedIndex": "1.0 s",
+      "totalByteWeight": 675048,
+      "requests": 37,
+      "serverResponseMs": 51,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [],
+        "seo": [
+          "canonical"
+        ]
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://perezrealtyteam.com/",
+      "warnings": []
+    }
+  },
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [
+      "en",
+      "es",
+      "x-default"
+    ],
+    "toggles": [],
+    "translateWidgets": [],
+    "spanishLinks": [],
+    "elementsLangEs": 1,
+    "spanishWordShare": 0.007,
+    "spanishLines": []
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [
+    "https://perezrealtyteam.com/search",
+    "https://perezrealtyteam.com/buy",
+    "https://perezrealtyteam.com/sell",
+    "https://perezrealtyteam.com/mortgage",
+    "https://perezrealtyteam.com/team",
+    "https://perezrealtyteam.com/about",
+    "https://www.perezrealtyteam.com/",
+    "https://www.perezrealtyteam.com/es",
+    "https://www.perezrealtyteam.com/search",
+    "https://www.perezrealtyteam.com/es/buscar",
+    "https://www.perezrealtyteam.com/home-value",
+    "https://www.perezrealtyteam.com/es/cuanto-vale-mi-casa",
+    "https://www.perezrealtyteam.com/buy",
+    "https://www.perezrealtyteam.com/es/comprar",
+    "https://www.perezrealtyteam.com/sell"
+  ],
+  "signals": {
+    "iframes": [],
+    "videos": [],
+    "forms": [
+      {
+        "id": null,
+        "action": null,
+        "netlify": false,
+        "visible": true,
+        "fields": [
+          "hero-q",
+          "hero-max"
+        ],
+        "submit": "SEARCH"
+      }
+    ],
+    "canvases": 0,
+    "lottie": 0,
+    "copyright": [
+      "© 2026 Perez Realty Team. All rights reserved."
+    ],
+    "featureHints": [
+      "form: hero-q, hero-max"
+    ]
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [],
+    "mixedContent": [],
+    "brokenImages": [],
+    "emptyHashLinks": [],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 6572,
+      "mobile": 10074
+    },
+    "modes": {
+      "full": "normal",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "normal"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 0,
+      "mobile": 0,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 132152,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 47438,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 5477,
+        "bytes": 255802,
+        "quality": 72,
+        "sourceHeight": 6572
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 50584,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 155568,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  }
+}

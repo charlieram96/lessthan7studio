@@ -1,0 +1,425 @@
+{
+  "slug": "snipers-trading-academy",
+  "name": "Snipers Trading Academy",
+  "captureUrl": "https://www.sniperstradingacademy.com/",
+  "liveUrl": "https://www.sniperstradingacademy.com/",
+  "auditedAt": "2026-10-20T22:29:51.686Z",
+  "finalUrl": "https://www.sniperstradingacademy.com/",
+  "status": 200,
+  "redirects": [],
+  "title": "Snipers Trading Academy - Elite Options Trading Network",
+  "metaDescription": "Join the elite trading network and earn commissions",
+  "canonical": null,
+  "htmlLang": "en",
+  "ogImage": null,
+  "favicon": "https://www.sniperstradingacademy.com/favicon.ico?favicon.7d34b509.ico",
+  "headings": {
+    "h1": [
+      "Learn to trade trade read size the market like a sniper."
+    ],
+    "h2": [
+      "From your first lesson to your first team.",
+      "Six topics. Each one builds on the last.",
+      "One membership. Everything included.",
+      "Questions, answered.",
+      "Your seat is waiting."
+    ],
+    "h3": [
+      "A path, not a pile of videos",
+      "Three classes a week",
+      "Climb from 10% to 16%",
+      "Paid in USDC, every month",
+      "Options Fundamentals",
+      "Technical Analysis",
+      "Strategy Development",
+      "Risk Management",
+      "Portfolio Management",
+      "Trading Psychology",
+      "Do I need trading experience?",
+      "How do the live classes work?"
+    ]
+  },
+  "navLabels": [
+    "Curriculum",
+    "Membership",
+    "FAQ",
+    "ES",
+    "Log in",
+    "Join"
+  ],
+  "ctas": [
+    "Join",
+    "Join the academy",
+    "Do I need trading experience?",
+    "How do the live classes work?",
+    "How much does it cost?",
+    "How do referral commissions work?"
+  ],
+  "contact": {
+    "phones": [],
+    "emails": [
+      "support@sniperstradingacademy.com"
+    ],
+    "address": [],
+    "social": [],
+    "mapLinks": []
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "body": {
+        "family": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "weight": "400",
+        "size": "18px",
+        "lineHeight": "29.25px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Inter"
+        ]
+      },
+      "h1": {
+        "family": "unbounded, \"unbounded Fallback\"",
+        "weight": "800",
+        "size": "70px",
+        "lineHeight": "72.8px",
+        "letterSpacing": "-2.8px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Unbounded"
+        ]
+      },
+      "h2": {
+        "family": "unbounded, \"unbounded Fallback\"",
+        "weight": "700",
+        "size": "48px",
+        "lineHeight": "50.88px",
+        "letterSpacing": "-1.92px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Unbounded"
+        ]
+      },
+      "button": {
+        "family": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "weight": "600",
+        "size": "14.5px",
+        "lineHeight": "21.75px",
+        "letterSpacing": "-0.0725px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Inter SemiBold"
+        ]
+      }
+    },
+    "loadedFonts": [
+      "geistMono",
+      "unbounded"
+    ],
+    "googleFonts": [],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "body": {
+        "background": "#05080f",
+        "text": "#e6eaf2",
+        "gradient": "radial-gradient(at 20% center, rgba(212, 168, 83, 0.02) 0%, rgba(0, 0, 0, 0) 50%), radial-gradient(at 80% 20%, rgba(59, 130, 246, 0.016) 0%, rgba(0, 0, 0, 0) 50%)"
+      },
+      "header": {
+        "background": "#05080f99",
+        "text": "#e6eaf2"
+      },
+      "primaryButton": {
+        "background": "#f9eccc",
+        "text": "#05080f",
+        "gradient": "linear-gradient(135deg, rgb(249, 236, 204) 0%, rgb(229, 192, 106) 35%, rgb(212, 168, 83) 60%, rgb(166, 126, 46) 100%)",
+        "label": "Join the academy"
+      },
+      "link": {
+        "text": "#05080f",
+        "label": "Join the academy"
+      }
+    },
+    "palette": [
+      "#0b0e17",
+      "#2d261b",
+      "#111f39",
+      "#4b5363",
+      "#6b522d",
+      "#d0d4de"
+    ],
+    "paletteShare": [
+      0.646,
+      0.141,
+      0.117,
+      0.032,
+      0.025,
+      0.02
+    ],
+    "cssColorTokens": {
+      "--color-emerald-dim": "#31d69c1f",
+      "--background": "#05080f",
+      "--foreground": "#e6eaf2",
+      "--foreground-secondary": "#8b95a9",
+      "--foreground-tertiary": "#525d73",
+      "--foreground-quaternary": "#475569",
+      "--surface-0": "#0a0f1c",
+      "--surface-1": "#0a0f1c",
+      "--surface-2": "#101728",
+      "--surface-3": "#101728",
+      "--surface-4": "#151d33",
+      "--surface-overlay": "#151d33",
+      "--card": "#0a0f1c",
+      "--card-foreground": "#e6eaf2",
+      "--popover": "#151d33",
+      "--popover-foreground": "#e6eaf2",
+      "--gold-50": "#fdf8ed",
+      "--gold-100": "#f9eccc",
+      "--gold-200": "#f0d48a",
+      "--gold-300": "#e5c06a",
+      "--gold-400": "#d4a853",
+      "--gold-500": "#c49b3e",
+      "--gold-600": "#a67e2e",
+      "--gold-700": "#856420",
+      "--gold-800": "#6b4d18",
+      "--primary": "#d4a853",
+      "--primary-foreground": "#05080f",
+      "--accent": "#d4a853",
+      "--accent-foreground": "#05080f",
+      "--accent-hover": "#c49b3e"
+    }
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [
+      "Next.js",
+      "React"
+    ],
+    "libraries": [
+      "Tailwind CSS"
+    ],
+    "hosting": [
+      "Vercel"
+    ],
+    "services": [],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Vercel",
+      "x-powered-by": "Next.js",
+      "x-vercel-id": "iad1::iad1::7c2z8-1792535322844-a970fd576b3a",
+      "x-vercel-cache": "STALE",
+      "strict-transport-security": "max-age=63072000",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": []
+  },
+  "seo": {
+    "jsonLdTypes": [],
+    "jsonLdBlocks": 0,
+    "jsonLdParseErrors": 0,
+    "hreflang": [],
+    "robotsMeta": null,
+    "viewport": "width=device-width, initial-scale=1",
+    "ogTitle": false,
+    "ogDescription": false,
+    "ogImage": false,
+    "twitterCard": null,
+    "images": {
+      "count": 5,
+      "withAlt": 2,
+      "emptyAlt": 3,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 14,
+      "internal": 14,
+      "internalUnique": 3,
+      "external": 0
+    },
+    "robotsTxt": {
+      "present": false,
+      "status": 404,
+      "sitemaps": [],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": false,
+      "url": null,
+      "sitemapXmlStatus": 404,
+      "isIndex": false,
+      "locCount": 0,
+      "urlCount": 0
+    }
+  },
+  "perf": {
+    "transferBytes": 1722480,
+    "requests": 30,
+    "ttfbMs": 413,
+    "serverResponseMs": 40,
+    "domContentLoadedMs": 778,
+    "loadMs": 976,
+    "documentTransferBytes": 12686,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 80,
+      "accessibility": 94,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "4.5 s",
+      "cls": "0",
+      "tbt": "180 ms",
+      "fcp": "1.1 s",
+      "speedIndex": "3.3 s",
+      "totalByteWeight": 1099955,
+      "requests": 27,
+      "serverResponseMs": 47,
+      "failingAudits": {
+        "accessibility": [
+          "color-contrast",
+          "landmark-one-main"
+        ],
+        "bestPractices": [],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://www.sniperstradingacademy.com/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 99,
+      "accessibility": 94,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0",
+      "tbt": "40 ms",
+      "fcp": "0.4 s",
+      "speedIndex": "1.1 s",
+      "totalByteWeight": 1109936,
+      "requests": 29,
+      "serverResponseMs": 35,
+      "failingAudits": {
+        "accessibility": [
+          "color-contrast",
+          "landmark-one-main"
+        ],
+        "bestPractices": [],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://www.sniperstradingacademy.com/",
+      "warnings": []
+    }
+  },
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [],
+    "toggles": [
+      "ES"
+    ],
+    "translateWidgets": [],
+    "spanishLinks": [],
+    "elementsLangEs": 0,
+    "spanishWordShare": 0,
+    "spanishLines": []
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [
+    "https://www.sniperstradingacademy.com/login",
+    "https://www.sniperstradingacademy.com/register"
+  ],
+  "signals": {
+    "iframes": [],
+    "videos": [],
+    "forms": [],
+    "canvases": 0,
+    "lottie": 0,
+    "copyright": [],
+    "featureHints": [
+      "language toggle"
+    ]
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [],
+    "mixedContent": [],
+    "brokenImages": [],
+    "emptyHashLinks": [],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 5323,
+      "mobile": 7503
+    },
+    "modes": {
+      "full": "reduced",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "reduced"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 0,
+      "mobile": 0,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 103576,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 40616,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 4436,
+        "bytes": 164870,
+        "quality": 72,
+        "sourceHeight": 5323
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 77586,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 151392,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  }
+}

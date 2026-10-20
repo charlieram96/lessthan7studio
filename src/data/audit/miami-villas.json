@@ -1,0 +1,408 @@
+{
+  "slug": "miami-villas",
+  "name": "Miami Villas",
+  "captureUrl": "https://miamivillas.com/",
+  "liveUrl": "https://miamivillas.com/",
+  "auditedAt": "2026-10-20T22:34:52.128Z",
+  "finalUrl": "https://miamivillas.com/",
+  "status": 200,
+  "redirects": [],
+  "title": "Miami Villas — Luxury Redefined",
+  "metaDescription": "Experience Miami's finest private luxury estates. Villa Rio Grande, Villa Parque, and Villa Azur offer unparalleled comfort for families and large groups.",
+  "canonical": null,
+  "htmlLang": "en",
+  "ogImage": null,
+  "favicon": "https://miamivillas.com/favicon.png",
+  "headings": {
+    "h1": [
+      "Miami Villas"
+    ],
+    "h2": [
+      "Experience Miami's Finest Rental Estates",
+      "Where Luxury Meets Comfort",
+      "More Than a Stay",
+      "Ready to Experience Luxury?"
+    ],
+    "h3": [
+      "Lux Grove Villa",
+      "Villa Rio Grande",
+      "Villa Parque",
+      "Villa Azur",
+      "Villa Granada",
+      "Villa Amara",
+      "Villa Marbella",
+      "15 Bedroom Compound"
+    ]
+  },
+  "navLabels": [
+    "Properties",
+    "About",
+    "Gallery",
+    "Contact",
+    "Book Now"
+  ],
+  "ctas": [
+    "Book Now",
+    "Explore Our Properties",
+    "View Property",
+    "Book Your Stay"
+  ],
+  "contact": {
+    "phones": [
+      "305-904-7703"
+    ],
+    "emails": [
+      "info@miamivillas.com"
+    ],
+    "address": [],
+    "social": [],
+    "mapLinks": []
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "\"DM Sans\", sans-serif",
+      "body": {
+        "family": "\"DM Sans\", sans-serif",
+        "weight": "400",
+        "size": "18.4px",
+        "lineHeight": "36.8px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "DM Sans 9pt"
+        ]
+      },
+      "h1": {
+        "family": "\"Poiret One\", cursive",
+        "weight": "400",
+        "size": "112px",
+        "lineHeight": "123.2px",
+        "letterSpacing": "22.4px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Poiret One"
+        ]
+      },
+      "h2": {
+        "family": "Outfit, sans-serif",
+        "weight": "300",
+        "size": "56px",
+        "lineHeight": "67.2px",
+        "letterSpacing": "1.12px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Outfit Thin"
+        ]
+      },
+      "button": {
+        "family": "\"Poiret One\", cursive",
+        "weight": "400",
+        "size": "32px",
+        "lineHeight": "54.4px",
+        "letterSpacing": "6.4px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Poiret One"
+        ]
+      }
+    },
+    "loadedFonts": [
+      "DM Sans",
+      "Outfit",
+      "Poiret One"
+    ],
+    "googleFonts": [],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "body": {
+        "background": "#0d1b2a",
+        "text": "#fff8f0"
+      },
+      "header": {
+        "background": "transparent",
+        "text": "#fff8f0"
+      },
+      "primaryButton": {
+        "background": "#ff6b6b",
+        "text": "#fff8f0",
+        "gradient": "linear-gradient(135deg, rgb(255, 107, 107), rgb(255, 142, 142))",
+        "label": "Book Now"
+      },
+      "link": null
+    },
+    "palette": [
+      "#283c28",
+      "#182526",
+      "#40542a",
+      "#384950",
+      "#687579",
+      "#3b799d"
+    ],
+    "paletteShare": [
+      0.197,
+      0.182,
+      0.164,
+      0.162,
+      0.106,
+      0.094
+    ],
+    "cssColorTokens": {
+      "--color-navy": "#0d1b2a",
+      "--color-navy-light": "#1b2d45",
+      "--color-navy-lighter": "#243b53",
+      "--color-cream": "#fff8f0",
+      "--color-cream-dark": "#f5ede3",
+      "--color-pink-soft": "#ffe8e8",
+      "--color-pink-glow": "#ff6a6a59",
+      "--color-teal-glow": "#2ec3b64d",
+      "--color-gold": "#d4af37",
+      "--color-gold-light": "#e8c84a",
+      "--color-gold-dim": "#d4b0384d",
+      "--color-bg": "#0d1b2a",
+      "--color-bg-alt": "#fff8f0",
+      "--color-text": "#fff8f0",
+      "--color-text-dark": "#0d1b2a",
+      "--color-muted": "#8899aa",
+      "--color-muted-light": "#fff7ef80",
+      "--color-border": "#d3af3840",
+      "--color-border-light": "#d7ae3626",
+      "--color-card-bg": "#1b2d4499",
+      "--color-card-bg-solid": "#1b2d45"
+    }
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [],
+    "libraries": [],
+    "hosting": [
+      "Netlify"
+    ],
+    "services": [
+      "Google Fonts"
+    ],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Netlify",
+      "x-nf-request-id": "01M5DQ6EPG2KBQZ6S3CB3J7ZR0",
+      "strict-transport-security": "max-age=31536000",
+      "cache-control": "public,max-age=0,must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": [
+      "a0.muscache.com",
+      "fonts.googleapis.com",
+      "media.vrbo.com"
+    ]
+  },
+  "seo": {
+    "jsonLdTypes": [],
+    "jsonLdBlocks": 0,
+    "jsonLdParseErrors": 0,
+    "hreflang": [],
+    "robotsMeta": null,
+    "viewport": "width=device-width, initial-scale=1.0",
+    "ogTitle": false,
+    "ogDescription": false,
+    "ogImage": false,
+    "twitterCard": null,
+    "images": {
+      "count": 10,
+      "withAlt": 10,
+      "emptyAlt": 0,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 31,
+      "internal": 29,
+      "internalUnique": 13,
+      "external": 0
+    },
+    "robotsTxt": {
+      "present": false,
+      "status": 404,
+      "sitemaps": [],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": false,
+      "url": null,
+      "sitemapXmlStatus": 404,
+      "isIndex": false,
+      "locCount": 0,
+      "urlCount": 0
+    }
+  },
+  "perf": {
+    "transferBytes": 3912157,
+    "requests": 21,
+    "ttfbMs": 761,
+    "serverResponseMs": 381,
+    "domContentLoadedMs": 1270,
+    "loadMs": 1777,
+    "documentTransferBytes": 4018,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 65,
+      "accessibility": 98,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "13.2 s",
+      "cls": "0",
+      "tbt": "70 ms",
+      "fcp": "2.9 s",
+      "speedIndex": "6.0 s",
+      "totalByteWeight": 3912628,
+      "requests": 21,
+      "serverResponseMs": 40,
+      "failingAudits": {
+        "accessibility": [
+          "heading-order"
+        ],
+        "bestPractices": [],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://miamivillas.com/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 93,
+      "accessibility": 98,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "1.6 s",
+      "cls": "0.003",
+      "tbt": "0 ms",
+      "fcp": "0.7 s",
+      "speedIndex": "1.2 s",
+      "totalByteWeight": 3911910,
+      "requests": 21,
+      "serverResponseMs": 134,
+      "failingAudits": {
+        "accessibility": [
+          "heading-order"
+        ],
+        "bestPractices": [],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://miamivillas.com/",
+      "warnings": []
+    }
+  },
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [],
+    "toggles": [],
+    "translateWidgets": [],
+    "spanishLinks": [],
+    "elementsLangEs": 0,
+    "spanishWordShare": 0,
+    "spanishLines": []
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [
+    "https://miamivillas.com/properties",
+    "https://miamivillas.com/about",
+    "https://miamivillas.com/gallery",
+    "https://miamivillas.com/contact"
+  ],
+  "signals": {
+    "iframes": [],
+    "videos": [],
+    "forms": [],
+    "canvases": 0,
+    "lottie": 0,
+    "copyright": [
+      "© 2026 Miami Villas. All rights reserved."
+    ],
+    "featureHints": []
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [],
+    "mixedContent": [],
+    "brokenImages": [],
+    "emptyHashLinks": [
+      "Facebook",
+      "Instagram",
+      "X (Twitter)"
+    ],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 6795,
+      "mobile": 9492
+    },
+    "modes": {
+      "full": "normal",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "normal"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 0,
+      "mobile": 0,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 287436,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 86126,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 5663,
+        "bytes": 402922,
+        "quality": 72,
+        "sourceHeight": 6795
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 94996,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 230562,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  }
+}

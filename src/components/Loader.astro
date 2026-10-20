@@ -143,10 +143,9 @@ const lines = [0, 20, 40, 60, 80, 100];
     stroke-dashoffset: 1;
   }
 
+  /* GSAP owns SVG transforms (via the transform attribute); CSS only hides until it starts. */
   .loader__cell {
-    transform-box: fill-box;
-    transform-origin: center;
-    transform: scale(0);
+    opacity: 0;
   }
 
   .loader__pieces {

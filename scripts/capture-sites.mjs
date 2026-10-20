@@ -196,7 +196,7 @@ async function captureBest(url, name, rawDir, log, collect) {
   const modes = opts.fullMode && SHOTS[name].fullPage ? [opts.fullMode] : ['normal', 'reduced', 'forced'];
   for (const mode of modes) {
     const file = mode === 'normal' ? target : path.join(rawDir, `${name}.${mode}.png`);
-    const result = await capture(url, SHOTS[name], file, mode, collect && !facts, rawDir);
+    const result = await capture(url, SHOTS[name], file, mode, collect && !facts && mode !== 'reduced', rawDir);
     facts ??= result.facts;
     if (!best || badness(result) < badness(best)) best = { ...result, mode, file };
     if (result.hidden.length < 3 && result.pinnedGap < 300 && result.blank < 0.3) break;
@@ -254,6 +254,7 @@ async function capture(url, spec, file, mode, collect, rawDir) {
       await page.addStyleTag({ content: REVEAL_CSS });
       await page.waitForTimeout(800);
     }
+    if (!spec.fullPage) await page.evaluate(settleHeadline).catch(() => {});
     const result = {
       facts,
       status: response?.status() ?? 0,
@@ -358,6 +359,44 @@ async function backToTop() {
     window.scrollTo({ top, behavior: 'instant' });
     await sleep(150);
   }
+}
+
+// Rotating or typed headlines: sample how much of the first visible h1 is legible and wait for its fullest state.
+async function settleHeadline() {
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const h1 = [...document.querySelectorAll('h1')].find((el) => {
+    const r = el.getBoundingClientRect();
+    return r.width > 0 && r.bottom > 0 && r.top < innerHeight;
+  });
+  if (!h1) return;
+  const legibleArea = () => {
+    let area = 0;
+    const walker = document.createTreeWalker(h1, NodeFilter.SHOW_TEXT);
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      const el = node.parentElement;
+      if (!node.textContent.trim() || !el.checkVisibility({ opacityProperty: true, visibilityProperty: true })) continue;
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      for (const rect of range.getClientRects()) {
+        let { left, top, right, bottom } = rect;
+        for (let p = el; p && p !== document.documentElement; p = p.parentElement) {
+          const cs = getComputedStyle(p);
+          if (cs.overflowX === 'visible' && cs.overflowY === 'visible' && cs.clipPath === 'none') continue;
+          const box = p.getBoundingClientRect();
+          left = Math.max(left, box.left); top = Math.max(top, box.top);
+          right = Math.min(right, box.right); bottom = Math.min(bottom, box.bottom);
+        }
+        if (right > left && bottom > top) area += (right - left) * (bottom - top);
+      }
+    }
+    return area;
+  };
+  let most = 0;
+  for (let i = 0; i < 10; i++) {
+    most = Math.max(most, legibleArea());
+    await sleep(250);
+  }
+  for (let waited = 0; waited < 8000 && legibleArea() < most * 0.97; waited += 100) await sleep(100);
 }
 
 // Empty space a full-page shot shows below full-screen sticky/pinned sections (the scroll distance they occupy).
@@ -465,9 +504,11 @@ function collectFacts() {
       return /^https?:$/.test(u.protocol) && u.hostname.replace(/^www\./, '') === host;
     } catch { return false; }
   };
-  // Read copy in its source case (text-transform neutralised) and without hidden duplicates; restored before style reads.
+  // Read copy in its source case (text-transform neutralised) and without aria-hidden duplicates; restored before style reads.
+  const skipped = [...document.querySelectorAll('[aria-hidden="true"]')].filter((el) => !el.querySelector('h1, main'));
+  skipped.forEach((el) => el.setAttribute('data-capture-skip', ''));
   const caseReset = document.createElement('style');
-  caseReset.textContent = '*, *::before, *::after { text-transform: none !important; }';
+  caseReset.textContent = '*, *::before, *::after { text-transform: none !important; } [data-capture-skip] { display: none !important; }';
   document.head.append(caseReset);
   const textOf = (el) => clean(el.checkVisibility?.() === false ? el.textContent : el.innerText);
   const bodyText = document.body?.innerText || '';
@@ -562,6 +603,7 @@ function collectFacts() {
   const contentLink = firstRendered('p a[href]', linkTest) || firstRendered('main a[href], article a[href], section a[href]', linkTest);
   const contentLinkLabel = contentLink ? textOf(contentLink).slice(0, 40) : null;
   caseReset.remove();
+  skipped.forEach((el) => el.removeAttribute('data-capture-skip'));
 
   // Type and colour.
   const bodyCopy = firstTextNodeParent(firstRendered('main p, article p, section p, p', (p) => clean(p.textContent).length > 40)) || document.body;

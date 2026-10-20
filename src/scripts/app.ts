@@ -44,6 +44,8 @@ if (!intro || document.documentElement.classList.contains('no-intro')) {
 }
 
 Promise.allSettled(pending).then(() => {
+  // Page modules create their pins after the global reveals; re-sort so pins measure first.
+  ScrollTrigger.sort();
   ScrollTrigger.refresh();
 });
 

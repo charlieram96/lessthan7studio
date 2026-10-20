@@ -200,6 +200,8 @@ export function initScene(): void {
     start: 'top top',
     end: () => `+=${Math.round(units * 0.62 * window.innerHeight)}`,
     pin: true,
+    // Pins refresh first so triggers further down measure the added scroll distance.
+    refreshPriority: 1,
     pinSpacing: true,
     anticipatePin: 1,
     scrub: 0.4,

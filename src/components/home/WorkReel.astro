@@ -1,5 +1,5 @@
 ---
-import { PROJECTS, img } from '../../data/projects';
+import { PROJECTS, countWord, img } from '../../data/projects';
 
 const featured = PROJECTS.filter((p) => p.featured !== false);
 ---
@@ -15,8 +15,8 @@ const featured = PROJECTS.filter((p) => p.featured !== false);
         </h2>
       </div>
       <p class="reel__intro" data-reveal>
-        {featured.length} websites for law firms, clinics, villas, academies, artists and the businesses that keep Miami
-        running. Each one built to load fast, read clearly and rank.
+        {countWord(featured.length)} websites for law firms, clinics, villas, academies, artists and the businesses that
+        keep Miami running. Each one built to load fast, read clearly and rank.
       </p>
     </header>
 
@@ -79,6 +79,8 @@ const featured = PROJECTS.filter((p) => p.featured !== false);
 
   .reel__inner {
     display: grid;
+    /* Keep the column at viewport width; the track overflows it on purpose. */
+    grid-template-columns: minmax(0, 1fr);
     align-content: center;
     gap: var(--space-l);
     padding-block: var(--space-2xl) var(--space-xl);
@@ -107,6 +109,7 @@ const featured = PROJECTS.filter((p) => p.featured !== false);
   }
 
   .reel__viewport {
+    min-width: 0;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;

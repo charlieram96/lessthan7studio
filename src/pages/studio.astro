@@ -196,24 +196,38 @@ const lines = [0, 20, 40, 60, 80, 100];
     display: grid;
     align-content: center;
     gap: var(--space-s);
-    opacity: 0.25;
-    transition: opacity 0.6s ease;
   }
 
-  .story__step.is-active,
-  :global(.reduced-motion) .story__step {
-    opacity: 1;
-  }
-
+  /* Every step stays readable; the active one is marked with color, not by dimming the rest. */
   .story__title {
     font-size: var(--step-5);
+    color: var(--text-mute);
+    transition: color 0.5s ease;
   }
 
   .story__body {
     max-width: 36ch;
     font-size: var(--step-1);
     line-height: 1.5;
+    color: var(--text-faint);
+    transition: color 0.5s ease;
+  }
+
+  .story__step.is-active .story__title {
+    color: var(--paper);
+  }
+
+  .story__step.is-active .story__body {
     color: var(--text-mute);
+  }
+
+  .story__step.is-active .story__title::after {
+    content: '';
+    display: block;
+    width: 2.2rem;
+    height: 3px;
+    margin-top: 0.9rem;
+    background: var(--sun);
   }
 
   .story__sticky {

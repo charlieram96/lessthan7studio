@@ -1,9 +1,9 @@
 [
-  {"slug": "marketink", "name": "Marketink Strategies", "captureUrl": "https://www.marketinkstrategies.com/", "liveUrl": "https://www.marketinkstrategies.com/"},
+  {"slug": "marketink", "name": "Market Ink Strategies", "captureUrl": "https://www.marketinkstrategies.com/", "liveUrl": "https://www.marketinkstrategies.com/"},
   {"slug": "hungry-house-media", "name": "Hungry House Media", "captureUrl": "https://hungryhousemedia.com/", "liveUrl": "https://hungryhousemedia.com/"},
-  {"slug": "pigeon-post", "name": "Pigeon Post", "captureUrl": "https://www.pigeonpost.media/", "liveUrl": "https://www.pigeonpost.media/", "fullPageUrl": "https://www.pigeonpost.media/stairs/"},
-  {"slug": "bland-law", "name": "Bland Law", "captureUrl": "https://blandlaw.netlify.app/", "liveUrl": "https://blandlaw.legal/"},
-  {"slug": "south-med-research", "name": "South Med & Research", "captureUrl": "https://southmedandresearch.com/", "liveUrl": "https://southmedandresearch.com/"},
+  {"slug": "pigeon-post", "name": "Pigeon Post Media", "captureUrl": "https://www.pigeonpost.media/", "liveUrl": "https://www.pigeonpost.media/", "fullPageUrl": "https://www.pigeonpost.media/stairs/"},
+  {"slug": "bland-law", "name": "Bland Law, P.A.", "captureUrl": "https://blandlaw.netlify.app/", "liveUrl": "https://blandlaw.legal/"},
+  {"slug": "south-med-research", "name": "South Miami Medical & Research Group", "captureUrl": "https://southmedandresearch.com/", "liveUrl": "https://southmedandresearch.com/"},
   {"slug": "plaza-seafood", "name": "Plaza Seafood Market", "captureUrl": "https://plazaseafood.netlify.app/", "liveUrl": "https://plazaseafoodmarket.com/"},
   {"slug": "jany-did-my-hair", "name": "Jany Did My Hair", "captureUrl": "https://janydidmyhair.com/", "liveUrl": "https://janydidmyhair.com/"},
   {"slug": "newbula", "name": "Newbula", "captureUrl": "https://newbula.ai/", "liveUrl": "https://newbula.ai/"},

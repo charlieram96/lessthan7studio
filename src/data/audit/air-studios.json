@@ -1,0 +1,411 @@
+{
+  "slug": "air-studios",
+  "name": "AIR Studios",
+  "captureUrl": "https://airstudiosexperience.com/",
+  "liveUrl": "https://airstudiosexperience.com/",
+  "auditedAt": "2026-10-20T22:33:33.819Z",
+  "finalUrl": "https://airstudiosexperience.com/",
+  "status": 200,
+  "redirects": [],
+  "title": "AIR Studios",
+  "metaDescription": "AIR Studios is a fine arts wedding photographer based in miami, florida. My mission is to create images that enable the gift of human connection. Images where every person is represented with stature, dignity & grace.",
+  "canonical": null,
+  "htmlLang": "en",
+  "ogImage": null,
+  "favicon": "https://airstudiosexperience.com/media/favicon.png",
+  "headings": {
+    "h1": [
+      "LUXURY DESTINATION WEDDING & EDITORIAL PHOTOGRAPHER"
+    ],
+    "h2": [
+      "MEET ABNER ISAIAS REYES",
+      "PORTFOLIO",
+      "EXPERIENCE"
+    ],
+    "h3": []
+  },
+  "navLabels": [
+    "ABOUT",
+    "PORTFOLIO",
+    "EXPERIENCE",
+    "CONTACT"
+  ],
+  "ctas": [],
+  "contact": {
+    "phones": [],
+    "emails": [],
+    "address": [],
+    "social": [
+      "https://www.instagram.com/p/DemccTORgOW",
+      "https://www.instagram.com/p/DeiHFRhCb1i",
+      "https://www.instagram.com/p/DecR4SgIDhd",
+      "https://www.instagram.com/p/DeRrdzZFsUP",
+      "https://www.instagram.com/abnerireyes/"
+    ],
+    "mapLinks": []
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "Meno, serif",
+      "body": {
+        "family": "Meno, serif",
+        "weight": "100",
+        "size": "18px",
+        "lineHeight": "34.2px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Meno Banner",
+          "Meno Banner"
+        ]
+      },
+      "h1": {
+        "family": "Orpheus, serif",
+        "weight": "700",
+        "size": "40px",
+        "lineHeight": "48px",
+        "letterSpacing": "5.12px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "FSP DEMO - Orpheus Pro Med",
+          "EB Garamond"
+        ]
+      },
+      "h2": {
+        "family": "Orpheus, serif",
+        "weight": "300",
+        "size": "36px",
+        "lineHeight": "54px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "OrpheusW05-Regular"
+        ]
+      },
+      "button": null
+    },
+    "loadedFonts": [
+      "EB Garamond",
+      "Orpheus",
+      "Meno"
+    ],
+    "googleFonts": [],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "body": {
+        "background": "#f7f7f5",
+        "text": "#2f2f2f"
+      },
+      "header": {
+        "background": "transparent",
+        "text": "#2f2f2f"
+      },
+      "primaryButton": null,
+      "link": {
+        "text": "#2f2f2f",
+        "label": "More about me, my signature work, philos"
+      }
+    },
+    "palette": [
+      "#2d2019",
+      "#c7c6c5",
+      "#aa9e98",
+      "#967666",
+      "#6c473b",
+      "#60544f"
+    ],
+    "paletteShare": [
+      0.542,
+      0.143,
+      0.082,
+      0.065,
+      0.064,
+      0.055
+    ],
+    "cssColorTokens": {
+      "--bg-color": "#f7f7f5",
+      "--accent-color": "#efeee9",
+      "--contrast-color": "#2f2f2f",
+      "--light-text": "#fafafa",
+      "--dark-text": "#2f2f2f",
+      "--dark-box-p-color": "#e6e6e6",
+      "--light-border": "#fafafa"
+    }
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [],
+    "libraries": [
+      "GSAP",
+      "ScrollTrigger"
+    ],
+    "hosting": [
+      "Netlify"
+    ],
+    "services": [
+      "cdnjs",
+      "Elfsight widgets",
+      "Google Fonts"
+    ],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Netlify",
+      "x-nf-request-id": "01M5DPZMMDRHSNNMNC0DQWJ08M",
+      "strict-transport-security": "max-age=31536000",
+      "cache-control": "public,max-age=0,must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": [
+      "cdnjs.cloudflare.com",
+      "core.service.elfsight.com",
+      "fonts.googleapis.com",
+      "phosphor.utils.elfsightcdn.com",
+      "static.elfsight.com",
+      "storage.elfsight.com"
+    ]
+  },
+  "seo": {
+    "jsonLdTypes": [],
+    "jsonLdBlocks": 0,
+    "jsonLdParseErrors": 0,
+    "hreflang": [],
+    "robotsMeta": null,
+    "viewport": "width=device-width, initial-scale=1.0",
+    "ogTitle": false,
+    "ogDescription": false,
+    "ogImage": false,
+    "twitterCard": null,
+    "images": {
+      "count": 25,
+      "withAlt": 23,
+      "emptyAlt": 2,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 25,
+      "internal": 20,
+      "internalUnique": 7,
+      "external": 5
+    },
+    "robotsTxt": {
+      "present": false,
+      "status": 404,
+      "sitemaps": [],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": false,
+      "url": null,
+      "sitemapXmlStatus": 404,
+      "isIndex": false,
+      "locCount": 0,
+      "urlCount": 0
+    }
+  },
+  "perf": {
+    "transferBytes": 4865039,
+    "requests": 47,
+    "ttfbMs": 1218,
+    "serverResponseMs": 601,
+    "domContentLoadedMs": 1803,
+    "loadMs": 2222,
+    "documentTransferBytes": 2581,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 89,
+      "accessibility": 100,
+      "bestPractices": 77,
+      "seo": 100,
+      "lcp": "2.4 s",
+      "cls": "0.026",
+      "tbt": "150 ms",
+      "fcp": "2.3 s",
+      "speedIndex": "5.7 s",
+      "totalByteWeight": 11788061,
+      "requests": 45,
+      "serverResponseMs": 132,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [
+          "third-party-cookies",
+          "inspector-issues"
+        ],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://airstudiosexperience.com/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 90,
+      "accessibility": 100,
+      "bestPractices": 77,
+      "seo": 100,
+      "lcp": "1.2 s",
+      "cls": "0.026",
+      "tbt": "0 ms",
+      "fcp": "1.1 s",
+      "speedIndex": "2.5 s",
+      "totalByteWeight": 13772504,
+      "requests": 43,
+      "serverResponseMs": 65,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [
+          "third-party-cookies",
+          "inspector-issues"
+        ],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://airstudiosexperience.com/",
+      "warnings": []
+    }
+  },
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [],
+    "toggles": [],
+    "translateWidgets": [],
+    "spanishLinks": [],
+    "elementsLangEs": 0,
+    "spanishWordShare": 0,
+    "spanishLines": []
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [
+    "https://airstudiosexperience.com/about",
+    "https://airstudiosexperience.com/portfolio",
+    "https://airstudiosexperience.com/experience",
+    "https://airstudiosexperience.com/contact"
+  ],
+  "signals": {
+    "iframes": [],
+    "videos": [
+      {
+        "src": "https://airstudiosexperience.com/media/main-loop.webm",
+        "autoplay": true,
+        "muted": true,
+        "loop": true,
+        "poster": false,
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "playing": true
+      },
+      {
+        "src": "https://airstudiosexperience.com/media/main-loop-mobile.webm",
+        "autoplay": true,
+        "muted": true,
+        "loop": true,
+        "poster": false,
+        "width": 0,
+        "height": 0,
+        "top": 0,
+        "playing": false
+      },
+      {
+        "src": "https://airstudiosexperience.com/media/abner-vid.webm",
+        "autoplay": true,
+        "muted": true,
+        "loop": true,
+        "poster": false,
+        "width": 560,
+        "height": 680,
+        "top": 950,
+        "playing": false
+      }
+    ],
+    "forms": [],
+    "canvases": 0,
+    "lottie": 0,
+    "copyright": [
+      "© 2023 AIR Studios Inc."
+    ],
+    "featureHints": [
+      "autoplaying background video"
+    ]
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [],
+    "mixedContent": [],
+    "brokenImages": [],
+    "emptyHashLinks": [],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 4690,
+      "mobile": 5389
+    },
+    "modes": {
+      "full": "forced",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "forced"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 1,
+      "mobile": 1,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 74168,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 29978,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 3908,
+        "bytes": 133338,
+        "quality": 72,
+        "sourceHeight": 4690
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 54854,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 106266,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  }
+}
