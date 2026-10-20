@@ -187,16 +187,13 @@ const ticks = [0, 1, 2, 3, 4, 5, 6, 7];
     transform-origin: 0 100%;
   }
 
-  /* Initial states for the intro; the failsafe and reduced motion keep everything visible. */
-  :global(.js.no-intro:not(.reduced-motion)) .hero__line,
-  :global(.js:not(.reduced-motion)) [data-hero-in],
+  /* The copy paints with the page (it is the largest content); only the mark's pieces wait
+     for the intro. The failsafe and reduced motion keep everything visible. */
   :global(.js:not(.reduced-motion)) .hero__mark-wrap :global(.mark__l),
   :global(.js:not(.reduced-motion)) .hero__mark-wrap :global(.mark__7) {
     opacity: 0;
   }
 
-  :global(.js.reveal-failsafe) .hero__line,
-  :global(.js.reveal-failsafe) [data-hero-in],
   :global(.js.reveal-failsafe) .hero__mark-wrap :global(.mark__l),
   :global(.js.reveal-failsafe) .hero__mark-wrap :global(.mark__7) {
     opacity: 1;

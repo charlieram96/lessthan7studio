@@ -17,7 +17,32 @@ export function initReel(): void {
   const tween = gsap.to(track, {
     x: () => -distance(),
     ease: 'none',
+    onUpdate: () => drift(),
   });
+
+  // Each screenshot drifts against the track for depth: +4% as its card enters on the right,
+  // -4% as it leaves on the left. Offsets are measured on refresh, so frames only do arithmetic.
+  const shots = imgs.map((im) => ({
+    set: gsap.quickSetter(im, 'xPercent') as (value: number) => void,
+    item: im.closest<HTMLElement>('.reel__item')!,
+    left: 0,
+    width: 0,
+  }));
+  let origin = 0;
+  const measureShots = () => {
+    const trackLeft = track.getBoundingClientRect().left;
+    origin = trackLeft - (gsap.getProperty(track, 'x') as number);
+    shots.forEach((s) => {
+      const r = s.item.getBoundingClientRect();
+      s.left = r.left - trackLeft;
+      s.width = r.width;
+    });
+  };
+  const drift = () => {
+    const x = gsap.getProperty(track, 'x') as number;
+    const vw = window.innerWidth;
+    for (const s of shots) s.set(4 - 8 * gsap.utils.clamp(0, 1, (vw - (origin + x + s.left)) / (vw + s.width)));
+  };
 
   const skewTo = gsap.quickTo(cards, 'skewX', { duration: 0.5, ease: 'power3' });
 
@@ -38,24 +63,12 @@ export function initReel(): void {
       skewTo(v);
     },
     onScrubComplete: () => skewTo(0),
+    onRefresh: () => {
+      measureShots();
+      drift();
+    },
   });
 
-  // Each screenshot drifts against the track for depth.
-  imgs.forEach((im) => {
-    gsap.fromTo(
-      im,
-      { xPercent: 4 },
-      {
-        xPercent: -4,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: im.closest('.reel__item') as Element,
-          containerAnimation: tween,
-          start: 'left right',
-          end: 'right left',
-          scrub: true,
-        },
-      },
-    );
-  });
+  measureShots();
+  drift();
 }

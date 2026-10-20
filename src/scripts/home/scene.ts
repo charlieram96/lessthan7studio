@@ -1,6 +1,6 @@
 import { gsap, ScrollTrigger, finePointer, onIntroDone, reducedMotion } from '../core';
 import { LEAN } from '../../config';
-import { startSunset } from '../webgl/sunset';
+import { startSunset, type Sunset } from '../webgl/sunset';
 
 const PORTAL = 1.4; // timeline units spent diving through the mark
 const STEP = 1; // timeline units per milestone
@@ -24,7 +24,15 @@ export function initScene(): void {
   const impression = scene.querySelector<HTMLElement>('[data-impression]');
 
   const rm = reducedMotion();
-  const sunset = startSunset(canvas, { still: rm });
+  // The WebGL glow is an enhancement over the CSS one, so it starts once the page is idle.
+  let sunset: Sunset | null = null;
+  let glowActive = true;
+  const whenIdle = (cb: () => void) =>
+    'requestIdleCallback' in window ? window.requestIdleCallback(cb, { timeout: 1500 }) : setTimeout(cb, 300);
+  whenIdle(() => {
+    sunset = startSunset(canvas, { still: rm });
+    sunset?.setActive(glowActive);
+  });
 
   // The two pieces wait apart (and invisible, via CSS) until the intro brings them together.
   if (!rm) {
@@ -36,14 +44,17 @@ export function initScene(): void {
   onIntroDone(() => {
     if (rm) return;
     const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-    tl.fromTo(
-      lines,
-      { yPercent: 38, skewY: 5, opacity: 0 },
-      { yPercent: 0, skewY: 0, opacity: 1, duration: 1.3, stagger: 0.09 },
-      0.05,
-    )
-      .fromTo(ins, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 1.1, stagger: 0.08 }, 0.35)
-      .to([pieceL, piece7], { opacity: 1, x: 0, y: 0, duration: 1.6, ease: 'elastic.out(1, 0.55)', stagger: 0.06 }, 0.2);
+    // After the loader, which still covers the hero here, the copy rises in as the panels part.
+    // Without it the copy stays as it painted, so it never disappears after showing.
+    if (!document.documentElement.classList.contains('no-intro')) {
+      tl.fromTo(
+        lines,
+        { yPercent: 38, skewY: 5, opacity: 0 },
+        { yPercent: 0, skewY: 0, opacity: 1, duration: 1.3, stagger: 0.09 },
+        0.05,
+      ).fromTo(ins, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 1.1, stagger: 0.08 }, 0.35);
+    }
+    tl.to([pieceL, piece7], { opacity: 1, x: 0, y: 0, duration: 1.6, ease: 'elastic.out(1, 0.55)', stagger: 0.06 }, 0.2);
     startImpressionClock();
   });
 
@@ -156,6 +167,10 @@ export function initScene(): void {
 
   const tl = gsap.timeline({ defaults: { ease: 'none' }, paused: true });
 
+  // Scene A waits under the hero. Keep it unpainted until the dive opens the mark, so the
+  // browser doesn't count the hidden stopwatch as the page's main content.
+  tl.fromTo(t7, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.02 }, 0.01);
+
   // Dive: the copy steps aside, light floods the mark's square, and we fly through it.
   tl.to([content, bar], { opacity: 0, y: -60, duration: 0.45, ease: 'power2.in' }, 0)
     .to(st, { hole: 1, duration: 0.5, ease: 'power2.in', onUpdate: apply }, 0)
@@ -227,7 +242,8 @@ export function initScene(): void {
         rx(0);
         ry(0);
       }
-      sunset?.setActive(p < PORTAL + 0.05);
+      glowActive = p < PORTAL + 0.05;
+      sunset?.setActive(glowActive);
     },
   });
 

@@ -79,6 +79,15 @@ export interface Sunset {
   setActive(on: boolean): void;
 }
 
+// Without a GPU the shader renders on the CPU and every frame blocks the page (and sinks
+// Lighthouse scores, which run without one). The CSS glow underneath stands in instead.
+const SOFTWARE = /swiftshader|llvmpipe|softpipe|software|basic render/i;
+
+function isSoftware(gl: WebGLRenderingContext): boolean {
+  const info = gl.getExtension('WEBGL_debug_renderer_info');
+  return SOFTWARE.test(String(gl.getParameter(info ? info.UNMASKED_RENDERER_WEBGL : gl.RENDERER)));
+}
+
 export function startSunset(canvas: HTMLCanvasElement, opts: { still?: boolean } = {}): Sunset | null {
   const gl = canvas.getContext('webgl', {
     antialias: false,
@@ -87,8 +96,13 @@ export function startSunset(canvas: HTMLCanvasElement, opts: { still?: boolean }
     stencil: false,
     preserveDrawingBuffer: false,
     powerPreference: 'low-power',
+    failIfMajorPerformanceCaveat: true,
   });
   if (!gl) return null;
+  if (isSoftware(gl)) {
+    gl.getExtension('WEBGL_lose_context')?.loseContext();
+    return null;
+  }
 
   const compile = (type: number, src: string) => {
     const s = gl.createShader(type)!;
