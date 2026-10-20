@@ -33,7 +33,7 @@ const fmtDate = (iso: string) =>
 
 const list = (items: string[], cls = '') => `<ul class="rp-list ${cls}">${items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>`;
 
-/** Contrast-safe ink for text on a swatch. */
+/** Contrast-safe ink for text on a swatch: whichever of near-black or white contrasts more. */
 function inkFor(hex: string): string {
   const m = hex.replace('#', '').match(/^([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
   if (!m) return '#0d0b14';
@@ -42,7 +42,8 @@ function inkFor(hex: string): string {
     return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
   });
   const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  return lum > 0.32 ? '#0d0b14' : '#ffffff';
+  // #0d0b14 and white contrast equally against a luminance of about 0.187.
+  return lum > 0.187 ? '#0d0b14' : '#ffffff';
 }
 
 const fontStack = (family: string, fallback: string) => `'${family.replace(/'/g, '')}', ${fallback}`;
