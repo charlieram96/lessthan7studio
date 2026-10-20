@@ -3,7 +3,7 @@
   "name": "Latin Music Mastery",
   "captureUrl": "https://latinmusicmastery.com/",
   "liveUrl": "https://latinmusicmastery.com/",
-  "auditedAt": "2026-10-20T22:28:09.040Z",
+  "auditedAt": "2026-10-20T23:25:52.074Z",
   "finalUrl": "https://latinmusicmastery.com/",
   "status": 200,
   "redirects": [],
@@ -15,7 +15,7 @@
   "favicon": "https://latinmusicmastery.com/favicon.ico?favicon.5b7a7cd0.ico",
   "headings": {
     "h1": [
-      "Learn from the masters of la música latina."
+      "Learn from the masters of Latin music"
     ],
     "h2": [
       "Take your seat in the orquesta.",
@@ -55,15 +55,8 @@
     "Join the waitlist",
     "Save my seat",
     "Browse Conga courses",
-    "Hear the groove",
-    "Son 3-2",
-    "2-3",
-    "Rumba",
-    "−",
-    "+",
-    "Clave Son clave",
-    "Campana Bongó bell",
-    "Conga Tumbao"
+    "See how PlaySense works",
+    "Lock in founding pricing"
   ],
   "contact": {
     "phones": [],
@@ -163,20 +156,20 @@
       }
     },
     "palette": [
-      "#120c15",
-      "#f0e8db",
-      "#2b191d",
-      "#463d42",
-      "#beb6ad",
-      "#7f7774"
+      "#130d15",
+      "#2c1819",
+      "#363539",
+      "#967f52",
+      "#e0d7ca",
+      "#767673"
     ],
     "paletteShare": [
-      0.532,
-      0.153,
-      0.14,
-      0.058,
-      0.055,
-      0.039
+      0.609,
+      0.12,
+      0.089,
+      0.059,
+      0.04,
+      0.038
     ],
     "cssColorTokens": {}
   },
@@ -196,7 +189,7 @@
     "headers": {
       "server": "Vercel",
       "x-powered-by": "Next.js",
-      "x-vercel-id": "iad1::iad1::lmjlk-1792535164242-c719a1544b53",
+      "x-vercel-id": "iad1::iad1::qtg4r-1792538629830-4891e53b03fb",
       "x-vercel-cache": "MISS",
       "strict-transport-security": "max-age=63072000",
       "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
@@ -243,14 +236,14 @@
     }
   },
   "perf": {
-    "transferBytes": 877247,
+    "transferBytes": 881560,
     "requests": 93,
-    "ttfbMs": 416,
-    "serverResponseMs": 45,
-    "domContentLoadedMs": 1213,
-    "loadMs": 4450,
-    "documentTransferBytes": 24554,
-    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+    "ttfbMs": 347,
+    "serverResponseMs": 46,
+    "domContentLoadedMs": 1262,
+    "loadMs": 2425,
+    "documentTransferBytes": 24633,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy. Excludes 5 video request(s), transcoded locally for capture."
   },
   "lighthouse": {
     "version": "13.5.0",
@@ -342,7 +335,7 @@
         "width": 862,
         "height": 854,
         "top": 29,
-        "playing": false
+        "playing": true
       },
       {
         "src": "https://latinmusicmastery.com/videos/hero-video-final.mp4",
@@ -425,6 +418,7 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -452,40 +446,44 @@
       "mobile": 0,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 72206,
+        "bytes": 81016,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 32352,
+        "bytes": 36124,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 7200,
-        "bytes": 298326,
+        "bytes": 311340,
         "quality": 72,
         "sourceHeight": 8640
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 57678,
+        "bytes": 57018,
         "quality": 78,
         "sourceHeight": 2532
       },
       "mobile-full.webp": {
         "width": 600,
         "height": 6000,
-        "bytes": 135734,
+        "bytes": 134870,
         "quality": 70,
         "sourceHeight": 7800
       }

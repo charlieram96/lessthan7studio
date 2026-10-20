@@ -1,9 +1,9 @@
 {
   "slug": "bland-law",
-  "name": "Bland Law",
+  "name": "Bland Law, P.A.",
   "captureUrl": "https://blandlaw.netlify.app/",
   "liveUrl": "https://blandlaw.legal/",
-  "auditedAt": "2026-10-20T22:17:29.990Z",
+  "auditedAt": "2026-10-20T23:28:36.914Z",
   "finalUrl": "https://blandlaw.netlify.app/",
   "status": 200,
   "redirects": [],
@@ -52,10 +52,9 @@
     "Consultation"
   ],
   "ctas": [
-    "Practice Areas",
-    "Music",
     "Consultation",
     "Schedule a consultation",
+    "Practice areas",
     "Send request"
   ],
   "contact": {
@@ -69,9 +68,7 @@
     ],
     "address": [
       "3191 Coral Way, Suite 1005 Miami, FL 33145",
-      "7777 Glades Road, Suite 110 Boca Raton, FL 33434",
-      "3191 Coral Way, Suite 1005, Miami, FL 33145 · (305) 819-7066",
-      "7777 Glades Road, Suite 110, Boca Raton, FL 33434 · (561) 245-4604"
+      "7777 Glades Road, Suite 110 Boca Raton, FL 33434"
     ],
     "social": [
       "https://www.instagram.com/blandlaw/",
@@ -164,20 +161,20 @@
       }
     },
     "palette": [
-      "#131d2d",
-      "#23325d",
-      "#3a3e47",
-      "#da8f67",
-      "#845742",
-      "#697080"
+      "#121a2a",
+      "#232f44",
+      "#22325c",
+      "#4a4d56",
+      "#da8f68",
+      "#855842"
     ],
     "paletteShare": [
-      0.877,
-      0.039,
-      0.035,
+      0.782,
+      0.107,
+      0.042,
+      0.03,
       0.019,
-      0.013,
-      0.011
+      0.013
     ],
     "cssColorTokens": {
       "--ink": "#0f1724",
@@ -219,7 +216,7 @@
     "hsts": true,
     "headers": {
       "server": "Netlify",
-      "x-nf-request-id": "01M5DP5CVTVZ1Z4964H8A59ADX",
+      "x-nf-request-id": "01M5DT88GSGCPA2MV8NHF6BBNG",
       "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
       "x-frame-options": "SAMEORIGIN",
       "cache-control": "public,max-age=0,must-revalidate",
@@ -286,13 +283,13 @@
     }
   },
   "perf": {
-    "transferBytes": 365103,
+    "transferBytes": 365122,
     "requests": 17,
-    "ttfbMs": 313,
-    "serverResponseMs": 35,
-    "domContentLoadedMs": 1265,
-    "loadMs": 1268,
-    "documentTransferBytes": 19230,
+    "ttfbMs": 358,
+    "serverResponseMs": 61,
+    "domContentLoadedMs": 732,
+    "loadMs": 798,
+    "documentTransferBytes": 19228,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
   "lighthouse": {
@@ -388,15 +385,9 @@
           "phone",
           "email",
           "topic",
-          "topic",
-          "topic",
-          "topic",
-          "topic",
-          "topic",
-          "office",
           "office",
           "lang",
-          "lang"
+          "message"
         ],
         "submit": "SEND REQUEST"
       }
@@ -407,12 +398,13 @@
       "© 2026 Bland Law, P.A. All rights reserved."
     ],
     "featureHints": [
-      "form: bot-field, first, last, phone, email, topic, topic, topic, topic, topic, topic, office, office, lang, lang (Netlify Forms)",
+      "form: bot-field, first, last, phone, email, topic, office, lang, message (Netlify Forms)",
       "language toggle"
     ]
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -429,7 +421,7 @@
       "mobile": 14167
     },
     "modes": {
-      "full": "forced",
+      "full": "normal",
       "hero": "normal",
       "mobile": "normal",
       "mobileFull": "normal"
@@ -440,40 +432,44 @@
       "mobile": 0,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 69116,
+        "bytes": 69182,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 25080,
+        "bytes": 25056,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 7200,
-        "bytes": 310920,
+        "bytes": 306054,
         "quality": 72,
         "sourceHeight": 8640
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 50312,
+        "bytes": 50366,
         "quality": 78,
         "sourceHeight": 2532
       },
       "mobile-full.webp": {
         "width": 600,
         "height": 6000,
-        "bytes": 148280,
+        "bytes": 148556,
         "quality": 70,
         "sourceHeight": 7800
       }

@@ -3,7 +3,7 @@
   "name": "AIR Studios",
   "captureUrl": "https://airstudiosexperience.com/",
   "liveUrl": "https://airstudiosexperience.com/",
-  "auditedAt": "2026-10-20T22:33:33.819Z",
+  "auditedAt": "2026-10-20T23:06:20.027Z",
   "finalUrl": "https://airstudiosexperience.com/",
   "status": 200,
   "redirects": [],
@@ -36,10 +36,6 @@
     "emails": [],
     "address": [],
     "social": [
-      "https://www.instagram.com/p/DemccTORgOW",
-      "https://www.instagram.com/p/DeiHFRhCb1i",
-      "https://www.instagram.com/p/DecR4SgIDhd",
-      "https://www.instagram.com/p/DeRrdzZFsUP",
       "https://www.instagram.com/abnerireyes/"
     ],
     "mapLinks": []
@@ -114,20 +110,18 @@
       }
     },
     "palette": [
-      "#2d2019",
-      "#c7c6c5",
-      "#aa9e98",
-      "#967666",
-      "#6c473b",
-      "#60544f"
+      "#8f857a",
+      "#796755",
+      "#655755",
+      "#846966",
+      "#4d4139"
     ],
     "paletteShare": [
-      0.542,
-      0.143,
-      0.082,
-      0.065,
-      0.064,
-      0.055
+      0.559,
+      0.133,
+      0.119,
+      0.104,
+      0.086
     ],
     "cssColorTokens": {
       "--bg-color": "#f7f7f5",
@@ -158,7 +152,7 @@
     "hsts": true,
     "headers": {
       "server": "Netlify",
-      "x-nf-request-id": "01M5DPZMMDRHSNNMNC0DQWJ08M",
+      "x-nf-request-id": "01M5DRVFX7M0FD4YYE34MWA8QT",
       "strict-transport-security": "max-age=31536000",
       "cache-control": "public,max-age=0,must-revalidate",
       "content-encoding": "br"
@@ -211,13 +205,13 @@
     }
   },
   "perf": {
-    "transferBytes": 4865039,
+    "transferBytes": 4863970,
     "requests": 47,
-    "ttfbMs": 1218,
-    "serverResponseMs": 601,
-    "domContentLoadedMs": 1803,
-    "loadMs": 2222,
-    "documentTransferBytes": 2581,
+    "ttfbMs": 425,
+    "serverResponseMs": 36,
+    "domContentLoadedMs": 869,
+    "loadMs": 1205,
+    "documentTransferBytes": 2536,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
   "lighthouse": {
@@ -342,6 +336,7 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -369,40 +364,44 @@
       "mobile": 1,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 74168,
+        "bytes": 91798,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 29978,
+        "bytes": 35690,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 3908,
-        "bytes": 133338,
+        "bytes": 131400,
         "quality": 72,
         "sourceHeight": 4690
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 54854,
+        "bytes": 40712,
         "quality": 78,
         "sourceHeight": 2532
       },
       "mobile-full.webp": {
         "width": 600,
         "height": 6000,
-        "bytes": 106266,
+        "bytes": 106336,
         "quality": 70,
         "sourceHeight": 7800
       }

@@ -3,7 +3,7 @@
   "name": "Plaza Seafood Market",
   "captureUrl": "https://plazaseafood.netlify.app/",
   "liveUrl": "https://plazaseafoodmarket.com/",
-  "auditedAt": "2026-10-20T22:20:39.476Z",
+  "auditedAt": "2026-10-20T23:21:09.515Z",
   "finalUrl": "https://plazaseafood.netlify.app/",
   "status": 200,
   "redirects": [],
@@ -53,7 +53,6 @@
     "(305) 636-1695"
   ],
   "ctas": [
-    "(305) 636-1695",
     "Call to order",
     "Get directions",
     "Order online",
@@ -61,10 +60,7 @@
     "Steak Rueda",
     "Filet Filete",
     "Butterfly Minuta",
-    "Whole",
-    "Steak",
-    "Filet",
-    "Butterfly"
+    "plazaseafood@comcast.net"
   ],
   "contact": {
     "phones": [
@@ -74,10 +70,7 @@
       "plazaseafood@comcast.net"
     ],
     "address": [
-      "3114 NW 17th Ave Miami, FL 33142",
-      "3114 NW 17th Ave, Miami, FL 33142",
-      "3114 NW 17th Ave, Miami, FL, 33142",
-      "2026 Plaza Seafood Market"
+      "3114 NW 17th Ave Miami, FL 33142"
     ],
     "social": [],
     "mapLinks": [
@@ -157,7 +150,7 @@
       },
       "header": {
         "background": "transparent",
-        "text": "#f6f0e1"
+        "text": "#262a4c"
       },
       "primaryButton": {
         "background": "#b5121b",
@@ -165,25 +158,25 @@
         "label": "Call to order"
       },
       "link": {
-        "text": "#f6f0e1",
+        "text": "#262a4c",
         "label": "Order online"
       }
     },
     "palette": [
-      "#112316",
-      "#42452b",
-      "#2b5967",
-      "#7c591d",
-      "#88988a",
-      "#cf9011"
+      "#0a918a",
+      "#056b6a",
+      "#629999",
+      "#183452",
+      "#cfd4ce",
+      "#5b4d5b"
     ],
     "paletteShare": [
-      0.253,
-      0.211,
-      0.184,
-      0.117,
-      0.103,
-      0.075
+      0.615,
+      0.281,
+      0.036,
+      0.023,
+      0.019,
+      0.013
     ],
     "cssColorTokens": {
       "--navy": "#262a4c",
@@ -228,7 +221,7 @@
     "hsts": true,
     "headers": {
       "server": "Netlify",
-      "x-nf-request-id": "01M5DPAP0PT9CPPT1F6RCHPZQF",
+      "x-nf-request-id": "01M5DSSP17ASR5NR8WC63BA727",
       "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
       "cache-control": "public,max-age=0,must-revalidate",
       "content-encoding": "br"
@@ -282,14 +275,14 @@
     }
   },
   "perf": {
-    "transferBytes": 2127436,
+    "transferBytes": 2050396,
     "requests": 41,
-    "ttfbMs": 546,
-    "serverResponseMs": 253,
-    "domContentLoadedMs": 1374,
-    "loadMs": 1451,
-    "documentTransferBytes": 47516,
-    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+    "ttfbMs": 387,
+    "serverResponseMs": 41,
+    "domContentLoadedMs": 967,
+    "loadMs": 1074,
+    "documentTransferBytes": 47551,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy. Excludes 1 video request(s), transcoded locally for capture."
   },
   "lighthouse": {
     "version": "13.5.0",
@@ -349,7 +342,7 @@
     ],
     "spanishLinks": [],
     "elementsLangEs": 0,
-    "spanishWordShare": 0.025,
+    "spanishWordShare": 0.026,
     "spanishLines": []
   },
   "notableFeatures": [],
@@ -390,11 +383,10 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
-    "brokenImages": [
-      "data:image/gif;base64,R0lGODlhAQABAAAAACw="
-    ],
+    "brokenImages": [],
     "emptyHashLinks": [],
     "httpErrors": [],
     "failedRequests": [],
@@ -405,10 +397,10 @@
   "screenshots": {
     "pageHeight": {
       "desktop": 12435,
-      "mobile": 17153
+      "mobile": 17384
     },
     "modes": {
-      "full": "forced",
+      "full": "reduced",
       "hero": "normal",
       "mobile": "normal",
       "mobileFull": "normal"
@@ -419,40 +411,44 @@
       "mobile": 0,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 246500,
-        "quality": 80,
+        "bytes": 276662,
+        "quality": 76,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 81164,
+        "bytes": 104384,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 7200,
-        "bytes": 595538,
+        "bytes": 579330,
         "quality": 72,
         "sourceHeight": 8640
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 166852,
+        "bytes": 127602,
         "quality": 78,
         "sourceHeight": 2532
       },
       "mobile-full.webp": {
         "width": 600,
         "height": 6000,
-        "bytes": 277156,
+        "bytes": 284632,
         "quality": 70,
         "sourceHeight": 7800
       }
@@ -469,7 +465,7 @@
       "nginx"
     ],
     "differsFromCapture": true,
-    "heroDifference": 0.395,
+    "heroDifference": 0.343,
     "beforeHero": "before-hero.webp"
   }
 }

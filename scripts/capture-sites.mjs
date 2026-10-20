@@ -15,6 +15,10 @@
 // If ffmpeg is on PATH, H.264 videos (which open-source Chromium can't decode) are transcoded to WebM on the fly
 // so video heroes render the way they do in Chrome.
 //
+// sites.json entries: { slug, name, captureUrl, liveUrl, fullPageUrl? }. captureUrl is shot and audited; a different
+// liveUrl origin also gets a before-hero.webp (deleted when it matches); fullPageUrl optionally points the full-page
+// shots at a static version of a scroll-driven page.
+//
 // Writes public/work/<slug>/*.webp and src/data/audit/<slug>.json. Hand-written fields already present in an
 // audit file (notableFeatures, designNotes, businessSummary, keyCopy) are kept on re-runs.
 
@@ -150,7 +154,6 @@ async function processSite(site) {
   let audit = previous ?? {};
 
   if (!opts.lighthouseOnly) {
-    // fullPageUrl (optional) points the full-page shots at a static version of a scroll-driven page.
     const shots = {};
     for (const name of Object.keys(SHOTS)) {
       const url = SHOTS[name].fullPage && site.fullPageUrl ? site.fullPageUrl : site.captureUrl;
@@ -273,7 +276,8 @@ async function capture(url, spec, file, mode, collect, rawDir) {
     await page.screenshot({
       path: file,
       timeout: 120_000,
-      ...(spec.fullPage && { fullPage: true, animations: 'disabled', clip: { x: 0, y: 0, width: spec.viewport.width, height: spec.maxHeight } }),
+      // No `animations: 'disabled'`: fast-forwarding CSS animations fires animationend, which advances JS carousels mid-shot.
+      ...(spec.fullPage && { fullPage: true, clip: { x: 0, y: 0, width: spec.viewport.width, height: spec.maxHeight } }),
     });
     result.blank = spec.fullPage ? await blankShare(file, spec.viewport.width) : 0;
     return result;
@@ -391,9 +395,14 @@ async function settleHeadline() {
     }
     return area;
   };
+  // Static headlines return after 2.5s; changing ones are sampled over ~8s (a typical rotation cycle) first.
   let most = 0;
-  for (let i = 0; i < 10; i++) {
-    most = Math.max(most, legibleArea());
+  let least = Infinity;
+  for (let i = 0; i < 32; i++) {
+    const area = legibleArea();
+    most = Math.max(most, area);
+    least = Math.min(least, area);
+    if (i === 9 && most - least < most * 0.01) return;
     await sleep(250);
   }
   for (let waited = 0; waited < 8000 && legibleArea() < most * 0.97; waited += 100) await sleep(100);
@@ -510,7 +519,8 @@ function collectFacts() {
   const caseReset = document.createElement('style');
   caseReset.textContent = '*, *::before, *::after { text-transform: none !important; } [data-capture-skip] { display: none !important; }';
   document.head.append(caseReset);
-  const textOf = (el) => clean(el.checkVisibility?.() === false ? el.textContent : el.innerText);
+  const textOf = (el) => clean(el.checkVisibility?.() === false ? el.textContent : el.innerText)
+    || clean(el.getAttribute('aria-label')) || clean(el.textContent);
   const bodyText = document.body?.innerText || '';
   const lines = bodyText.split('\n').map(clean).filter(Boolean);
   const anchors = [...document.querySelectorAll('a[href]')];
@@ -519,15 +529,33 @@ function collectFacts() {
   const toggleRe = /^(es|esp|español|espanol|spanish|en|eng|english|en\s*[|/·]\s*es|es\s*[|/·]\s*en)$/i;
 
   // Navigation: the first nav/header block with at least two visible links (the logo link excluded).
-  const isLogoLink = (a) => a.matches('a') && !!a.querySelector('img, svg') && isInternal(a.href) && /^\/(index\.html?)?$/.test(new URL(a.href).pathname);
+  const isLogoLink = (a) => a.matches('a') && isInternal(a.href) && /^\/(index\.html?)?$/.test(new URL(a.href).pathname)
+    && !new URL(a.href).hash && (!!a.querySelector('img, svg') || !/^home$/i.test(clean(a.innerText)));
   let navLinks = [];
   for (const root of document.querySelectorAll('header nav, nav, [role=navigation], header')) {
     const links = [...root.querySelectorAll('a[href], button')].filter((a) => rendered(a) && !isLogoLink(a) && clean(a.innerText) && clean(a.innerText).length <= 40);
     if (links.length >= 2) { navLinks = links; break; }
   }
-  const navHidden = !navLinks.length;
-  if (navHidden) navLinks = [...(document.querySelector('nav, [role=navigation]')?.querySelectorAll('a[href]') ?? [])];
-  const navLabels = dedupe(navLinks.map((a) => clean(a.innerText || a.textContent)).filter((t) => t.length <= 40)).slice(0, 20);
+  // Header that only shows a menu toggle: read the links of the largest (hidden) menu instead.
+  const navHidden = !navLinks.length
+    || navLinks.some((a) => a.matches('button, [aria-expanded], [aria-controls]') && /^(menu|open menu)$/i.test(clean(a.innerText)));
+  if (navHidden) {
+    const menus = [...document.querySelectorAll('nav, [role=navigation]')].filter((n) => !n.closest('footer'));
+    const menu = menus.sort((a, b) => b.querySelectorAll('a[href]').length - a.querySelectorAll('a[href]').length)[0];
+    if (menu) navLinks = [...menu.querySelectorAll('a[href]')].filter((a) => !isLogoLink(a));
+  }
+  // Text of a hidden link without aria-hidden duplicates (hover-roll copies) or <sup> index numbers.
+  const ownText = (el) => {
+    let out = '';
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      let skip = false;
+      for (let p = node.parentElement; p && p !== el && !skip; p = p.parentElement) skip = p.getAttribute('aria-hidden') === 'true' || p.tagName === 'SUP';
+      if (!skip) out += ` ${node.textContent}`;
+    }
+    return clean(out);
+  };
+  const navLabels = dedupe(navLinks.map((a) => (navHidden ? ownText(a) : clean(a.innerText || a.textContent))).filter((t) => t && t.length <= 40)).slice(0, 20);
   const here = location.href.split('#')[0];
   const navPages = dedupe(navLinks.filter((a) => a.href && isInternal(a.href)).map((a) => a.href.split('#')[0]).filter((h) => h !== here));
 
@@ -542,11 +570,16 @@ function collectFacts() {
     ...document.querySelectorAll('button, [role=button], input[type=submit], input[type=button], a[class*=btn], a[class*=button], a[class*=Button], a[class*=cta], .wp-block-button__link, .elementor-button'),
     ...anchors.filter(looksLikeButton),
   ]);
-  const ignoreCta = /^(menu|open menu|close( menu)?|toggle (navigation|menu)|skip to .*|prev(ious)?|next|play|pause|mute|unmute|search|×|✕|x|\d+)$/i;
+  const ignoreCta = /^(menu|open menu|close( menu)?|toggle (navigation|menu)|skip to .*|prev(ious)?|next|play|pause|mute|unmute|copy)$/i;
   const ctaText = (el) => clean(el.innerText || el.value);
+  // Disclosure toggles (accordions, dropdowns, tabs) and symbol-only controls are not calls to action.
+  const isToggle = (el) => el.matches('[aria-expanded], [role=tab], summary, [aria-pressed]');
   const ctaEls = [...ctaCandidates]
     .sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1))
-    .filter((el) => rendered(el) && ctaText(el) && ctaText(el).length <= 50 && !ignoreCta.test(ctaText(el)) && !toggleRe.test(ctaText(el)));
+    .filter((el) => {
+      const t = ctaText(el);
+      return rendered(el) && t && t.length <= 50 && /[a-z]{2,}/i.test(t) && !ignoreCta.test(t) && !toggleRe.test(t) && !isToggle(el);
+    });
   const ctas = dedupe(ctaEls.map(ctaText)).slice(0, 12);
   const primaryButton = ctaEls.find((el) => !el.closest('header, nav') && filled(el)) || ctaEls.find(filled) || ctaEls[0] || null;
   const primaryLabel = primaryButton ? ctaText(primaryButton) : null;
@@ -564,11 +597,14 @@ function collectFacts() {
     ...anchors.filter((a) => a.getAttribute('href').startsWith('mailto:')).map((a) => decodeURIComponent(a.getAttribute('href').slice(7).split('?')[0]).trim()),
     ...(bodyText.match(/[\w.+-]+@[\w-]+(?:\.[\w-]+)*\.[a-z]{2,}/gi) || []),
   ]).filter((e) => !/\.(png|jpe?g|webp|svg|gif)$/i.test(e));
-  const street = /\b\d{2,6}\s+(?:[NSEW]{1,2}\.?\s+)?(?:[\w.'-]+\s+){0,4}(?:Street|St|Avenue|Ave|Boulevard|Blvd|Road|Rd|Drive|Dr|Way|Court|Ct|Lane|Ln|Terrace|Ter|Place|Pl|Parkway|Pkwy|Highway|Hwy|Circle|Cir|Trail|Plaza|Causeway)\b/i;
+  const street = /\b\d{2,6}\s+(?:[NSEW]{1,2}\.?\s+)?(?:[\w.'-]+\s+){0,4}(?:Street|St|Avenue|Ave|Boulevard|Blvd|Road|Rd|Drive|Dr|Way|Court|Ct|Lane|Ln|Terrace|Ter|Place|Pl|Parkway|Pkwy|Highway|Hwy|Circle|Cir|Trail|Causeway)\b/i;
   const zip = /\b(?:FL|Florida)\.?,?\s+\d{5}\b/;
   const addresses = [...document.querySelectorAll('address')].map((a) => clean(a.innerText));
-  lines.forEach((line, i) => {
-    if (line.length > 160) return;
+  // Business addresses live in the footer or contact/visit/location blocks (listing cards elsewhere are not the business).
+  const addressScopes = [...document.querySelectorAll('footer, [id*="contact" i], [class*="contact" i], [id*="visit" i], [class*="visit" i], [id*="location" i], [class*="location" i], [id*="office" i], [class*="office" i], [id*="find" i]')];
+  const scopedLines = addressScopes.flatMap((el) => (el.innerText || '').split('\n').map(clean).filter(Boolean));
+  scopedLines.forEach((line, i, lines) => {
+    if (line.length > 160 || /©|copyright/i.test(line)) return;
     const match = line.match(street);
     if (match) {
       let address = line.slice(match.index).split(/(?<=\b[A-Za-z]{4,}|\d{5})\.\s|\s[·|•]\s/)[0];
@@ -593,11 +629,13 @@ function collectFacts() {
     try { walk(JSON.parse(s.textContent)); } catch { ldErrors++; }
   }
   const socialRe = /\/\/(?:[a-z]+\.)?(?:facebook|instagram|twitter|x|linkedin|youtube|tiktok|pinterest|yelp|threads|spotify|soundcloud|behance|dribbble|vimeo|zillow|realtor|discord|whatsapp)\.(?:com|net|gg)\b|\/\/(?:youtu\.be|wa\.me|t\.me|g\.page)\b/i;
-  const social = dedupe(anchors.map((a) => a.href).filter((h) => socialRe.test(h) && !/sharer|\/share\b|share\?|intent\/tweet|shareArticle/i.test(h)));
+  const social = dedupe(anchors.map((a) => a.href).filter((h) => socialRe.test(h)
+    && !/sharer|\/share\b|share\?|intent\/tweet|shareArticle|instagram\.com\/(p|reel|tv)\//i.test(h)));
   const mapLinks = dedupe(anchors.map((a) => a.href).filter((h) => /google\.[a-z.]+\/maps|maps\.app\.goo\.gl|maps\.apple\.com|goo\.gl\/maps/i.test(h)));
 
+  const squash = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
   const addressList = dedupe(addresses)
-    .filter((a, _, all) => !all.some((b) => b !== a && b.toLowerCase().includes(a.toLowerCase())))
+    .filter((a, i, all) => !all.some((b, j) => b !== a && (squash(b).includes(squash(a)) && (squash(b) !== squash(a) || j < i))))
     .sort((a, b) => zip.test(b) - zip.test(a)).slice(0, 4);
   const linkTest = (a) => !a.closest('nav, header, footer') && clean(a.textContent) && !looksLikeButton(a);
   const contentLink = firstRendered('p a[href]', linkTest) || firstRendered('main a[href], article a[href], section a[href]', linkTest);
@@ -736,7 +774,7 @@ function collectFacts() {
     action: f.getAttribute('action'),
     netlify: f.hasAttribute('data-netlify') || f.hasAttribute('netlify'),
     visible: rendered(f),
-    fields: [...f.querySelectorAll('input, select, textarea')].filter((i) => !['hidden', 'submit', 'button', 'image', 'reset'].includes(i.type)).map((i) => i.getAttribute('name') || i.id || i.getAttribute('placeholder') || i.type).slice(0, 15),
+    fields: dedupe([...f.querySelectorAll('input, select, textarea')].filter((i) => !['hidden', 'submit', 'button', 'image', 'reset'].includes(i.type)).map((i) => i.getAttribute('name') || i.id || i.getAttribute('placeholder') || i.type)).slice(0, 15),
     submit: clean(f.querySelector('[type=submit], button')?.innerText) || null,
   }));
   const nav = performance.getEntriesByType('navigation')[0];
@@ -881,7 +919,8 @@ async function renderedFonts(page) {
       const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: `[data-capture-font="${key}"]` }).catch(() => ({}));
       if (!nodeId) continue;
       const { fonts } = await cdp.send('CSS.getPlatformFontsForNode', { nodeId });
-      out[key] = fonts.sort((a, b) => b.glyphCount - a.glyphCount).map((f) => f.familyName);
+      // Non-web fonts come from the capturing machine's system fonts, not from the site.
+      out[key] = fonts.sort((a, b) => b.glyphCount - a.glyphCount).map((f) => (f.isCustomFont ? f.familyName : `${f.familyName} (local system font)`));
     }
   } catch (err) {
     console.warn('font inspection failed:', err.message);

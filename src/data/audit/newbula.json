@@ -3,7 +3,7 @@
   "name": "Newbula",
   "captureUrl": "https://newbula.ai/",
   "liveUrl": "https://newbula.ai/",
-  "auditedAt": "2026-10-20T22:25:29.268Z",
+  "auditedAt": "2026-10-20T23:09:35.986Z",
   "finalUrl": "https://newbula.ai/",
   "status": 200,
   "redirects": [],
@@ -46,8 +46,6 @@
     "Request a demo"
   ],
   "ctas": [
-    "Platform",
-    "Solutions",
     "Sign in",
     "Request a demo",
     "Watch the film",
@@ -57,7 +55,9 @@
     "Adult day cares",
     "Patient app",
     "R. Castillo Talking 1:49",
-    "J. Moreau Talking 3:17"
+    "J. Moreau Talking 3:17",
+    "A. Nguyen Ringing 0:21",
+    "L. Ferreira To staff 2:12"
   ],
   "contact": {
     "phones": [
@@ -152,19 +152,19 @@
       }
     },
     "palette": [
-      "#f1f4f9",
-      "#c9dcf3",
+      "#f0f3f9",
+      "#bad4f1",
       "#222d44",
       "#2f4466",
       "#b1b6be",
       "#0b1221"
     ],
     "paletteShare": [
-      0.71,
-      0.078,
+      0.728,
+      0.061,
       0.06,
       0.043,
-      0.041,
+      0.04,
       0.037
     ],
     "cssColorTokens": {
@@ -217,7 +217,7 @@
     "hsts": true,
     "headers": {
       "server": "Vercel",
-      "x-vercel-id": "iad1::9fcd7-1792535051474-81ff1ae7eef6",
+      "x-vercel-id": "iad1::g67jx-1792537756287-aa1e4e69b479",
       "x-vercel-cache": "HIT",
       "strict-transport-security": "max-age=63072000",
       "cache-control": "public, max-age=0, must-revalidate",
@@ -266,12 +266,12 @@
     }
   },
   "perf": {
-    "transferBytes": 695748,
+    "transferBytes": 695620,
     "requests": 72,
-    "ttfbMs": 443,
-    "serverResponseMs": 40,
-    "domContentLoadedMs": 762,
-    "loadMs": 832,
+    "ttfbMs": 411,
+    "serverResponseMs": 64,
+    "domContentLoadedMs": 727,
+    "loadMs": 785,
     "documentTransferBytes": 26016,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
@@ -343,7 +343,7 @@
     "translateWidgets": [],
     "spanishLinks": [],
     "elementsLangEs": 0,
-    "spanishWordShare": 0.027,
+    "spanishWordShare": 0.028,
     "spanishLines": [
       "Hola, le llamo de Bayside Medical Group para confirmar su cita del jueves a las 9:30."
     ]
@@ -397,6 +397,9 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [
+      "(786) 555-0142"
+    ],
     "placeholders": [
       "555-0142"
     ],
@@ -418,7 +421,7 @@
       "full": "reduced",
       "hero": "normal",
       "mobile": "normal",
-      "mobileFull": "normal"
+      "mobileFull": "reduced"
     },
     "hiddenBlocks": {
       "full": 0,
@@ -426,40 +429,44 @@
       "mobile": 0,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 69878,
+        "bytes": 70358,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 28882,
+        "bytes": 29036,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 7200,
-        "bytes": 301798,
+        "bytes": 301712,
         "quality": 72,
         "sourceHeight": 8640
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 53808,
+        "bytes": 53430,
         "quality": 78,
         "sourceHeight": 2532
       },
       "mobile-full.webp": {
         "width": 600,
         "height": 6000,
-        "bytes": 137426,
+        "bytes": 158808,
         "quality": 70,
         "sourceHeight": 7800
       }

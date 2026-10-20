@@ -1,9 +1,9 @@
 {
   "slug": "pigeon-post",
-  "name": "Pigeon Post",
+  "name": "Pigeon Post Media",
   "captureUrl": "https://www.pigeonpost.media/",
   "liveUrl": "https://www.pigeonpost.media/",
-  "auditedAt": "2026-10-20T22:15:18.639Z",
+  "auditedAt": "2026-10-20T23:17:00.582Z",
   "finalUrl": "https://www.pigeonpost.media/",
   "status": 200,
   "redirects": [],
@@ -57,19 +57,13 @@
   ],
   "ctas": [
     "Send a letter",
-    "Not a fan of fun? Take the stairs →",
-    "R",
-    "L",
-    "✉",
+    "Not a fan of fun? Take the stairs",
     "Floors",
-    "Sound off",
-    "Write me a hook",
-    "Add to my letter",
-    "More"
+    "Write me a hook"
   ],
   "contact": {
     "phones": [
-      "3055550170"
+      "(305) 555-0170"
     ],
     "emails": [
       "hello@pigeonpost.media"
@@ -163,20 +157,20 @@
       "link": null
     },
     "palette": [
-      "#78443f",
-      "#54302e",
-      "#cf9670",
-      "#ebbc93",
-      "#a36e47",
-      "#936d5e"
+      "#79443f",
+      "#d6a17b",
+      "#54312e",
+      "#ebc6a4",
+      "#a26d4f",
+      "#2e1816"
     ],
     "paletteShare": [
-      0.188,
+      0.184,
+      0.178,
       0.159,
-      0.152,
-      0.152,
-      0.109,
-      0.094
+      0.149,
+      0.117,
+      0.091
     ],
     "cssColorTokens": {
       "--plum": "#4a1a20",
@@ -206,7 +200,7 @@
     "hsts": true,
     "headers": {
       "server": "Vercel",
-      "x-vercel-id": "iad1::jddlh-1792534382642-0ff49e05b71b",
+      "x-vercel-id": "iad1::wt4rv-1792538179769-8a18eee0b05a",
       "x-vercel-cache": "HIT",
       "strict-transport-security": "max-age=63072000",
       "cache-control": "public, max-age=0, must-revalidate",
@@ -253,12 +247,12 @@
     }
   },
   "perf": {
-    "transferBytes": 4999716,
+    "transferBytes": 4999941,
     "requests": 72,
-    "ttfbMs": 518,
-    "serverResponseMs": 34,
-    "domContentLoadedMs": 754,
-    "loadMs": 754,
+    "ttfbMs": 450,
+    "serverResponseMs": 43,
+    "domContentLoadedMs": 738,
+    "loadMs": 1889,
     "documentTransferBytes": 948,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
@@ -351,12 +345,6 @@
           "name",
           "business",
           "services",
-          "services",
-          "services",
-          "services",
-          "services",
-          "services",
-          "services",
           "email",
           "phone",
           "message",
@@ -369,12 +357,15 @@
     "lottie": 0,
     "copyright": [],
     "featureHints": [
-      "form: name, business, services, services, services, services, services, services, services, email, phone, message, _gotcha",
+      "form: name, business, services, email, phone, message, _gotcha",
       "2 large canvas element(s) (WebGL/2D)"
     ]
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [
+      "(305) 555-0170"
+    ],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -386,9 +377,10 @@
     "mobileOverflowPx": 0
   },
   "screenshots": {
+    "fullPageUrl": "https://www.pigeonpost.media/stairs/",
     "pageHeight": {
-      "desktop": 61650,
-      "mobile": 57814
+      "desktop": 8809,
+      "mobile": 6463
     },
     "modes": {
       "full": "normal",
@@ -402,40 +394,44 @@
       "mobile": 0,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 302044,
+        "bytes": 301768,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 76728,
+        "bytes": 78006,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 7200,
-        "bytes": 105286,
+        "bytes": 552608,
         "quality": 72,
         "sourceHeight": 8640
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 146012,
+        "bytes": 146346,
         "quality": 78,
         "sourceHeight": 2532
       },
       "mobile-full.webp": {
         "width": 600,
         "height": 6000,
-        "bytes": 83374,
+        "bytes": 285546,
         "quality": 70,
         "sourceHeight": 7800
       }

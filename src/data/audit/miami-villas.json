@@ -3,7 +3,7 @@
   "name": "Miami Villas",
   "captureUrl": "https://miamivillas.com/",
   "liveUrl": "https://miamivillas.com/",
-  "auditedAt": "2026-10-20T22:34:52.128Z",
+  "auditedAt": "2026-10-20T23:07:16.821Z",
   "finalUrl": "https://miamivillas.com/",
   "status": 200,
   "redirects": [],
@@ -142,14 +142,14 @@
       "#283c28",
       "#182526",
       "#40542a",
-      "#384950",
+      "#38494f",
       "#687579",
       "#3b799d"
     ],
     "paletteShare": [
       0.197,
       0.182,
-      0.164,
+      0.163,
       0.162,
       0.106,
       0.094
@@ -192,7 +192,7 @@
     "hsts": true,
     "headers": {
       "server": "Netlify",
-      "x-nf-request-id": "01M5DQ6EPG2KBQZ6S3CB3J7ZR0",
+      "x-nf-request-id": "01M5DS1N1R6DA8Q3TDV891XJ1R",
       "strict-transport-security": "max-age=31536000",
       "cache-control": "public,max-age=0,must-revalidate",
       "content-encoding": "br"
@@ -242,13 +242,13 @@
     }
   },
   "perf": {
-    "transferBytes": 3912157,
+    "transferBytes": 3911995,
     "requests": 21,
-    "ttfbMs": 761,
-    "serverResponseMs": 381,
-    "domContentLoadedMs": 1270,
-    "loadMs": 1777,
-    "documentTransferBytes": 4018,
+    "ttfbMs": 410,
+    "serverResponseMs": 35,
+    "domContentLoadedMs": 830,
+    "loadMs": 1180,
+    "documentTransferBytes": 4041,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
   "lighthouse": {
@@ -335,6 +335,7 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -366,19 +367,23 @@
       "mobile": 0,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 287436,
+        "bytes": 287396,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 86126,
+        "bytes": 85946,
         "quality": 78,
         "sourceHeight": 1800
       },
@@ -392,7 +397,7 @@
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 94996,
+        "bytes": 94994,
         "quality": 78,
         "sourceHeight": 2532
       },

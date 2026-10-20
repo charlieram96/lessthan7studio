@@ -3,7 +3,7 @@
   "name": "Hungry House Media",
   "captureUrl": "https://hungryhousemedia.com/",
   "liveUrl": "https://hungryhousemedia.com/",
-  "auditedAt": "2026-10-20T22:12:38.249Z",
+  "auditedAt": "2026-10-20T23:14:41.588Z",
   "finalUrl": "https://hungryhousemedia.com/",
   "status": 200,
   "redirects": [],
@@ -15,7 +15,7 @@
   "favicon": "https://hungryhousemedia.com/favicon.svg",
   "headings": {
     "h1": [
-      "We feed your feed. Hungry House Media. WE FEED YOUR FEED"
+      "We feed your feed. Hungry House Media."
     ],
     "h2": [
       "The living room",
@@ -41,11 +41,11 @@
     ]
   },
   "navLabels": [
+    "HUNGRY HOUSE media",
     "The kitchen",
     "Dining room",
     "The menu",
     "House rules",
-    "EN",
     "ES",
     "Book a call"
   ],
@@ -55,8 +55,7 @@
     "See the menu",
     "Order the starter",
     "Order the main",
-    "Order the tasting menu",
-    "Copy"
+    "Order the tasting menu"
   ],
   "contact": {
     "phones": [],
@@ -153,20 +152,20 @@
       }
     },
     "palette": [
-      "#7b160b",
-      "#cae0e7",
-      "#f4e9d0",
-      "#c1aba2",
-      "#a9766c",
-      "#8e3a2b"
+      "#7b170c",
+      "#cae0e8",
+      "#a57066",
+      "#914335",
+      "#bfaaa1",
+      "#f5ebd5"
     ],
     "paletteShare": [
-      0.699,
-      0.115,
-      0.04,
+      0.704,
+      0.114,
+      0.046,
+      0.042,
       0.039,
-      0.037,
-      0.031
+      0.035
     ],
     "cssColorTokens": {
       "--oxblood": "#7c150a",
@@ -198,7 +197,7 @@
     "hsts": true,
     "headers": {
       "server": "Netlify",
-      "x-nf-request-id": "01M5DNWVJ02ANS87HGNGJJ9ZJG",
+      "x-nf-request-id": "01M5DSEC0TQF42BN9P6HBXWY7N",
       "strict-transport-security": "max-age=31536000",
       "x-frame-options": "SAMEORIGIN",
       "cache-control": "public,max-age=0,must-revalidate",
@@ -267,13 +266,13 @@
     }
   },
   "perf": {
-    "transferBytes": 210488,
+    "transferBytes": 210410,
     "requests": 13,
-    "ttfbMs": 1017,
-    "serverResponseMs": 643,
-    "domContentLoadedMs": 1491,
-    "loadMs": 1534,
-    "documentTransferBytes": 12937,
+    "ttfbMs": 338,
+    "serverResponseMs": 36,
+    "domContentLoadedMs": 581,
+    "loadMs": 684,
+    "documentTransferBytes": 12926,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
   "lighthouse": {
@@ -366,6 +365,7 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -393,19 +393,23 @@
       "mobile": 0,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 63844,
+        "bytes": 63766,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 27386,
+        "bytes": 27426,
         "quality": 78,
         "sourceHeight": 1800
       },
@@ -419,7 +423,7 @@
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 49750,
+        "bytes": 49694,
         "quality": 78,
         "sourceHeight": 2532
       },

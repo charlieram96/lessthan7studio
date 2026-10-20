@@ -3,7 +3,7 @@
   "name": "Jany Did My Hair",
   "captureUrl": "https://janydidmyhair.com/",
   "liveUrl": "https://janydidmyhair.com/",
-  "auditedAt": "2026-10-20T22:23:50.774Z",
+  "auditedAt": "2026-10-20T23:23:49.334Z",
   "finalUrl": "https://janydidmyhair.com/",
   "status": 200,
   "redirects": [],
@@ -136,18 +136,20 @@
       }
     },
     "palette": [
-      "#5c5c5c",
-      "#bfbfbf",
-      "#a1a1a1",
-      "#e0e0e0",
-      "#858585"
+      "#28160c",
+      "#543622",
+      "#754a32",
+      "#a86f55",
+      "#9f723c",
+      "#740f10"
     ],
     "paletteShare": [
-      0.496,
-      0.287,
-      0.079,
-      0.072,
-      0.065
+      0.306,
+      0.211,
+      0.14,
+      0.1,
+      0.097,
+      0.063
     ],
     "cssColorTokens": {
       "--main-bg-color": "#ffffff",
@@ -175,7 +177,7 @@
     "hsts": true,
     "headers": {
       "server": "Netlify",
-      "x-nf-request-id": "01M5DPETQ1J1KWGMG3S4SYH0TY",
+      "x-nf-request-id": "01M5DSWSRDKQWEN79G5YZA9NR3",
       "strict-transport-security": "max-age=31536000",
       "cache-control": "public,max-age=0,must-revalidate",
       "content-encoding": "br"
@@ -223,12 +225,12 @@
     }
   },
   "perf": {
-    "transferBytes": 4674686,
+    "transferBytes": 4675159,
     "requests": 40,
-    "ttfbMs": 1008,
-    "serverResponseMs": 649,
-    "domContentLoadedMs": 1704,
-    "loadMs": 4302,
+    "ttfbMs": 458,
+    "serverResponseMs": 68,
+    "domContentLoadedMs": 1184,
+    "loadMs": 1320,
     "documentTransferBytes": 4929,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy. Excludes 1 video request(s), transcoded locally for capture."
   },
@@ -333,6 +335,7 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -360,33 +363,37 @@
       "mobile": 1,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 70036,
+        "bytes": 82626,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 29406,
+        "bytes": 33454,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 6872,
-        "bytes": 268540,
+        "bytes": 268162,
         "quality": 72,
         "sourceHeight": 8246
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 37980,
+        "bytes": 51792,
         "quality": 78,
         "sourceHeight": 2532
       },

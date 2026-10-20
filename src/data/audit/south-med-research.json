@@ -1,9 +1,9 @@
 {
   "slug": "south-med-research",
-  "name": "South Med & Research",
+  "name": "South Miami Medical & Research Group",
   "captureUrl": "https://southmedandresearch.com/",
   "liveUrl": "https://southmedandresearch.com/",
-  "auditedAt": "2026-10-20T22:06:13.622Z",
+  "auditedAt": "2026-10-20T23:19:27.502Z",
   "finalUrl": "https://southmedandresearch.com/",
   "status": 200,
   "redirects": [],
@@ -152,17 +152,17 @@
       }
     },
     "palette": [
-      "#383029",
-      "#7d7265",
-      "#5d534a",
-      "#a29687",
-      "#ccbcab",
+      "#393029",
+      "#7d7266",
+      "#5e544b",
+      "#a39688",
+      "#ccbcac",
       "#607078"
     ],
     "paletteShare": [
-      0.4,
-      0.172,
-      0.172,
+      0.404,
+      0.17,
+      0.169,
       0.101,
       0.098,
       0.035
@@ -205,7 +205,7 @@
     "hsts": true,
     "headers": {
       "server": "Netlify",
-      "x-nf-request-id": "01M5DNHD1KE7NECCMY9SJ5F8G1",
+      "x-nf-request-id": "01M5DSQDFA8HY52K2B61YKPV74",
       "strict-transport-security": "max-age=31536000",
       "cache-control": "public,max-age=0,must-revalidate",
       "content-encoding": "br"
@@ -253,16 +253,80 @@
     }
   },
   "perf": {
-    "transferBytes": 2851669,
+    "transferBytes": 2851631,
     "requests": 17,
-    "ttfbMs": 565,
-    "serverResponseMs": 230,
-    "domContentLoadedMs": 1077,
-    "loadMs": 1381,
-    "documentTransferBytes": 5610,
+    "ttfbMs": 394,
+    "serverResponseMs": 74,
+    "domContentLoadedMs": 907,
+    "loadMs": 1098,
+    "documentTransferBytes": 5568,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
-  "lighthouse": null,
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 77,
+      "accessibility": 94,
+      "bestPractices": 96,
+      "seo": 91,
+      "lcp": "3.7 s",
+      "cls": "0",
+      "tbt": "0 ms",
+      "fcp": "3.3 s",
+      "speedIndex": "6.5 s",
+      "totalByteWeight": 726580,
+      "requests": 12,
+      "serverResponseMs": 68,
+      "failingAudits": {
+        "accessibility": [
+          "color-contrast",
+          "heading-order"
+        ],
+        "bestPractices": [
+          "errors-in-console"
+        ],
+        "seo": [
+          "meta-description"
+        ]
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "finalUrl": "https://southmedandresearch.com/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 81,
+      "accessibility": 95,
+      "bestPractices": 96,
+      "seo": 91,
+      "lcp": "3.0 s",
+      "cls": "0.012",
+      "tbt": "0 ms",
+      "fcp": "0.8 s",
+      "speedIndex": "1.7 s",
+      "totalByteWeight": 2852528,
+      "requests": 16,
+      "serverResponseMs": 41,
+      "failingAudits": {
+        "accessibility": [
+          "color-contrast",
+          "heading-order"
+        ],
+        "bestPractices": [
+          "errors-in-console"
+        ],
+        "seo": [
+          "meta-description"
+        ]
+      },
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "finalUrl": "https://southmedandresearch.com/",
+      "warnings": []
+    }
+  },
   "languages": {
     "htmlLang": "en",
     "hreflang": [],
@@ -304,6 +368,7 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -331,40 +396,44 @@
       "mobile": 0,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 73236,
+        "bytes": 74498,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 29806,
+        "bytes": 29994,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 5374,
-        "bytes": 278126,
+        "bytes": 277962,
         "quality": 72,
         "sourceHeight": 6449
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 52486,
+        "bytes": 52884,
         "quality": 78,
         "sourceHeight": 2532
       },
       "mobile-full.webp": {
         "width": 600,
         "height": 6000,
-        "bytes": 139356,
+        "bytes": 139414,
         "quality": 70,
         "sourceHeight": 7800
       }
