@@ -1,0 +1,253 @@
+---
+/**
+ * First-visit intro: the mark is constructed on its 5×5 grid, leans to 31.7°,
+ * and a stopwatch reports how long this page really took to load.
+ */
+const cellsL = [
+  [0, 1],
+  [0, 2],
+  [0, 3],
+  [0, 4],
+  [1, 4],
+  [2, 4],
+];
+const cells7 = [
+  [2, 0],
+  [3, 0],
+  [4, 0],
+  [4, 1],
+  [4, 2],
+  [4, 3],
+];
+const lines = [0, 20, 40, 60, 80, 100];
+---
+
+<div class="loader" data-loader aria-hidden="true">
+  <div class="loader__panel loader__panel--a"></div>
+  <div class="loader__panel loader__panel--b"></div>
+  <div class="loader__glow"></div>
+  <div class="loader__stage">
+    <svg class="loader__art" viewBox="-40 -30 180 160" overflow="visible">
+      <defs>
+        <linearGradient id="ld-sun" gradientUnits="userSpaceOnUse" x1="0" y1="100" x2="100" y2="0">
+          <stop offset="0" stop-color="#ff8a1e"></stop>
+          <stop offset=".38" stop-color="#ff4a3a"></stop>
+          <stop offset=".7" stop-color="#f02c6e"></stop>
+          <stop offset="1" stop-color="#c8238f"></stop>
+        </linearGradient>
+      </defs>
+      <g class="loader__rot" data-loader-rot>
+        <g class="loader__grid" fill="none" stroke="rgba(243,241,247,.22)" stroke-width=".35">
+          {lines.map((v) => <path d={`M-6 ${v}H106`} pathLength="1" />)}
+          {lines.map((v) => <path d={`M${v} -6V106`} pathLength="1" />)}
+        </g>
+        <g class="loader__cells">
+          {
+            cellsL.map(([x, y], i) => (
+              <rect class="loader__cell" data-piece="l" data-i={i} x={x * 20 + 0.6} y={y * 20 + 0.6} width="18.8" height="18.8" fill="#ff6a2e" />
+            ))
+          }
+          {
+            cells7.map(([x, y], i) => (
+              <rect class="loader__cell" data-piece="7" data-i={i} x={x * 20 + 0.6} y={y * 20 + 0.6} width="18.8" height="18.8" fill="#ee2f6d" />
+            ))
+          }
+        </g>
+        <g class="loader__pieces" fill="url(#ld-sun)">
+          <polygon class="loader__l" points="0,20 20,20 20,80 60,80 60,100 0,100"></polygon>
+          <polygon class="loader__7" points="100,80 80,80 80,20 40,20 40,0 100,0"></polygon>
+        </g>
+      </g>
+      <g class="loader__angle" fill="none" stroke-width=".5">
+        <path class="loader__base" d="M50 50H132" stroke="rgba(243,241,247,.4)" stroke-dasharray="1.6 1.6"></path>
+        <path class="loader__arc" d="M110 50A60 60 0 0 1 101.04 81.53" stroke="#ff4a3a" pathLength="1"></path>
+        <text class="loader__deg" x="116" y="78" fill="rgba(243,241,247,.85)" stroke="none" font-size="6.2">0.0°</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="loader__clock">
+    <span class="loader__num tnum" data-loader-num>0.00</span><span class="loader__unit">s</span>
+  </div>
+  <p class="loader__caption" data-loader-caption>Loading…</p>
+  <p class="loader__brand">lessthan7 <span aria-hidden="true">·</span> Miami</p>
+  <button class="loader__skip" type="button" data-loader-skip tabindex="-1">Skip intro</button>
+</div>
+
+<style>
+  .loader {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    color: var(--paper);
+    overflow: hidden;
+    pointer-events: auto;
+  }
+
+  /* Two halves split along the seam between the L and the 7 (76.7° from horizontal). */
+  .loader__panel {
+    position: absolute;
+    top: 50%;
+    width: 160vmax;
+    height: 320vmax;
+    background: var(--ink);
+    will-change: transform;
+  }
+
+  .loader__panel--a {
+    right: 50%;
+    transform-origin: 100% 50%;
+    transform: translateY(-50%) rotate(-13.2825deg);
+  }
+
+  .loader__panel--b {
+    left: 50%;
+    transform-origin: 0% 50%;
+    transform: translateY(-50%) rotate(-13.2825deg);
+  }
+
+  :global(.no-intro) .loader {
+    display: none;
+  }
+
+  .loader__glow {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    width: 90vmax;
+    height: 90vmax;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgb(255 74 58 / 0.22), rgb(200 35 143 / 0.08) 45%, transparent 70%);
+    opacity: 0;
+  }
+
+  .loader__stage {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    width: min(56vmin, 520px);
+    transform: translate(-50%, -50%);
+  }
+
+  .loader__art {
+    width: 100%;
+    height: auto;
+  }
+
+  .loader__rot {
+    transform-origin: 50px 50px;
+  }
+
+  .loader__grid path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+
+  .loader__cell {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scale(0);
+  }
+
+  .loader__pieces {
+    opacity: 0;
+  }
+
+  .loader__l,
+  .loader__7 {
+    transform-box: view-box;
+  }
+
+  .loader__arc {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+
+  .loader__base,
+  .loader__deg {
+    opacity: 0;
+  }
+
+  .loader__deg {
+    font-family: var(--font-body);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .loader__clock {
+    position: absolute;
+    left: var(--gutter);
+    bottom: calc(clamp(24px, 5vh, 56px) + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    align-items: baseline;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-stretch: 62%;
+    font-size: clamp(5.5rem, 16vw, 13rem);
+    line-height: 0.78;
+    letter-spacing: -0.01em;
+  }
+
+  .loader__unit {
+    margin-left: 0.04em;
+    font-size: 0.42em;
+    background: var(--sun);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .loader__caption {
+    position: absolute;
+    right: var(--gutter-r);
+    bottom: calc(clamp(28px, 5.4vh, 60px) + env(safe-area-inset-bottom, 0px));
+    max-width: 22ch;
+    text-align: right;
+    font-size: var(--step-0);
+    line-height: 1.45;
+    color: var(--text-mute);
+  }
+
+  .loader__caption :global(b) {
+    color: var(--paper);
+    font-weight: 600;
+  }
+
+  .loader__brand {
+    position: absolute;
+    left: var(--gutter);
+    top: calc(28px + env(safe-area-inset-top, 0px));
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .loader__skip {
+    position: absolute;
+    right: var(--gutter-r);
+    top: calc(22px + env(safe-area-inset-top, 0px));
+    padding: 0.5rem 0;
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .loader__skip:hover {
+    color: var(--paper);
+  }
+
+  @media (max-width: 600px) {
+    .loader__stage {
+      top: 40%;
+      width: 78vw;
+    }
+
+    .loader__caption {
+      left: var(--gutter);
+      right: auto;
+      bottom: auto;
+      top: 68%;
+      text-align: left;
+    }
+  }
+</style>

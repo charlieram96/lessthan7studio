@@ -1,0 +1,373 @@
+{
+  "slug": "south-med-research",
+  "name": "South Med & Research",
+  "captureUrl": "https://southmedandresearch.com/",
+  "liveUrl": "https://southmedandresearch.com/",
+  "auditedAt": "2026-10-20T22:06:13.622Z",
+  "finalUrl": "https://southmedandresearch.com/",
+  "status": 200,
+  "redirects": [],
+  "title": "South Miami Medical",
+  "metaDescription": null,
+  "canonical": null,
+  "htmlLang": "en",
+  "ogImage": null,
+  "favicon": null,
+  "headings": {
+    "h1": [
+      "Clinical research in the heart of South Miami"
+    ],
+    "h2": [
+      "The team behind every study",
+      "Samples processed and stored on site",
+      "Find us at 7400 SW 50th Terrace",
+      "Come see us in South Miami"
+    ],
+    "h3": [
+      "Join a clinical study",
+      "Run your study here",
+      "Meet the people",
+      "Visit us"
+    ]
+  },
+  "navLabels": [
+    "Research",
+    "Sponsors",
+    "Our team",
+    "Contact",
+    "EN",
+    "ES",
+    "See if you qualify"
+  ],
+  "ctas": [
+    "See if you qualify",
+    "Join a study",
+    "For sponsors",
+    "Meet our team",
+    "See site capabilities",
+    "Send a message",
+    "Get directions"
+  ],
+  "contact": {
+    "phones": [
+      "786-534-8131"
+    ],
+    "emails": [
+      "info@southmedandresearch.com"
+    ],
+    "address": [
+      "7400 SW 50th Terrace, Suite 201, Miami, FL 33155"
+    ],
+    "social": [
+      "https://www.instagram.com/southmiamimedical/"
+    ],
+    "mapLinks": [
+      "https://www.google.com/maps/search/?api=1&query=7400+SW+50th+Terrace+Suite+201+Miami+FL+33155"
+    ]
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "\"Hanken Grotesk\", \"Helvetica Neue\", Arial, system-ui, sans-serif",
+      "body": {
+        "family": "\"Hanken Grotesk\", \"Helvetica Neue\", Arial, system-ui, sans-serif",
+        "weight": "400",
+        "size": "16.56px",
+        "lineHeight": "26.496px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Hanken Grotesk"
+        ]
+      },
+      "h1": {
+        "family": "\"Cormorant Garamond\", Cormorant, Georgia, \"Times New Roman\", serif",
+        "weight": "300",
+        "size": "92.16px",
+        "lineHeight": "86.6304px",
+        "letterSpacing": "-2.94912px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Cormorant Garamond Light"
+        ]
+      },
+      "h2": {
+        "family": "\"Cormorant Garamond\", Cormorant, Georgia, \"Times New Roman\", serif",
+        "weight": "300",
+        "size": "80.64px",
+        "lineHeight": "80.64px",
+        "letterSpacing": "-1.6128px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Cormorant Garamond Light"
+        ]
+      },
+      "button": {
+        "family": "\"Hanken Grotesk\", \"Helvetica Neue\", Arial, system-ui, sans-serif",
+        "weight": "600",
+        "size": "12.16px",
+        "lineHeight": "12.16px",
+        "letterSpacing": "2.1888px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Hanken Grotesk"
+        ]
+      }
+    },
+    "loadedFonts": [
+      "Cormorant Garamond",
+      "Hanken Grotesk"
+    ],
+    "googleFonts": [
+      "Cormorant Garamond",
+      "Hanken Grotesk",
+      "IBM Plex Mono"
+    ],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "body": {
+        "background": "#f6f1e7",
+        "text": "#1f1712"
+      },
+      "header": {
+        "background": "transparent",
+        "text": "#1f1712"
+      },
+      "primaryButton": {
+        "background": "#9a742f",
+        "text": "#1f1712",
+        "gradient": "linear-gradient(100deg, rgb(154, 116, 47) 0%, rgb(199, 161, 87) 26%, rgb(232, 208, 149) 46%, rgb(188, 149, 76) 64%, rgb(142, 107, 43) 100%)",
+        "label": "Join a study"
+      },
+      "link": {
+        "text": "#dcc085",
+        "label": "Meet our team"
+      }
+    },
+    "palette": [
+      "#383029",
+      "#7d7265",
+      "#5d534a",
+      "#a29687",
+      "#ccbcab",
+      "#607078"
+    ],
+    "paletteShare": [
+      0.4,
+      0.172,
+      0.172,
+      0.101,
+      0.098,
+      0.035
+    ],
+    "cssColorTokens": {
+      "--ivory": "#f6f1e7",
+      "--paper": "#fffdf8",
+      "--champagne": "#e8dac0",
+      "--champagne-2": "#d8c6a6",
+      "--gold": "#b08a3e",
+      "--gold-hi": "#dcc085",
+      "--gold-lo": "#8a6626",
+      "--espresso": "#1f1712",
+      "--espresso-2": "#2a2019",
+      "--brown": "#3f3128",
+      "--taupe": "#7a6b5d",
+      "--line": "#ddd0b9",
+      "--line-dark": "#dec2852e",
+      "--on-dark": "#f0e7d7",
+      "--on-dark-soft": "#b4a590",
+      "--ice": "#a6d1e6",
+      "--ok": "#4f7a55",
+      "--ok-bg": "#e6eee1",
+      "--alert": "#b4573f"
+    }
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [],
+    "libraries": [
+      "Lenis"
+    ],
+    "hosting": [
+      "Netlify"
+    ],
+    "services": [
+      "Google Fonts"
+    ],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Netlify",
+      "x-nf-request-id": "01M5DNHD1KE7NECCMY9SJ5F8G1",
+      "strict-transport-security": "max-age=31536000",
+      "cache-control": "public,max-age=0,must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": [
+      "fonts.googleapis.com"
+    ]
+  },
+  "seo": {
+    "jsonLdTypes": [],
+    "jsonLdBlocks": 0,
+    "jsonLdParseErrors": 0,
+    "hreflang": [],
+    "robotsMeta": null,
+    "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+    "ogTitle": false,
+    "ogDescription": false,
+    "ogImage": false,
+    "twitterCard": null,
+    "images": {
+      "count": 10,
+      "withAlt": 4,
+      "emptyAlt": 6,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 30,
+      "internal": 28,
+      "internalUnique": 10,
+      "external": 2
+    },
+    "robotsTxt": {
+      "present": false,
+      "status": 404,
+      "sitemaps": [],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": false,
+      "url": null,
+      "sitemapXmlStatus": 404,
+      "isIndex": false,
+      "locCount": 0,
+      "urlCount": 0
+    }
+  },
+  "perf": {
+    "transferBytes": 2851669,
+    "requests": 17,
+    "ttfbMs": 565,
+    "serverResponseMs": 230,
+    "domContentLoadedMs": 1077,
+    "loadMs": 1381,
+    "documentTransferBytes": 5610,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+  },
+  "lighthouse": null,
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [],
+    "toggles": [
+      "EN",
+      "ES"
+    ],
+    "translateWidgets": [
+      "[data-lang]"
+    ],
+    "spanishLinks": [],
+    "elementsLangEs": 65,
+    "spanishWordShare": 0.027,
+    "spanishLines": []
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [
+    "https://southmedandresearch.com/research.html",
+    "https://southmedandresearch.com/sponsors.html",
+    "https://southmedandresearch.com/about.html",
+    "https://southmedandresearch.com/contact.html"
+  ],
+  "signals": {
+    "iframes": [],
+    "videos": [],
+    "forms": [],
+    "canvases": 1,
+    "lottie": 0,
+    "copyright": [
+      "© 2026 South Miami Medical and Research Group, Inc."
+    ],
+    "featureHints": [
+      "1 large canvas element(s) (WebGL/2D)",
+      "language toggle"
+    ]
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [],
+    "mixedContent": [],
+    "brokenImages": [],
+    "emptyHashLinks": [],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 6449,
+      "mobile": 6658
+    },
+    "modes": {
+      "full": "reduced",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "reduced"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 0,
+      "mobile": 0,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 73236,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 29806,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 5374,
+        "bytes": 278126,
+        "quality": 72,
+        "sourceHeight": 6449
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 52486,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 139356,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  }
+}

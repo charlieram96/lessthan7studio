@@ -1,0 +1,268 @@
+---
+import Mark from './Mark.astro';
+import { NAV, SITE } from '../config';
+
+interface Props {
+  /** Skip the big call to action, e.g. on the contact page. */
+  quiet?: boolean;
+}
+
+const { quiet = false } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class:list={['site-footer', { 'site-footer--quiet': quiet }]} data-footer>
+  <div class="footer-cta wrap" hidden={quiet}>
+    <p class="eyebrow">Got seven seconds?</p>
+    <h2 class="footer-cta__title display">
+      <span class="line-mask"><span data-split-line>Let’s make your</span></span>
+      <span class="line-mask"><span data-split-line>first impression.</span></span>
+    </h2>
+    <a href={`mailto:${SITE.email}`} class="footer-mail" data-cursor="mail">
+      <span class="footer-mail__text">{SITE.email}</span>
+      <svg class="footer-mail__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+    </a>
+    <div class="footer-cta__actions">
+      <a href="/contact/" class="btn btn--sun" data-magnetic="0.3">
+        Start a project
+        <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+      </a>
+      <a href={SITE.phoneHref} class="btn btn--ghost" data-magnetic="0.2">{SITE.phone}</a>
+    </div>
+  </div>
+
+  <div class="footer-grid wrap">
+    <div class="footer-col footer-col--brand">
+      <a href="/" class="footer-mark" aria-label={`${SITE.name}, home`}>
+        <Mark />
+      </a>
+      <p class="footer-blurb">
+        Design, development and SEO from Miami, Florida. Working with businesses everywhere.
+      </p>
+    </div>
+    <nav class="footer-col" aria-label="Footer">
+      <p class="footer-label">Explore</p>
+      <ul role="list">
+        <li><a href="/" class="link-quiet">Home</a></li>
+        {NAV.map((n) => <li><a href={n.href} class="link-quiet">{n.label}</a></li>)}
+      </ul>
+    </nav>
+    <div class="footer-col">
+      <p class="footer-label">Contact</p>
+      <ul role="list">
+        <li><a href={`mailto:${SITE.email}`} class="link-quiet">{SITE.email}</a></li>
+        <li><a href={SITE.phoneHref} class="link-quiet">{SITE.phone}</a></li>
+        <li class="footer-muted">Miami, Florida</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Follow</p>
+      <ul role="list">
+        {
+          SITE.socials.map((s) => (
+            <li>
+              <a href={s.href} class="link-quiet" rel="noopener" target="_blank">
+                {s.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bar wrap">
+    <p class="footer-legal">
+      © {year} lessthan<a href="/lab/" class="secret" aria-label="Studio lab" tabindex="-1">7</a> studio
+      <span aria-hidden="true">·</span>
+      <a href="/privacy/" class="link-quiet">Privacy</a>
+    </p>
+    <p class="footer-live">
+      <span>Miami <time class="tnum" data-miami-clock>--:--</time></span>
+      <span>This page loaded in <strong class="tnum" data-load-time>—</strong></span>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    position: relative;
+    background: var(--ink-deep);
+    color: var(--paper);
+    overflow: hidden;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .site-footer::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -30vmax;
+    width: 90vmax;
+    height: 60vmax;
+    transform: translateX(-50%);
+    background: radial-gradient(closest-side, rgb(255 74 58 / 0.18), rgb(200 35 143 / 0.08) 55%, transparent);
+    pointer-events: none;
+  }
+
+  .footer-cta {
+    position: relative;
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-2xl);
+    display: grid;
+    gap: var(--space-m);
+  }
+
+  .footer-cta__title {
+    font-size: var(--step-6);
+    max-width: 14ch;
+  }
+
+  .footer-mail {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    width: fit-content;
+    max-width: 100%;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-stretch: 100%;
+    font-size: clamp(1.5rem, 5vw, 4.25rem);
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-mail__text {
+    background: linear-gradient(var(--paper), var(--paper)) 0 100% / 100% 2px no-repeat;
+    transition: background-size 0.6s var(--ease-out);
+  }
+
+  .footer-mail:hover .footer-mail__text,
+  .footer-mail:focus-visible .footer-mail__text {
+    background-image: var(--sun);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .footer-mail__arrow {
+    width: 0.7em;
+    height: 0.7em;
+    flex: none;
+    transition: transform 0.5s var(--ease-out);
+  }
+
+  .footer-mail:hover .footer-mail__arrow {
+    transform: translate(0.12em, -0.12em);
+  }
+
+  .footer-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: var(--space-s);
+  }
+
+  .footer-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-l);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    border-top: 1px solid var(--line);
+  }
+
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .footer-label {
+    margin-bottom: 1rem;
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .footer-mark {
+    display: inline-block;
+    width: 64px;
+  }
+
+  .footer-blurb {
+    margin-top: 1.25rem;
+    max-width: 30ch;
+    color: var(--text-mute);
+  }
+
+  .footer-muted {
+    color: var(--text-mute);
+  }
+
+  .link-quiet {
+    color: #d6d1e0;
+    transition: color 0.25s ease;
+  }
+
+  .link-quiet:hover,
+  .link-quiet:focus-visible {
+    color: var(--sun-1);
+  }
+
+  .footer-bar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid var(--line);
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .footer-legal,
+  .footer-live {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    align-items: baseline;
+  }
+
+  .footer-legal {
+    gap: 0.5rem;
+  }
+
+  .footer-live strong {
+    color: var(--paper);
+    font-weight: 600;
+  }
+
+  .secret {
+    color: inherit;
+    cursor: text;
+  }
+
+  .secret:hover {
+    color: var(--sun-2);
+  }
+
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-col--brand {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

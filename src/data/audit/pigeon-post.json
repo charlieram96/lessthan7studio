@@ -1,0 +1,444 @@
+{
+  "slug": "pigeon-post",
+  "name": "Pigeon Post",
+  "captureUrl": "https://www.pigeonpost.media/",
+  "liveUrl": "https://www.pigeonpost.media/",
+  "auditedAt": "2026-10-20T22:15:18.639Z",
+  "finalUrl": "https://www.pigeonpost.media/",
+  "status": 200,
+  "redirects": [],
+  "title": "Pigeon Post Media — Social media, sent first class.",
+  "metaDescription": "Pigeon Post is a media house from Miami. We write, shoot, design, post and grow your brand — one well-addressed message at a time.",
+  "canonical": null,
+  "htmlLang": "en",
+  "ogImage": null,
+  "favicon": "https://www.pigeonpost.media/favicon.svg",
+  "headings": {
+    "h1": [
+      "Social media, sent first class."
+    ],
+    "h2": [
+      "Scripts & Creative Direction",
+      "Photography",
+      "Video & Content",
+      "Design & Websites",
+      "Google Reviews & Reputation",
+      "Social Media Management",
+      "Advertising & Growth"
+    ],
+    "h3": [
+      "What you get",
+      "How it goes",
+      "Good for",
+      "What you get",
+      "How it goes",
+      "Good for",
+      "What you get",
+      "How it goes",
+      "Good for",
+      "What you get",
+      "How it goes",
+      "Good for"
+    ]
+  },
+  "navLabels": [
+    "R",
+    "6",
+    "5",
+    "4",
+    "3",
+    "2",
+    "1",
+    "L",
+    "✉",
+    "Floors",
+    "Sound off",
+    "Send a letter"
+  ],
+  "ctas": [
+    "Send a letter",
+    "Not a fan of fun? Take the stairs →",
+    "R",
+    "L",
+    "✉",
+    "Floors",
+    "Sound off",
+    "Write me a hook",
+    "Add to my letter",
+    "More"
+  ],
+  "contact": {
+    "phones": [
+      "3055550170"
+    ],
+    "emails": [
+      "hello@pigeonpost.media"
+    ],
+    "address": [],
+    "social": [
+      "https://instagram.com/pigeonpostmedia",
+      "https://tiktok.com/@pigeonpostmedia"
+    ],
+    "mapLinks": []
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "\"Courier Prime\", \"Courier New\", monospace",
+      "body": {
+        "family": "\"Fraunces Variable\", Fraunces, Georgia, serif",
+        "weight": "400",
+        "size": "19.008px",
+        "lineHeight": "24.7104px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "italic",
+        "rendered": [
+          "Fraunces"
+        ]
+      },
+      "h1": {
+        "family": "\"Fraunces Variable\", Fraunces, Georgia, serif",
+        "weight": "800",
+        "size": "67.68px",
+        "lineHeight": "64.296px",
+        "letterSpacing": "-1.0152px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Fraunces"
+        ]
+      },
+      "h2": {
+        "family": "\"Fraunces Variable\", Fraunces, Georgia, serif",
+        "weight": "800",
+        "size": "28px",
+        "lineHeight": "28.84px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Fraunces"
+        ]
+      },
+      "button": {
+        "family": "\"Jost Variable\", Jost, Futura, \"Century Gothic\", sans-serif",
+        "weight": "700",
+        "size": "12px",
+        "lineHeight": "12px",
+        "letterSpacing": "2.64px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Jost"
+        ]
+      }
+    },
+    "loadedFonts": [
+      "Fraunces Variable",
+      "Jost Variable",
+      "Courier Prime",
+      "Nothing You Could Do"
+    ],
+    "googleFonts": [],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "#140a0b",
+        "text": "#f1e8d6"
+      },
+      "body": {
+        "background": "#140a0b",
+        "text": "#f1e8d6"
+      },
+      "header": {
+        "background": "transparent",
+        "text": "#f1e8d6"
+      },
+      "primaryButton": {
+        "background": "transparent",
+        "text": "#0000ee",
+        "gradient": "radial-gradient(circle at 6px 6px, rgba(0, 0, 0, 0) 3.4px, rgb(241, 232, 214) 3.9px)",
+        "label": "Send a letter"
+      },
+      "link": null
+    },
+    "palette": [
+      "#78443f",
+      "#54302e",
+      "#cf9670",
+      "#ebbc93",
+      "#a36e47",
+      "#936d5e"
+    ],
+    "paletteShare": [
+      0.188,
+      0.159,
+      0.152,
+      0.152,
+      0.109,
+      0.094
+    ],
+    "cssColorTokens": {
+      "--plum": "#4a1a20",
+      "--olive": "#a89a3e",
+      "--cream": "#f1e8d6",
+      "--chocolate": "#5b3a26",
+      "--postmark": "#b8392a",
+      "--tangerine": "#d9793f",
+      "--ink": "#140a0b",
+      "--brass": "#b8923e",
+      "--brass-dark": "#7a5c22"
+    }
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [
+      "Vite"
+    ],
+    "libraries": [
+      "Lenis"
+    ],
+    "hosting": [
+      "Vercel"
+    ],
+    "services": [],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Vercel",
+      "x-vercel-id": "iad1::jddlh-1792534382642-0ff49e05b71b",
+      "x-vercel-cache": "HIT",
+      "strict-transport-security": "max-age=63072000",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": []
+  },
+  "seo": {
+    "jsonLdTypes": [],
+    "jsonLdBlocks": 0,
+    "jsonLdParseErrors": 0,
+    "hreflang": [],
+    "robotsMeta": null,
+    "viewport": "width=device-width, initial-scale=1, viewport-fit=cover",
+    "ogTitle": false,
+    "ogDescription": false,
+    "ogImage": false,
+    "twitterCard": null,
+    "images": {
+      "count": 71,
+      "withAlt": 7,
+      "emptyAlt": 64,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 21,
+      "internal": 8,
+      "internalUnique": 2,
+      "external": 2
+    },
+    "robotsTxt": {
+      "present": false,
+      "status": 404,
+      "sitemaps": [],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": false,
+      "url": null,
+      "sitemapXmlStatus": 404,
+      "isIndex": false,
+      "locCount": 0,
+      "urlCount": 0
+    }
+  },
+  "perf": {
+    "transferBytes": 4999716,
+    "requests": 72,
+    "ttfbMs": 518,
+    "serverResponseMs": 34,
+    "domContentLoadedMs": 754,
+    "loadMs": 754,
+    "documentTransferBytes": 948,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 60,
+      "accessibility": 84,
+      "bestPractices": 92,
+      "seo": 100,
+      "lcp": "3.4 s",
+      "cls": "0.022",
+      "tbt": "1,080 ms",
+      "fcp": "2.0 s",
+      "speedIndex": "7.4 s",
+      "totalByteWeight": 4618099,
+      "requests": 72,
+      "serverResponseMs": 43,
+      "failingAudits": {
+        "accessibility": [
+          "aria-prohibited-attr",
+          "button-name",
+          "skip-link",
+          "target-size"
+        ],
+        "bestPractices": [
+          "image-aspect-ratio",
+          "image-size-responsive"
+        ],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://www.pigeonpost.media/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 88,
+      "accessibility": 94,
+      "bestPractices": 92,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0",
+      "tbt": "160 ms",
+      "fcp": "0.6 s",
+      "speedIndex": "3.3 s",
+      "totalByteWeight": 4461027,
+      "requests": 72,
+      "serverResponseMs": 30,
+      "failingAudits": {
+        "accessibility": [
+          "aria-prohibited-attr",
+          "skip-link"
+        ],
+        "bestPractices": [
+          "image-aspect-ratio",
+          "image-size-responsive"
+        ],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://www.pigeonpost.media/",
+      "warnings": []
+    }
+  },
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [],
+    "toggles": [],
+    "translateWidgets": [],
+    "spanishLinks": [],
+    "elementsLangEs": 0,
+    "spanishWordShare": 0,
+    "spanishLines": []
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [],
+  "signals": {
+    "iframes": [],
+    "videos": [],
+    "forms": [
+      {
+        "id": null,
+        "action": null,
+        "netlify": false,
+        "visible": false,
+        "fields": [
+          "name",
+          "business",
+          "services",
+          "services",
+          "services",
+          "services",
+          "services",
+          "services",
+          "services",
+          "email",
+          "phone",
+          "message",
+          "_gotcha"
+        ],
+        "submit": null
+      }
+    ],
+    "canvases": 2,
+    "lottie": 0,
+    "copyright": [],
+    "featureHints": [
+      "form: name, business, services, services, services, services, services, services, services, email, phone, message, _gotcha",
+      "2 large canvas element(s) (WebGL/2D)"
+    ]
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [],
+    "mixedContent": [],
+    "brokenImages": [],
+    "emptyHashLinks": [],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 61650,
+      "mobile": 57814
+    },
+    "modes": {
+      "full": "normal",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "normal"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 0,
+      "mobile": 0,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 302044,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 76728,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 7200,
+        "bytes": 105286,
+        "quality": 72,
+        "sourceHeight": 8640
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 146012,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 83374,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  }
+}

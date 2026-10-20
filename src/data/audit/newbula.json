@@ -1,0 +1,468 @@
+{
+  "slug": "newbula",
+  "name": "Newbula",
+  "captureUrl": "https://newbula.ai/",
+  "liveUrl": "https://newbula.ai/",
+  "auditedAt": "2026-10-20T22:25:29.268Z",
+  "finalUrl": "https://newbula.ai/",
+  "status": 200,
+  "redirects": [],
+  "title": "Newbula — Healthcare operations, handled",
+  "metaDescription": "Newbula runs the calls, faxes, notes, rides and reports behind patient care, so your team can spend the day with patients. One platform for medical centers, health plans, pharmacies and adult day cares.",
+  "canonical": "https://newbula.ai/",
+  "htmlLang": "en",
+  "ogImage": "https://newbula.ai/media/site/newbula-film-poster.jpg",
+  "favicon": "https://newbula.ai/media/icons/favicon.ico",
+  "headings": {
+    "h1": [
+      "Healthcare operations, handled."
+    ],
+    "h2": [
+      "A complete suite for how your organization runs",
+      "Every tool writes to the same record",
+      "Wherever your team and patients already are",
+      "Built for protected health information",
+      "Questions teams ask us",
+      "Give your team the day back."
+    ],
+    "h3": [
+      "The front desk, the exam room and the back office on one screen",
+      "Find the gap, then close it in the same place",
+      "Stock, controlled substances and refills, counted and on time",
+      "Everyone picked up, checked in and billed correctly",
+      "A companion app for patients and caregivers",
+      "Calls every patient, in their language",
+      "Every fax read, matched and routed",
+      "The visit note writes itself"
+    ]
+  },
+  "navLabels": [
+    "Platform",
+    "Solutions",
+    "Security",
+    "Company",
+    "Contact",
+    "Sign in",
+    "Request a demo"
+  ],
+  "ctas": [
+    "Platform",
+    "Solutions",
+    "Sign in",
+    "Request a demo",
+    "Watch the film",
+    "Medical centers",
+    "Health plans",
+    "Pharmacies",
+    "Adult day cares",
+    "Patient app",
+    "R. Castillo Talking 1:49",
+    "J. Moreau Talking 3:17"
+  ],
+  "contact": {
+    "phones": [
+      "(786) 555-0142"
+    ],
+    "emails": [
+      "hello@newbula.ai"
+    ],
+    "address": [],
+    "social": [],
+    "mapLinks": []
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "body": {
+        "family": "Geist, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "weight": "400",
+        "size": "19.44px",
+        "lineHeight": "29.16px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Geist"
+        ]
+      },
+      "h1": {
+        "family": "Geist, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "weight": "500",
+        "size": "77.76px",
+        "lineHeight": "79.3152px",
+        "letterSpacing": "-3.65472px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Geist"
+        ]
+      },
+      "h2": {
+        "family": "Geist, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "weight": "500",
+        "size": "63.36px",
+        "lineHeight": "64.6272px",
+        "letterSpacing": "-1.9008px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Geist"
+        ]
+      },
+      "button": {
+        "family": "Geist, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "lineHeight": "24.8px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Geist"
+        ]
+      }
+    },
+    "loadedFonts": [
+      "Geist",
+      "Geist Mono"
+    ],
+    "googleFonts": [],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "body": {
+        "background": "transparent",
+        "text": "#0b1526"
+      },
+      "header": {
+        "background": "transparent",
+        "text": "#070d1a"
+      },
+      "primaryButton": {
+        "background": "#070d1a",
+        "text": "#ffffff",
+        "label": "Request a demo"
+      },
+      "link": {
+        "text": "#ffffff",
+        "label": "Request a demo"
+      }
+    },
+    "palette": [
+      "#f1f4f9",
+      "#c9dcf3",
+      "#222d44",
+      "#2f4466",
+      "#b1b6be",
+      "#0b1221"
+    ],
+    "paletteShare": [
+      0.71,
+      0.078,
+      0.06,
+      0.043,
+      0.041,
+      0.037
+    ],
+    "cssColorTokens": {
+      "--slate-50": "#f8fafc",
+      "--slate-100": "#f1f5f9",
+      "--slate-200": "#e2e8f0",
+      "--slate-300": "#cbd5e1",
+      "--slate-400": "#94a3b8",
+      "--slate-500": "#64748b",
+      "--slate-600": "#475569",
+      "--slate-700": "#334155",
+      "--slate-800": "#1e293b",
+      "--slate-900": "#0f172a",
+      "--brand-blue": "#57aee9",
+      "--brand-blue-deep": "#277ab4",
+      "--brand-indigo": "#48518c",
+      "--brand-indigo-soft": "#858ec8",
+      "--feat-cyan-500": "#06b6d4",
+      "--feat-cyan-50": "#ecfeff",
+      "--feat-cyan-600": "#0891b2",
+      "--feat-cyan-200": "#a5f3fc",
+      "--feat-green-500": "#22c55e",
+      "--feat-green-50": "#f0fdf4",
+      "--feat-green-600": "#16a34a",
+      "--feat-green-200": "#bbf7d0",
+      "--feat-blue-500": "#3b82f6",
+      "--feat-blue-50": "#eff6ff",
+      "--feat-blue-600": "#2563eb",
+      "--feat-blue-200": "#bfdbfe",
+      "--feat-orange-500": "#f97316",
+      "--feat-orange-50": "#fff7ed",
+      "--feat-orange-600": "#ea580c",
+      "--feat-orange-200": "#fed7aa"
+    }
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [
+      "Next.js",
+      "React"
+    ],
+    "libraries": [
+      "Lenis"
+    ],
+    "hosting": [
+      "Vercel"
+    ],
+    "services": [],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Vercel",
+      "x-vercel-id": "iad1::9fcd7-1792535051474-81ff1ae7eef6",
+      "x-vercel-cache": "HIT",
+      "strict-transport-security": "max-age=63072000",
+      "cache-control": "public, max-age=0, must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": []
+  },
+  "seo": {
+    "jsonLdTypes": [],
+    "jsonLdBlocks": 0,
+    "jsonLdParseErrors": 0,
+    "hreflang": [],
+    "robotsMeta": null,
+    "viewport": "width=device-width, initial-scale=1",
+    "ogTitle": true,
+    "ogDescription": true,
+    "ogImage": true,
+    "twitterCard": "summary_large_image",
+    "images": {
+      "count": 0,
+      "withAlt": 0,
+      "emptyAlt": 0,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 63,
+      "internal": 63,
+      "internalUnique": 18,
+      "external": 0
+    },
+    "robotsTxt": {
+      "present": true,
+      "status": 200,
+      "sitemaps": [
+        "https://newbula.ai/sitemap.xml"
+      ],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": true,
+      "url": "https://newbula.ai/sitemap.xml",
+      "sitemapXmlStatus": 200,
+      "isIndex": false,
+      "locCount": 38,
+      "urlCount": 38
+    }
+  },
+  "perf": {
+    "transferBytes": 695748,
+    "requests": 72,
+    "ttfbMs": 443,
+    "serverResponseMs": 40,
+    "domContentLoadedMs": 762,
+    "loadMs": 832,
+    "documentTransferBytes": 26016,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 45,
+      "accessibility": 85,
+      "bestPractices": 100,
+      "seo": 92,
+      "lcp": "5.0 s",
+      "cls": "0",
+      "tbt": "5,480 ms",
+      "fcp": "1.4 s",
+      "speedIndex": "7.0 s",
+      "totalByteWeight": 597891,
+      "requests": 38,
+      "serverResponseMs": 35,
+      "failingAudits": {
+        "accessibility": [
+          "aria-prohibited-attr",
+          "aria-required-children",
+          "color-contrast",
+          "heading-order"
+        ],
+        "bestPractices": [],
+        "seo": [
+          "link-text"
+        ]
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://newbula.ai/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 82,
+      "accessibility": 85,
+      "bestPractices": 100,
+      "seo": 92,
+      "lcp": "1.1 s",
+      "cls": "0",
+      "tbt": "340 ms",
+      "fcp": "0.4 s",
+      "speedIndex": "1.5 s",
+      "totalByteWeight": 671340,
+      "requests": 64,
+      "serverResponseMs": 33,
+      "failingAudits": {
+        "accessibility": [
+          "aria-prohibited-attr",
+          "aria-required-children",
+          "color-contrast",
+          "heading-order"
+        ],
+        "bestPractices": [],
+        "seo": [
+          "link-text"
+        ]
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://newbula.ai/",
+      "warnings": []
+    }
+  },
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [],
+    "toggles": [],
+    "translateWidgets": [],
+    "spanishLinks": [],
+    "elementsLangEs": 0,
+    "spanishWordShare": 0.027,
+    "spanishLines": [
+      "Hola, le llamo de Bayside Medical Group para confirmar su cita del jueves a las 9:30."
+    ]
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [
+    "https://newbula.ai/security",
+    "https://newbula.ai/about",
+    "https://newbula.ai/contact",
+    "https://newbula.ai/auth/login",
+    "https://newbula.ai/platform",
+    "https://newbula.ai/solutions",
+    "https://newbula.ai/documentation",
+    "https://newbula.ai/changelog",
+    "https://newbula.ai/text-alerts",
+    "https://newbula.ai/privacy",
+    "https://newbula.ai/terms",
+    "https://newbula.ai/sms-terms",
+    "https://newbula.ai/products/voice-outreach",
+    "https://newbula.ai/products/ambient-scribe",
+    "https://newbula.ai/products/communications"
+  ],
+  "signals": {
+    "iframes": [],
+    "videos": [
+      {
+        "src": null,
+        "autoplay": false,
+        "muted": true,
+        "loop": true,
+        "poster": true,
+        "width": 1276,
+        "height": 627,
+        "top": 712,
+        "playing": false
+      }
+    ],
+    "forms": [],
+    "canvases": 1,
+    "lottie": 0,
+    "copyright": [
+      "© 2026 Newbula"
+    ],
+    "featureHints": [
+      "1 video element(s)",
+      "1 large canvas element(s) (WebGL/2D)"
+    ]
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [
+      "555-0142"
+    ],
+    "mixedContent": [],
+    "brokenImages": [],
+    "emptyHashLinks": [],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 9271,
+      "mobile": 16948
+    },
+    "modes": {
+      "full": "reduced",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "normal"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 0,
+      "mobile": 0,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 69878,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 28882,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 7200,
+        "bytes": 301798,
+        "quality": 72,
+        "sourceHeight": 8640
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 53808,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 137426,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  }
+}

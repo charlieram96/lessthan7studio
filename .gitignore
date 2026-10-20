@@ -1,0 +1,27 @@
+# build output
+dist/
+dist-artifact/
+artifact/
+.netlify/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+*.log
+
+# environment
+.env
+.env.*
+!.env.example
+
+# os / editor
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# artifact preview manifest
+artifact-files.json

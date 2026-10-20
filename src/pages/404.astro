@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import Mark from '../components/Mark.astro';
+---
+
+<Base
+  title="Page not found | lessthan7"
+  description="This page doesn’t exist. Head back to the lessthan7 home page or browse our work."
+  path="/404/"
+  noindex
+>
+  <section class="nf">
+    <div class="nf__mark" aria-hidden="true"><Mark bleed={1} class="nf__svg" /></div>
+    <div class="nf__inner">
+      <p class="eyebrow">Error 404</p>
+      <h1 class="nf__title display">This page took longer than seven seconds to find.</h1>
+      <p class="nf__lede">It doesn’t exist, or it moved. Everything else loads quickly, promise.</p>
+      <div class="nf__actions">
+        <a href="/" class="btn btn--sun">Back home</a>
+        <a href="/work/" class="btn btn--ghost">See the work</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf {
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+    padding-top: var(--header-h);
+  }
+
+  .nf__mark {
+    position: absolute;
+    right: -10vw;
+    top: 50%;
+    width: min(70vw, 900px);
+    transform: translateY(-50%);
+    opacity: 0.9;
+  }
+
+  .nf__mark :global(.mark__l) {
+    transform: translate(-14px, 14px);
+  }
+
+  .nf__mark :global(.mark__7) {
+    transform: translate(14px, -14px);
+  }
+
+  .nf__inner {
+    position: relative;
+    display: grid;
+    gap: var(--space-m);
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .nf__title {
+    font-size: var(--step-5);
+    max-width: 13ch;
+  }
+
+  .nf__lede {
+    font-size: var(--step-1);
+    color: var(--text-mute);
+    max-width: 38ch;
+  }
+
+  .nf__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+</style>

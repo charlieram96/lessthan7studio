@@ -1,0 +1,1041 @@
+---
+import Base from '../../layouts/Base.astro';
+import { PROJECTS, nextProject, img } from '../../data/projects';
+import { getAudit, imageSize, kb, lighthouse } from '../../data/audit';
+import { breadcrumbs, caseStudy } from '../../lib/schema';
+
+export function getStaticPaths() {
+  return PROJECTS.map((p) => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+
+const { project: p } = Astro.props;
+const audit = getAudit(p.slug);
+const next = nextProject(p.slug);
+const mobileLh = lighthouse(audit, 'mobile');
+const desktopLh = lighthouse(audit, 'desktop');
+const hasBefore = !!audit?.liveSite?.beforeHero;
+const fullSize = imageSize(audit, 'full.webp') ?? { width: 1200, height: 7200 };
+const mobileFullSize = imageSize(audit, 'mobile-full.webp') ?? { width: 600, height: 6000 };
+const fonts = (audit?.design?.loadedFonts ?? []).filter((f) => !/icon|awesome|material/i.test(f)).slice(0, 3);
+const palette = (audit?.design?.palette ?? []).slice(0, 6);
+const frameworks = [...(audit?.tech?.frameworks ?? []), ...(audit?.tech?.hosting ?? [])];
+const stack = Array.from(new Set([...(p.stack ?? []), ...frameworks])).slice(0, 6);
+
+const title = `${p.name}: ${p.industry} website case study | lessthan7`;
+const description = p.summary;
+const ring = (v: number) => {
+  const c = 2 * Math.PI * 26;
+  return { c: c.toFixed(1), off: (c * (1 - v / 100)).toFixed(1), tone: v >= 90 ? 'good' : v >= 50 ? 'ok' : 'poor' };
+};
+// We publish the categories that clear 90; the rest stay internal (and on our to-do list).
+const scores = (run: NonNullable<typeof mobileLh>) =>
+  [
+    { label: 'Performance', v: run.performance },
+    { label: 'Accessibility', v: run.accessibility },
+    { label: 'Best practices', v: run.bestPractices },
+    { label: 'SEO', v: run.seo },
+  ].filter((s) => s.v >= 90);
+const runs = [
+  { kind: 'Mobile', run: mobileLh },
+  { kind: 'Desktop', run: desktopLh },
+].filter((r): r is { kind: string; run: NonNullable<typeof mobileLh> } => !!r.run && scores(r.run).length >= 2);
+const measured = audit ? new Date(audit.auditedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : '';
+const googleFont = (family: string) =>
+  `https://fonts.googleapis.com/css2?family=${encodeURIComponent(family).replace(/%20/g, '+')}&text=${encodeURIComponent('Aa' + family)}&display=swap`;
+---
+
+<Base
+  title={title}
+  description={description}
+  path={`/work/${p.slug}/`}
+  image={`/og/work-${p.slug}.jpg`}
+  imageAlt={`${p.name} website by lessthan7`}
+  type="article"
+  jsonLd={[
+    caseStudy({ ...p, image: img(p.slug, 'hero.webp') }),
+    breadcrumbs([
+      { name: 'Home', path: '/' },
+      { name: 'Work', path: '/work/' },
+      { name: p.name, path: `/work/${p.slug}/` },
+    ]),
+  ]}
+>
+  <article class="case" data-case style={`--accent:${p.accent};--accent-ink:${p.accentInk}`}>
+    <header class="cs-hero">
+      <div class="cs-hero__glow" aria-hidden="true"></div>
+      <div class="cs-hero__inner">
+        <nav class="cs-crumbs" aria-label="Breadcrumb">
+          <a href="/work/" class="link">Work</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{p.name}</span>
+        </nav>
+        <h1 class="cs-title display">
+          <span class="line-mask"><span class="cs-title__line">{p.name}</span></span>
+        </h1>
+        <p class="cs-summary">{p.summary}</p>
+        <dl class="cs-meta">
+          <div><dt>Industry</dt><dd>{p.industry}</dd></div>
+          <div><dt>Location</dt><dd>{p.location}</dd></div>
+          <div><dt>Services</dt><dd>{p.services.join(', ')}</dd></div>
+          {stack.length > 0 && <div><dt>Built with</dt><dd>{stack.join(', ')}</dd></div>}
+        </dl>
+        <a href={p.liveUrl} class="btn btn--sun cs-visit" target="_blank" rel="noopener" data-magnetic="0.2">
+          Visit {p.displayUrl}
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+        </a>
+      </div>
+      <figure class="cs-shot" data-cs-hero-shot>
+        <div class="browser">
+          <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>{p.displayUrl}</span></div>
+          <img
+            src={img(p.slug, 'hero.webp')}
+            srcset={`${img(p.slug, 'hero-960.webp')} 960w, ${img(p.slug, 'hero.webp')} 1920w`}
+            sizes="(max-width: 1680px) 92vw, 1560px"
+            width="1920"
+            height="1200"
+            alt={`The ${p.name} homepage designed and built by lessthan7`}
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+      </figure>
+    </header>
+
+    <section class="cs-overview paper" aria-label="Overview">
+      <div class="cs-wrap cs-overview__grid">
+        <div>
+          <h2 class="cs-h2">The brief</h2>
+          <p class="cs-lead" data-reveal>{p.brief}</p>
+        </div>
+        <div>
+          <h2 class="cs-h2">What we did</h2>
+          <div class="cs-prose" data-reveal set:html={p.approach} />
+          {p.keyQuote && <blockquote class="cs-quote" data-reveal><p>{p.keyQuote}</p><cite>From the {p.name} homepage</cite></blockquote>}
+        </div>
+      </div>
+    </section>
+
+    {
+      hasBefore && (
+        <section class="cs-ba" aria-labelledby="ba-title">
+          <div class="cs-wrap">
+            <div class="cs-sechead">
+              <p class="eyebrow">Before and after</p>
+              <h2 id="ba-title" class="cs-h2 cs-h2--big">Same business. New first impression.</h2>
+            </div>
+            <div class="ba" data-ba style="--pos:50%">
+              <img class="ba__img" src={img(p.slug, 'hero.webp')} width="1920" height="1200" alt={`New ${p.name} homepage`} loading="lazy" decoding="async" />
+              <div class="ba__before">
+                <img class="ba__img" src={img(p.slug, 'before-hero.webp')} width="1920" height="1200" alt={`Previous ${p.name} homepage`} loading="lazy" decoding="async" />
+              </div>
+              <span class="ba__label ba__label--before" aria-hidden="true">Before</span>
+              <span class="ba__label ba__label--after" aria-hidden="true">After</span>
+              <span class="ba__handle" aria-hidden="true"><i></i></span>
+              <label class="sr-only" for={`ba-range-${p.slug}`}>Compare the previous and new homepage</label>
+              <input class="ba__range" id={`ba-range-${p.slug}`} type="range" min="0" max="100" value="50" data-ba-range />
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="cs-scroll" aria-labelledby="scroll-title" data-cs-scroll>
+      <div class="cs-scroll__sticky">
+        <div class="cs-scroll__head cs-wrap">
+          <p class="eyebrow">The homepage, top to bottom</p>
+          <h2 id="scroll-title" class="sr-only">Full homepage</h2>
+        </div>
+        <div class="browser browser--tall">
+          <div class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span>{p.displayUrl}</span></div>
+          <div class="cs-scroll__view">
+            <img
+              src={img(p.slug, 'full.webp')}
+              width={fullSize.width}
+              height={fullSize.height}
+              alt={`Full-length screenshot of the ${p.name} homepage`}
+              loading="lazy"
+              decoding="async"
+              data-cs-full
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-mobile paper" aria-labelledby="mobile-title">
+      <div class="cs-wrap cs-mobile__grid">
+        <div class="cs-mobile__text">
+          <p class="eyebrow">On a phone</p>
+          <h2 id="mobile-title" class="cs-h2 cs-h2--big">Designed for the thumb first.</h2>
+          <p class="cs-lead" data-reveal>{p.mobileNote ?? 'Most visits start on a phone, so every section was designed at phone size first: readable type, buttons a thumb can hit, and nothing that shifts while it loads.'}</p>
+        </div>
+        <div class="phones">
+          <figure class="phone">
+            <img src={img(p.slug, 'mobile.webp')} width="780" height="1688" alt={`${p.name} homepage on a phone`} loading="lazy" decoding="async" />
+          </figure>
+          <figure class="phone phone--scroll" data-phone-scroll>
+            <div class="phone__track">
+              <img src={img(p.slug, 'mobile-full.webp')} width={mobileFullSize.width} height={mobileFullSize.height} alt={`The full ${p.name} homepage on a phone`} loading="lazy" decoding="async" />
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    {
+      (palette.length > 0 || fonts.length > 0) && (
+        <section class="cs-system" aria-labelledby="system-title">
+          <div class="cs-wrap">
+            <div class="cs-sechead">
+              <p class="eyebrow">Design system</p>
+              <h2 id="system-title" class="cs-h2 cs-h2--big">Built from a few good decisions.</h2>
+            </div>
+            <div class="cs-system__grid">
+              {palette.length > 0 && (
+                <div class="swatches" data-reveal>
+                  {palette.map((hex) => (
+                    <div class="swatch" style={`--c:${hex}`}>
+                      <span class="tnum">{hex.toUpperCase()}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {fonts.length > 0 && (
+                <div class="type" data-reveal>
+                  {fonts.map((f) => (
+                    <div class="type__item">
+                      <link rel="stylesheet" href={googleFont(f)} />
+                      <p class="type__aa" style={`font-family:'${f}', var(--font-body)`}>Aa</p>
+                      <p class="type__name" style={`font-family:'${f}', var(--font-body)`}>{f}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            {p.designNote && <p class="cs-lead cs-system__note" data-reveal>{p.designNote}</p>}
+          </div>
+        </section>
+      )
+    }
+
+    <section class="cs-details paper" aria-labelledby="details-title">
+      <div class="cs-wrap">
+        <div class="cs-sechead">
+          <p class="eyebrow">Details we sweated</p>
+          <h2 id="details-title" class="cs-h2 cs-h2--big">The parts most people never see.</h2>
+        </div>
+        <ul class="cs-details__grid" role="list">
+          {
+            p.details.map((d) => (
+              <li data-reveal>
+                <h3>{d.title}</h3>
+                <p>{d.body}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    {
+      runs.length > 0 && (
+        <section class="cs-results" aria-labelledby="results-title">
+          <div class="cs-wrap">
+            <div class="cs-sechead">
+              <p class="eyebrow">Measured, not promised</p>
+              <h2 id="results-title" class="cs-h2 cs-h2--big">How it performs.</h2>
+              <p class="cs-results__note">
+                Google Lighthouse {audit?.lighthouse?.version}, run by us in {measured} on the homepage. Scores move a little between runs.
+              </p>
+            </div>
+            <div class="lh">
+              {runs.map(({ kind, run }) =>
+                run ? (
+                  <div class="lh__group" data-reveal>
+                    <p class="lh__kind">{kind}</p>
+                    <div class="lh__rings">
+                      {scores(run).map((s) => {
+                        const r = ring(s.v);
+                        return (
+                          <div class={`lh__ring lh__ring--${r.tone}`} data-lh-ring data-value={s.v}>
+                            <svg viewBox="0 0 60 60">
+                              <circle cx="30" cy="30" r="26" class="lh__track" />
+                              <circle cx="30" cy="30" r="26" class="lh__bar" stroke-dasharray={r.c} stroke-dashoffset={r.off} />
+                            </svg>
+                            <b class="tnum">{s.v}</b>
+                            <span>{s.label}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    {run.performance >= 90 && (
+                      <dl class="lh__metrics">
+                        <div><dt>Largest Contentful Paint</dt><dd>{run.lcp}</dd></div>
+                        <div><dt>Layout shift</dt><dd>{run.cls}</dd></div>
+                        <div><dt>Blocking time</dt><dd>{run.tbt}</dd></div>
+                        <div><dt>Page weight</dt><dd>{kb(run.totalByteWeight)}</dd></div>
+                      </dl>
+                    )}
+                  </div>
+                ) : null,
+              )}
+            </div>
+            {p.outcomes.length > 0 && (
+              <ul class="cs-outcomes" role="list">
+                {p.outcomes.map((o) => (
+                  <li data-reveal>{o}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      )
+    }
+
+    <nav class="cs-next" aria-label="Next project">
+      <a href={`/work/${next.slug}/`} class="cs-next__link" data-cursor="Next">
+        <span class="eyebrow">Next project</span>
+        <span class="cs-next__name display">{next.name}</span>
+        <span class="cs-next__meta">{next.industry}</span>
+        <span class="cs-next__img" aria-hidden="true">
+          <img src={img(next.slug, 'hero-960.webp')} alt="" width="960" height="600" loading="lazy" decoding="async" />
+        </span>
+      </a>
+    </nav>
+  </article>
+</Base>
+
+<style>
+  .case {
+    --accent: var(--sun-2);
+  }
+
+  .cs-wrap {
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  /* Hero */
+  .cs-hero {
+    position: relative;
+    padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + var(--space-xl));
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .cs-hero__glow {
+    position: absolute;
+    right: -10vmax;
+    top: -20vmax;
+    width: 80vmax;
+    height: 80vmax;
+    z-index: -1;
+    background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%);
+  }
+
+  .cs-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-m) var(--space-l);
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .cs-crumbs {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.6rem;
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .cs-title {
+    grid-column: 1 / -1;
+    font-size: clamp(3rem, 1rem + 8.6vw, 10.5rem);
+  }
+
+  .cs-title__line {
+    display: block;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) .cs-title__line {
+      animation: cs-rise 1.2s var(--ease-out) both;
+    }
+  }
+
+  @keyframes cs-rise {
+    from {
+      transform: translate3d(0, 55%, 0) skewY(4deg);
+    }
+  }
+
+  .cs-summary {
+    grid-column: 1;
+    max-width: 46ch;
+    font-size: var(--step-1);
+    line-height: 1.45;
+    color: #c9c3d4;
+  }
+
+  .cs-visit {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: end;
+  }
+
+  .cs-meta {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-s);
+    margin: var(--space-s) 0 0;
+    padding-top: var(--space-s);
+    border-top: 1px solid var(--line);
+  }
+
+  .cs-meta dt {
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .cs-meta dd {
+    margin: 0.35rem 0 0;
+  }
+
+  .cs-shot {
+    max-width: 1640px;
+    margin: var(--space-xl) auto 0;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .browser {
+    overflow: hidden;
+    background: #1c1826;
+    box-shadow:
+      0 0 0 1px rgb(243 241 247 / 0.1),
+      0 60px 120px -50px rgb(0 0 0 / 0.9);
+  }
+
+  .browser__bar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 34px;
+    padding: 0 14px;
+    border-bottom: 1px solid rgb(243 241 247 / 0.06);
+    font-size: 0.75rem;
+    color: var(--text-faint);
+  }
+
+  .browser__bar i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgb(243 241 247 / 0.16);
+  }
+
+  .browser__bar span {
+    margin-left: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .browser img {
+    width: 100%;
+  }
+
+  /* Overview */
+  .cs-overview {
+    padding-block: var(--space-2xl);
+  }
+
+  .cs-overview__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: var(--space-xl);
+  }
+
+  .cs-h2 {
+    font-size: var(--step--1);
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+    margin-bottom: var(--space-s);
+  }
+
+  .cs-h2--big {
+    margin-top: 0.6rem;
+    font-family: var(--font-display);
+    font-size: var(--step-4);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    text-transform: none;
+    color: var(--text);
+  }
+
+  .cs-lead {
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-width: 44ch;
+  }
+
+  .cs-prose {
+    display: grid;
+    gap: 1rem;
+    max-width: 60ch;
+    color: var(--text-mute);
+  }
+
+  .cs-prose :global(strong) {
+    color: var(--text);
+  }
+
+  .cs-quote {
+    margin-top: var(--space-m);
+    padding-left: 1.25rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  .cs-quote p {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--step-2);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .cs-quote cite {
+    display: block;
+    margin-top: 0.6rem;
+    font-style: normal;
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .cs-sechead {
+    display: grid;
+    gap: 0.4rem;
+    margin-bottom: var(--space-l);
+  }
+
+  /* Before / after */
+  .cs-ba {
+    padding-block: var(--space-2xl);
+  }
+
+  .ba {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--ink-raised);
+    box-shadow: 0 0 0 1px var(--line);
+    user-select: none;
+  }
+
+  .ba__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .ba__before {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+  }
+
+  .ba__handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--pos);
+    width: 2px;
+    margin-left: -1px;
+    background: var(--paper);
+    pointer-events: none;
+  }
+
+  .ba__handle i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    margin: -22px 0 0 -22px;
+    background: var(--paper);
+    transform: rotate(var(--lean));
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.4);
+  }
+
+  .ba__label {
+    position: absolute;
+    top: 16px;
+    padding: 0.35rem 0.7rem;
+    background: rgb(13 11 20 / 0.75);
+    font-size: var(--step--1);
+    font-weight: 600;
+  }
+
+  .ba__label--before {
+    left: 16px;
+  }
+
+  .ba__label--after {
+    right: 16px;
+  }
+
+  .ba__range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+  }
+
+  .ba__range:focus-visible + .ba__handle,
+  .ba:has(.ba__range:focus-visible) .ba__handle i {
+    outline: 3px solid var(--sun-1);
+    outline-offset: 3px;
+  }
+
+  /* Scroll-through */
+  .cs-scroll {
+    position: relative;
+    height: 260vh;
+  }
+
+  .cs-scroll__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    padding-top: calc(var(--header-h) + 0.5rem);
+    padding-bottom: var(--space-m);
+  }
+
+  .browser--tall {
+    width: min(100% - var(--gutter) - var(--gutter-r), 1180px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 0;
+  }
+
+  .cs-scroll__view {
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .cs-scroll__view img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    will-change: transform;
+  }
+
+  :global(.reduced-motion) .cs-scroll {
+    height: auto;
+  }
+
+  :global(.reduced-motion) .cs-scroll__sticky {
+    position: static;
+    height: 80vh;
+  }
+
+  :global(.reduced-motion) .cs-scroll__view {
+    overflow-y: auto;
+  }
+
+  :global(.reduced-motion) .cs-scroll__view img {
+    position: static;
+  }
+
+  /* Mobile */
+  .cs-mobile {
+    padding-block: var(--space-2xl);
+  }
+
+  .cs-mobile__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .cs-mobile__text .cs-lead {
+    margin-top: var(--space-s);
+    color: var(--text-mute);
+  }
+
+  .phones {
+    display: flex;
+    justify-content: center;
+    gap: clamp(16px, 3vw, 40px);
+  }
+
+  .phone {
+    position: relative;
+    width: min(42%, 290px);
+    aspect-ratio: 390 / 844;
+    padding: 10px;
+    border-radius: 42px;
+    background: #0d0b14;
+    box-shadow:
+      0 0 0 1px rgb(20 17 28 / 0.2),
+      0 40px 80px -40px rgb(20 17 28 / 0.6);
+  }
+
+  .phone > img,
+  .phone__track {
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .phone--scroll {
+    margin-top: var(--space-xl);
+  }
+
+  .phone__track img {
+    width: 100%;
+    will-change: transform;
+  }
+
+  /* System */
+  .cs-system {
+    padding-block: var(--space-2xl);
+  }
+
+  .cs-system__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--space-l);
+  }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 8px;
+  }
+
+  .swatch {
+    display: grid;
+    align-content: end;
+    min-height: 180px;
+    padding: 0.75rem;
+    background: var(--c);
+    box-shadow: inset 0 0 0 1px rgb(243 241 247 / 0.08);
+  }
+
+  .swatch span {
+    justify-self: start;
+    padding: 0.2rem 0.45rem;
+    background: rgb(13 11 20 / 0.7);
+    font-size: 0.75rem;
+    color: var(--paper);
+  }
+
+  .type {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .type__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .type__aa {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1;
+  }
+
+  .type__name {
+    font-size: var(--step-1);
+    color: var(--text-mute);
+  }
+
+  .cs-system__note {
+    margin-top: var(--space-l);
+    max-width: 62ch;
+    color: var(--text-mute);
+  }
+
+  /* Details */
+  .cs-details {
+    padding-block: var(--space-2xl);
+  }
+
+  .cs-details__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-l) var(--space-m);
+    padding: 0;
+    list-style: none;
+  }
+
+  .cs-details__grid li {
+    display: grid;
+    align-content: start;
+    gap: 0.6rem;
+    padding-top: var(--space-s);
+    border-top: 2px solid var(--accent);
+  }
+
+  .cs-details__grid h3 {
+    font-size: var(--step-2);
+    letter-spacing: -0.03em;
+  }
+
+  .cs-details__grid p {
+    color: var(--text-mute);
+  }
+
+  /* Results */
+  .cs-results {
+    padding-block: var(--space-2xl);
+  }
+
+  .cs-results__note {
+    max-width: 60ch;
+    color: var(--text-faint);
+    font-size: var(--step--1);
+  }
+
+  .lh {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-l);
+  }
+
+  .lh__group {
+    padding: clamp(20px, 2.6vw, 36px);
+    background: var(--ink-raised);
+    box-shadow: 0 0 0 1px var(--line);
+  }
+
+  .lh__kind {
+    margin-bottom: 1.2rem;
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .lh__rings {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .lh__rings:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lh__rings:has(> :nth-child(2):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lh__ring {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .lh__ring svg {
+    width: clamp(64px, 6.5vw, 96px);
+    transform: rotate(-90deg);
+  }
+
+  .lh__track {
+    fill: none;
+    stroke: rgb(243 241 247 / 0.1);
+    stroke-width: 4;
+  }
+
+  .lh__bar {
+    fill: none;
+    stroke-width: 4;
+    stroke-linecap: round;
+  }
+
+  .lh__ring--good {
+    --tone: #3ddc97;
+  }
+
+  .lh__ring--ok {
+    --tone: #ffb347;
+  }
+
+  .lh__ring--poor {
+    --tone: #ff6b6b;
+  }
+
+  .lh__bar {
+    stroke: var(--tone);
+  }
+
+  .lh__ring b {
+    position: absolute;
+    top: calc(clamp(64px, 6.5vw, 96px) / 2);
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    color: var(--tone);
+  }
+
+  .lh__ring span {
+    font-size: 0.8rem;
+    color: var(--text-mute);
+  }
+
+  .lh__metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .lh__metrics dt {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+
+  .lh__metrics dd {
+    margin: 0.2rem 0 0;
+    font-family: var(--font-display);
+    font-weight: 750;
+    font-size: var(--step-1);
+  }
+
+  .cs-outcomes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-m);
+    margin-top: var(--space-xl);
+    padding: 0;
+    list-style: none;
+  }
+
+  .cs-outcomes li {
+    padding-top: var(--space-s);
+    border-top: 1px solid var(--line-strong);
+    font-size: var(--step-1);
+    line-height: 1.4;
+  }
+
+  /* Next */
+  .cs-next__link {
+    position: relative;
+    display: grid;
+    justify-items: start;
+    gap: 0.5rem;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding: var(--space-2xl) var(--gutter-r) var(--space-2xl) var(--gutter);
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+  }
+
+  .cs-next__name {
+    font-size: var(--step-6);
+    transition: transform 0.8s var(--ease-out);
+  }
+
+  .cs-next__meta {
+    color: var(--text-mute);
+  }
+
+  .cs-next__img {
+    position: absolute;
+    right: var(--gutter-r);
+    top: 50%;
+    width: min(36vw, 520px);
+    transform: translateY(-50%) rotate(-3deg) scale(0.9);
+    opacity: 0;
+    transition:
+      opacity 0.5s ease,
+      transform 0.8s var(--ease-out);
+    box-shadow: 0 40px 80px -30px rgb(0 0 0 / 0.8);
+    pointer-events: none;
+  }
+
+  .cs-next__link:hover .cs-next__img,
+  .cs-next__link:focus-visible .cs-next__img {
+    opacity: 1;
+    transform: translateY(-50%) rotate(-3deg) scale(1);
+  }
+
+  .cs-next__link:hover .cs-next__name {
+    transform: translateX(1.5rem);
+  }
+
+  @media (max-width: 900px) {
+    .cs-hero__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .cs-visit {
+      grid-column: 1;
+      grid-row: auto;
+      justify-self: start;
+    }
+
+    .cs-meta {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cs-overview__grid,
+    .cs-mobile__grid,
+    .cs-system__grid,
+    .lh {
+      grid-template-columns: 1fr;
+    }
+
+    .cs-details__grid,
+    .cs-outcomes {
+      grid-template-columns: 1fr;
+    }
+
+    .lh__metrics {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cs-next__img {
+      display: none;
+    }
+  }
+</style>

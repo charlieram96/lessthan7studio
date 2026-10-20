@@ -1,0 +1,405 @@
+---
+import { PILLARS } from '../../data/services';
+
+const rings = [
+  { label: 'Performance', value: 95 },
+  { label: 'Accessibility', value: 100 },
+  { label: 'Best practices', value: 100 },
+  { label: 'SEO', value: 100 },
+];
+const R = 26;
+const C = 2 * Math.PI * R;
+---
+
+<section class="svc paper" aria-labelledby="svc-title" data-services>
+  <div class="svc__wrap">
+    <header class="svc__head">
+      <p class="eyebrow">What we do</p>
+      <h2 id="svc-title" class="svc__title display">
+        <span class="line-mask"><span data-split-line>Three disciplines.</span></span>
+        <span class="line-mask"><span data-split-line>One standard.</span></span>
+      </h2>
+      <a href="/services/" class="link svc__more" data-reveal>All services</a>
+    </header>
+
+    <div class="svc__list">
+      {
+        PILLARS.map((p) => (
+          <article class="pillar" id={p.id} data-pillar={p.id}>
+            <div class="pillar__visual" aria-hidden="true">
+              {p.id === 'design' && (
+                <div class="viz viz--type" data-viz-type>
+                  <span class="viz-type__glyphs">Aa</span>
+                  <div class="viz-type__swatches">
+                    <i style="background:#ff8a1e" />
+                    <i style="background:#ff4a3a" />
+                    <i style="background:#f02c6e" />
+                    <i style="background:#c8238f" />
+                    <i style="background:#0d0b14" />
+                  </div>
+                  <p class="viz__caption">
+                    Archivo, <span class="tnum" data-viz-width>62</span>% width
+                  </p>
+                </div>
+              )}
+              {p.id === 'development' && (
+                <div class="viz viz--rings" data-viz-rings>
+                  {rings.map((r) => (
+                    <div class="ring" data-value={r.value}>
+                      <svg viewBox="0 0 64 64">
+                        <circle cx="32" cy="32" r={R} class="ring__track" />
+                        <circle
+                          cx="32"
+                          cy="32"
+                          r={R}
+                          class="ring__bar"
+                          stroke-dasharray={C.toFixed(2)}
+                          stroke-dashoffset={C.toFixed(2)}
+                          data-circ={C.toFixed(2)}
+                        />
+                      </svg>
+                      <span class="ring__num tnum">0</span>
+                      <span class="ring__label">{r.label}</span>
+                    </div>
+                  ))}
+                  <p class="viz__caption">Lighthouse targets for every launch</p>
+                </div>
+              )}
+              {p.id === 'search' && (
+                <div class="viz viz--serp" data-viz-serp>
+                  <div class="serp__box">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2" />
+                      <path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    <span class="serp__query" data-serp-query data-text="web design studio miami" />
+                    <span class="serp__caret" />
+                  </div>
+                  <div class="serp__result" data-serp-result>
+                    <p class="serp__crumb">
+                      <span class="serp__fav" />
+                      lessthan7.studio <span>› work</span>
+                    </p>
+                    <p class="serp__title">lessthan7: Web design, development and SEO in Miami</p>
+                    <p class="serp__desc">
+                      Fast, detail-obsessed websites with SEO built in. See case studies for law firms, clinics,
+                      villas and more.
+                    </p>
+                    <p class="serp__links">
+                      <span>Work</span>
+                      <span>Services</span>
+                      <span>Studio</span>
+                      <span>Contact</span>
+                    </p>
+                  </div>
+                  <p class="viz__caption">Illustration of a search result with structured data</p>
+                </div>
+              )}
+            </div>
+            <div class="pillar__text">
+              <p class="pillar__name">{p.name}</p>
+              <h3 class="pillar__headline">{p.headline}</h3>
+              <p class="pillar__summary">{p.summary}</p>
+              <ul class="pillar__caps" role="list">
+                {p.capabilities.map((c) => (
+                  <li>{c}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .svc {
+    position: relative;
+    padding-block: var(--space-3xl);
+  }
+
+  .svc__wrap {
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .svc__head {
+    display: grid;
+    gap: var(--space-s);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .svc__title {
+    font-size: var(--step-5);
+  }
+
+  .svc__more {
+    justify-self: start;
+    font-weight: 600;
+  }
+
+  .svc__list {
+    display: grid;
+    gap: var(--space-2xl);
+  }
+
+  .pillar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-xl);
+    align-items: center;
+    padding-top: var(--space-l);
+    border-top: 1px solid var(--line-strong);
+    scroll-margin-top: calc(var(--header-h) + 24px);
+  }
+
+  .pillar:nth-child(even) .pillar__visual {
+    order: 2;
+  }
+
+  .pillar__name {
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+  }
+
+  .pillar__headline {
+    margin-top: 0.8rem;
+    font-size: var(--step-4);
+    max-width: 14ch;
+  }
+
+  .pillar__summary {
+    margin-top: var(--space-s);
+    max-width: 50ch;
+    color: var(--text-mute);
+    font-size: var(--step-0);
+  }
+
+  .pillar__caps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem 1.5rem;
+    margin-top: var(--space-m);
+    padding: 0;
+    list-style: none;
+    font-weight: 500;
+  }
+
+  .pillar__caps li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+  }
+
+  .pillar__caps li::before {
+    content: '';
+    flex: none;
+    width: 7px;
+    height: 7px;
+    background: var(--accent-text);
+    transform: translateY(-1px) rotate(var(--lean));
+  }
+
+  /* ---------- Visuals ---------- */
+  .viz {
+    position: relative;
+    display: grid;
+    min-height: clamp(280px, 30vw, 440px);
+    padding: clamp(20px, 3vw, 40px);
+    background: var(--ink);
+    color: var(--paper);
+    overflow: hidden;
+  }
+
+  .viz__caption {
+    align-self: end;
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .viz--type {
+    grid-template-rows: 1fr auto auto;
+    gap: 1.25rem;
+  }
+
+  .viz-type__glyphs {
+    align-self: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-stretch: var(--viz-stretch, 62%);
+    font-size: clamp(6rem, 13vw, 13rem);
+    line-height: 0.8;
+    letter-spacing: -0.04em;
+    background: var(--sun);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .viz-type__swatches {
+    display: flex;
+    gap: 6px;
+  }
+
+  .viz-type__swatches i {
+    width: clamp(28px, 4vw, 52px);
+    height: clamp(28px, 4vw, 52px);
+    box-shadow: inset 0 0 0 1px rgb(243 241 247 / 0.14);
+  }
+
+  .viz--rings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-content: center;
+  }
+
+  .viz--rings .viz__caption {
+    grid-column: 1 / -1;
+  }
+
+  .ring {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 0.6rem;
+  }
+
+  .ring svg {
+    width: clamp(84px, 9vw, 120px);
+    transform: rotate(-90deg);
+  }
+
+  .ring__track {
+    fill: none;
+    stroke: rgb(243 241 247 / 0.1);
+    stroke-width: 4;
+  }
+
+  .ring__bar {
+    fill: none;
+    stroke: #3ddc97;
+    stroke-width: 4;
+    stroke-linecap: round;
+  }
+
+  .ring__num {
+    position: absolute;
+    top: calc(clamp(84px, 9vw, 120px) / 2);
+    transform: translateY(-50%);
+    font-family: var(--font-display);
+    font-weight: 750;
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    color: #3ddc97;
+  }
+
+  .ring__label {
+    font-size: var(--step--1);
+    color: var(--text-mute);
+    text-align: center;
+  }
+
+  .viz--serp {
+    align-content: center;
+    gap: 1.4rem;
+    background: #fff;
+    color: #202124;
+    font-family: Arial, 'Helvetica Neue', sans-serif;
+    box-shadow: inset 0 0 0 1px rgb(20 17 28 / 0.08);
+  }
+
+  .viz--serp .viz__caption {
+    color: #6d6680;
+    font-family: var(--font-body);
+  }
+
+  .serp__box {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.8rem 1.1rem;
+    border-radius: 24px;
+    box-shadow: 0 1px 6px rgb(32 33 36 / 0.28);
+    font-size: 1rem;
+  }
+
+  .serp__box svg {
+    width: 18px;
+    color: #9aa0a6;
+  }
+
+  .serp__caret {
+    width: 1px;
+    height: 1.15em;
+    background: #202124;
+    animation: caret 1s steps(1) infinite;
+  }
+
+  @keyframes caret {
+    50% { opacity: 0; }
+  }
+
+  .serp__result {
+    display: grid;
+    gap: 0.3rem;
+  }
+
+  .serp__crumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #202124;
+  }
+
+  .serp__crumb span:last-child {
+    color: #4d5156;
+  }
+
+  .serp__fav {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ff8a1e, #f02c6e 70%);
+  }
+
+  .serp__title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    color: #1a0dab;
+  }
+
+  .serp__desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #4d5156;
+    max-width: 52ch;
+  }
+
+  .serp__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+    color: #1a0dab;
+  }
+
+  @media (max-width: 900px) {
+    .pillar {
+      grid-template-columns: 1fr;
+    }
+
+    .pillar:nth-child(even) .pillar__visual {
+      order: 0;
+    }
+
+    .pillar__caps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

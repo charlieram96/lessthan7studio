@@ -1,0 +1,557 @@
+---
+/**
+ * Revamp report viewer. Renders a report as 1600×900 sheets; printing produces the PDF.
+ * Private: noindex, not in the sitemap, reached only from the lab.
+ */
+import '../../styles/global.css';
+import '../../styles/report.css';
+import archivoUrl from '../../assets/fonts/archivo-var.woff2?url';
+import instrumentUrl from '../../assets/fonts/instrument-sans-var.woff2?url';
+import { SITE } from '../../config';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="theme-color" content="#0d0b14" />
+    <title>Revamp report | lessthan7 lab</title>
+    <link rel="preload" href={archivoUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={instrumentUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      window.__lt7 = true;
+    </script>
+  </head>
+  <body class="rp-body" data-report data-email={SITE.email} data-phone={SITE.phone}>
+    <header class="rp-bar" data-rp-bar>
+      <a href="/lab/" class="rp-bar__back">← Lab</a>
+      <p class="rp-bar__title" data-rp-title>Loading report…</p>
+      <div class="rp-bar__actions">
+        <button type="button" class="rp-btn" data-rp-copy>Copy link</button>
+        <button type="button" class="rp-btn" data-rp-choose disabled>Choose a direction</button>
+        <button type="button" class="rp-btn rp-btn--sun" data-rp-print disabled>Download PDF</button>
+      </div>
+    </header>
+
+    <main class="rp-main" id="main">
+      <div class="rp-state" data-rp-state>
+        <p class="rp-state__msg" data-rp-msg>Loading report…</p>
+        <div class="rp-state__bar" hidden data-rp-progress><span></span></div>
+      </div>
+      <div class="rp-pages" data-rp-pages></div>
+    </main>
+
+    <dialog class="rp-dialog" data-rp-dialog aria-labelledby="rp-dialog-title">
+      <form method="dialog" class="rp-dialog__form" data-rp-choice-form novalidate>
+        <h2 id="rp-dialog-title" class="rp-dialog__title">Choose a direction</h2>
+        <p class="rp-dialog__lede">Pick the concept that feels right. We’ll follow up with a plan, a schedule and a price.</p>
+        <fieldset class="rp-dialog__concepts" data-rp-concepts>
+          <legend class="sr-only">Concept</legend>
+        </fieldset>
+        <div class="rp-dialog__grid">
+          <label>Your name<input name="name" required autocomplete="name" /></label>
+          <label>Email<input name="email" type="email" required autocomplete="email" /></label>
+          <label>Phone <span>optional</span><input name="phone" type="tel" autocomplete="tel" /></label>
+          <label class="rp-dialog__full">Anything we should know? <span>optional</span><textarea name="notes" rows="3"></textarea></label>
+        </div>
+        <p class="rp-dialog__status" role="status" aria-live="polite" data-rp-choice-status></p>
+        <div class="rp-dialog__actions">
+          <button type="button" class="rp-btn" data-rp-cancel>Cancel</button>
+          <button type="submit" class="rp-btn rp-btn--sun" value="send" data-rp-send>Send my choice</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Static copy for Netlify Forms detection; the dialog submits these fields with fetch. -->
+    <form name="revamp-choice" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="revamp-choice" />
+      <input name="bot-field" />
+      <input name="report-id" />
+      <input name="report-url" />
+      <input name="business" />
+      <input name="website" />
+      <input name="concept" />
+      <input name="concept-name" />
+      <input name="name" />
+      <input name="email" />
+      <input name="phone" />
+      <textarea name="notes"></textarea>
+    </form>
+
+    <script>
+      import '../../scripts/report';
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  .rp-body {
+    --s: 0.5;
+    background: #08070d;
+    min-height: 100vh;
+  }
+
+  .rp-bar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem max(16px, env(safe-area-inset-right, 0px)) 0.8rem max(16px, env(safe-area-inset-left, 0px));
+    background: rgb(8 7 13 / 0.86);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .rp-bar__back {
+    color: var(--text-mute);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .rp-bar__title {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+
+  .rp-bar__actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .rp-btn {
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    color: var(--paper);
+    transition: background-color 0.2s ease;
+  }
+
+  .rp-btn:hover:not(:disabled) {
+    background: rgb(243 241 247 / 0.08);
+  }
+
+  .rp-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .rp-btn--sun {
+    border-color: transparent;
+    background: var(--sun);
+    color: var(--ink);
+  }
+
+  .rp-btn--sun:hover:not(:disabled) {
+    background: var(--paper);
+  }
+
+  .rp-main {
+    padding: 24px max(16px, env(safe-area-inset-right, 0px)) 80px max(16px, env(safe-area-inset-left, 0px));
+  }
+
+  .rp-state {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    padding: 18vh 0;
+    text-align: center;
+    color: var(--text-mute);
+  }
+
+  .rp-state.is-hidden {
+    display: none;
+  }
+
+  .rp-state__bar {
+    width: min(420px, 80vw);
+    height: 3px;
+    background: var(--line);
+  }
+
+  .rp-state__bar span {
+    display: block;
+    height: 100%;
+    width: var(--p, 0%);
+    background: var(--sun);
+    transition: width 0.6s var(--ease-out);
+  }
+
+  .rp-pages {
+    display: grid;
+    justify-items: center;
+    gap: 24px;
+  }
+
+  .rp-slot {
+    width: min(100%, 1600px);
+    height: calc(900px * var(--s));
+    position: relative;
+    box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.8);
+  }
+
+  .rp-slot > .rp-sheet {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(var(--s));
+    transform-origin: 0 0;
+  }
+
+  /* ---------- Sheets: designed at 1600 × 900 px ---------- */
+  .rp-sheet {
+    --pad: 72px;
+    position: relative;
+    width: 1600px;
+    height: 900px;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 20px;
+    line-height: 1.45;
+  }
+
+  .rp-sheet.ink {
+    --bg: var(--ink);
+    --text: var(--paper);
+    --text-mute: #a39cb5;
+    --text-faint: #8d86a0;
+    --line: rgb(243 241 247 / 0.12);
+    --line-strong: rgb(243 241 247 / 0.24);
+    --accent-text: #ff6a3d;
+  }
+
+  .rp-sheet.sun {
+    --bg: linear-gradient(110deg, #ff8a1e, #ff4a3a 38%, #f02c6e 70%, #c8238f);
+    background: var(--bg);
+    --text: #0d0b14;
+    --text-mute: #2a1720;
+    --line: rgb(13 11 20 / 0.2);
+  }
+
+  .rp-head {
+    position: absolute;
+    left: var(--pad);
+    right: var(--pad);
+    top: 36px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .rp-head__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .rp-head__brand svg {
+    width: 26px;
+  }
+
+  .rp-foot {
+    position: absolute;
+    left: var(--pad);
+    right: var(--pad);
+    bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rp-body-area {
+    position: absolute;
+    left: var(--pad);
+    right: var(--pad);
+    top: 100px;
+    bottom: 80px;
+  }
+
+  .rp-eyebrow {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+  }
+
+  .rp-title {
+    margin-top: 14px;
+    font-family: var(--font-display);
+    font-weight: 820;
+    font-stretch: 118%;
+    font-size: 60px;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+
+  .rp-sub {
+    margin-top: 16px;
+    max-width: 52ch;
+    color: var(--text-mute);
+  }
+
+  .rp-cols {
+    display: grid;
+    gap: 48px;
+  }
+
+  .rp-chip {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+  }
+
+  .rp-chip.high {
+    color: #d92d20;
+  }
+
+  .rp-chip.medium {
+    color: #b54708;
+  }
+
+  .rp-chip.low {
+    color: #3f3a4c;
+  }
+
+  .ink .rp-chip.high {
+    color: #ff8f8f;
+  }
+
+  .ink .rp-chip.medium {
+    color: #ffc078;
+  }
+
+  .ink .rp-chip.low {
+    color: #a39cb5;
+  }
+
+  .rp-frame {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    box-shadow:
+      0 0 0 1px rgb(20 17 28 / 0.12),
+      0 30px 60px -30px rgb(0 0 0 / 0.6);
+  }
+
+  .rp-frame__chrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 30px;
+    padding: 0 12px;
+    background: #ece9f1;
+    border-bottom: 1px solid #ddd8e5;
+    font-size: 12px;
+    color: #6d6680;
+  }
+
+  .rp-frame__chrome i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #cdc7d8;
+  }
+
+  .rp-frame__chrome span {
+    margin-left: 10px;
+  }
+
+  .rp-frame__view {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rp-frame__view iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1440px;
+    height: 4800px;
+    border: 0;
+    transform-origin: 0 0;
+    pointer-events: none;
+    background: #fff;
+  }
+
+  /* ---------- Dialog ---------- */
+  .rp-dialog {
+    width: min(640px, calc(100vw - 32px));
+    padding: 0;
+    border: 0;
+    background: var(--ink-raised);
+    color: var(--paper);
+    box-shadow: 0 0 0 1px var(--line), 0 40px 80px rgb(0 0 0 / 0.6);
+  }
+
+  .rp-dialog::backdrop {
+    background: rgb(8 7 13 / 0.72);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+
+  .rp-dialog__form {
+    display: grid;
+    gap: 1.1rem;
+    padding: clamp(20px, 4vw, 36px);
+  }
+
+  .rp-dialog__title {
+    font-size: 2rem;
+  }
+
+  .rp-dialog__lede {
+    color: var(--text-mute);
+  }
+
+  .rp-dialog__concepts {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .rp-dialog__concepts label {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--line-strong);
+    cursor: pointer;
+  }
+
+  .rp-dialog__concepts label:has(input:checked) {
+    border-color: var(--sun-2);
+    background: rgb(255 74 58 / 0.1);
+  }
+
+  .rp-dialog__concepts input {
+    accent-color: #ff4a3a;
+  }
+
+  .rp-dialog__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+
+  .rp-dialog__grid label {
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .rp-dialog__grid label span {
+    font-weight: 400;
+    color: var(--text-faint);
+  }
+
+  .rp-dialog__grid input,
+  .rp-dialog__grid textarea {
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    background: var(--ink);
+    border: 1px solid var(--line-strong);
+    color: var(--paper);
+  }
+
+  .rp-dialog__full {
+    grid-column: 1 / -1;
+  }
+
+  .rp-dialog__status {
+    min-height: 1.4em;
+    color: var(--text-mute);
+  }
+
+  .rp-dialog__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .rp-bar__title,
+    [data-rp-copy] {
+      display: none;
+    }
+
+    .rp-dialog__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ---------- Print: one sheet per page, exactly as designed ---------- */
+  @page {
+    size: 1600px 900px;
+    margin: 0;
+  }
+
+  @media print {
+    html,
+    body {
+      background: none !important;
+    }
+
+    .rp-bar,
+    .rp-state,
+    .rp-dialog,
+    .rp-screen-only {
+      display: none !important;
+    }
+
+    .rp-main {
+      padding: 0;
+    }
+
+    .rp-pages {
+      display: block;
+    }
+
+    .rp-slot {
+      width: 1600px;
+      height: 900px;
+      box-shadow: none;
+      break-after: page;
+      break-inside: avoid;
+    }
+
+    .rp-slot > .rp-sheet {
+      transform: none;
+    }
+
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
+</style>

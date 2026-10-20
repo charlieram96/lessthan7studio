@@ -1,0 +1,435 @@
+{
+  "slug": "hungry-house-media",
+  "name": "Hungry House Media",
+  "captureUrl": "https://hungryhousemedia.com/",
+  "liveUrl": "https://hungryhousemedia.com/",
+  "auditedAt": "2026-10-20T22:12:38.249Z",
+  "finalUrl": "https://hungryhousemedia.com/",
+  "status": 200,
+  "redirects": [],
+  "title": "Hungry House Media · Social content for South Florida restaurants",
+  "metaDescription": "Hungry House Media makes short-form video for South Florida restaurants: Reels and Stories that fill tables. Based in Miami. Three monthly packages.",
+  "canonical": "https://hungryhousemedia.com/",
+  "htmlLang": "en",
+  "ogImage": "https://hungryhousemedia.com/og-en.png",
+  "favicon": "https://hungryhousemedia.com/favicon.svg",
+  "headings": {
+    "h1": [
+      "We feed your feed. Hungry House Media. WE FEED YOUR FEED"
+    ],
+    "h2": [
+      "The living room",
+      "How a reel gets made",
+      "Fresh off the line",
+      "Pick your table",
+      "Made in Miami",
+      "Before you sit down",
+      "Your table is ready."
+    ],
+    "h3": [
+      "Short-form video, only",
+      "Restaurants, only",
+      "Billed monthly",
+      "PREP",
+      "FIRE",
+      "PLATE",
+      "SERVE",
+      "HUNGRY HOUSE",
+      "Content Assist",
+      "Signature Content",
+      "Growth Partner"
+    ]
+  },
+  "navLabels": [
+    "The kitchen",
+    "Dining room",
+    "The menu",
+    "House rules",
+    "EN",
+    "ES",
+    "Book a call"
+  ],
+  "ctas": [
+    "Book a call",
+    "Book a free content call",
+    "See the menu",
+    "Order the starter",
+    "Order the main",
+    "Order the tasting menu",
+    "Copy"
+  ],
+  "contact": {
+    "phones": [],
+    "emails": [
+      "hello@hungryhousemedia.com"
+    ],
+    "address": [],
+    "social": [
+      "https://www.instagram.com/hungryhousemedia/"
+    ],
+    "mapLinks": []
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "\"Barlow Semi Condensed\", Barlow, \"Helvetica Neue\", Arial, sans-serif",
+      "body": {
+        "family": "\"Barlow Condensed\", \"DIN Condensed\", \"Arial Narrow\", sans-serif",
+        "weight": "700",
+        "size": "15px",
+        "lineHeight": "22.5px",
+        "letterSpacing": "2.1px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Barlow Condensed"
+        ]
+      },
+      "h1": {
+        "family": "\"Gasoek One\", \"Arial Black\", Impact, sans-serif",
+        "weight": "400",
+        "size": "34px",
+        "lineHeight": "29.24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Gasoek One"
+        ]
+      },
+      "h2": {
+        "family": "\"Barlow Condensed\", \"DIN Condensed\", \"Arial Narrow\", sans-serif",
+        "weight": "700",
+        "size": "15px",
+        "lineHeight": "22.5px",
+        "letterSpacing": "2.4px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Barlow Condensed"
+        ]
+      },
+      "button": {
+        "family": "\"Barlow Condensed\", \"DIN Condensed\", \"Arial Narrow\", sans-serif",
+        "weight": "800",
+        "size": "18px",
+        "lineHeight": "19.8px",
+        "letterSpacing": "0.9px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Barlow Condensed ExtraBold"
+        ]
+      }
+    },
+    "loadedFonts": [
+      "Gasoek One",
+      "Barlow Condensed",
+      "Barlow Semi Condensed",
+      "Instrument Serif"
+    ],
+    "googleFonts": [],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "body": {
+        "background": "#fbf2dc",
+        "text": "#260803"
+      },
+      "header": {
+        "background": "#fbf2dc",
+        "text": "#7c150a"
+      },
+      "primaryButton": {
+        "background": "#f5e7b8",
+        "text": "#7c150a",
+        "label": "Book a free content call"
+      },
+      "link": {
+        "text": "#260803",
+        "label": "@hungryhousemedia"
+      }
+    },
+    "palette": [
+      "#7b160b",
+      "#cae0e7",
+      "#f4e9d0",
+      "#c1aba2",
+      "#a9766c",
+      "#8e3a2b"
+    ],
+    "paletteShare": [
+      0.699,
+      0.115,
+      0.04,
+      0.039,
+      0.037,
+      0.031
+    ],
+    "cssColorTokens": {
+      "--oxblood": "#7c150a",
+      "--ember": "#a3301c",
+      "--night": "#260803",
+      "--coffee": "#3d1007",
+      "--sky": "#cfe9f3",
+      "--teal": "#1f4e5e",
+      "--deep": "#173f4c",
+      "--butter": "#f5e7b8",
+      "--cream": "#fbf2dc",
+      "--paper": "#fffaf0",
+      "--toast": "#d49a52",
+      "--gold": "#e8b968",
+      "--rose": "#e48d7c"
+    }
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [
+      "Astro"
+    ],
+    "libraries": [],
+    "hosting": [
+      "Netlify"
+    ],
+    "services": [],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Netlify",
+      "x-nf-request-id": "01M5DNWVJ02ANS87HGNGJJ9ZJG",
+      "strict-transport-security": "max-age=31536000",
+      "x-frame-options": "SAMEORIGIN",
+      "cache-control": "public,max-age=0,must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": []
+  },
+  "seo": {
+    "jsonLdTypes": [
+      "ProfessionalService",
+      "City",
+      "State",
+      "OfferCatalog",
+      "Offer",
+      "UnitPriceSpecification"
+    ],
+    "jsonLdBlocks": 1,
+    "jsonLdParseErrors": 0,
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://hungryhousemedia.com/"
+      },
+      {
+        "lang": "es",
+        "href": "https://hungryhousemedia.com/es/"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://hungryhousemedia.com/"
+      }
+    ],
+    "robotsMeta": null,
+    "viewport": "width=device-width, initial-scale=1, viewport-fit=cover",
+    "ogTitle": true,
+    "ogDescription": true,
+    "ogImage": true,
+    "twitterCard": "summary_large_image",
+    "images": {
+      "count": 0,
+      "withAlt": 0,
+      "emptyAlt": 0,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 30,
+      "internal": 29,
+      "internalUnique": 2,
+      "external": 1
+    },
+    "robotsTxt": {
+      "present": true,
+      "status": 200,
+      "sitemaps": [
+        "https://hungryhousemedia.com/sitemap-index.xml"
+      ],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": true,
+      "url": "https://hungryhousemedia.com/sitemap-index.xml",
+      "sitemapXmlStatus": 404,
+      "isIndex": true,
+      "locCount": 1,
+      "urlCount": 2
+    }
+  },
+  "perf": {
+    "transferBytes": 210488,
+    "requests": 13,
+    "ttfbMs": 1017,
+    "serverResponseMs": 643,
+    "domContentLoadedMs": 1491,
+    "loadMs": 1534,
+    "documentTransferBytes": 12937,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 96,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "2.0 s",
+      "cls": "0.006",
+      "tbt": "180 ms",
+      "fcp": "0.9 s",
+      "speedIndex": "3.4 s",
+      "totalByteWeight": 187836,
+      "requests": 13,
+      "serverResponseMs": 156,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://hungryhousemedia.com/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 98,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.3 s",
+      "cls": "0.05",
+      "tbt": "0 ms",
+      "fcp": "0.3 s",
+      "speedIndex": "1.5 s",
+      "totalByteWeight": 187867,
+      "requests": 13,
+      "serverResponseMs": 55,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://hungryhousemedia.com/",
+      "warnings": []
+    }
+  },
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [
+      "en",
+      "es",
+      "x-default"
+    ],
+    "toggles": [
+      "EN (/)",
+      "ES (/es/)"
+    ],
+    "translateWidgets": [
+      "a[hreflang]"
+    ],
+    "spanishLinks": [
+      "https://hungryhousemedia.com/es/"
+    ],
+    "elementsLangEs": 2,
+    "spanishWordShare": 0,
+    "spanishLines": []
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [
+    "https://hungryhousemedia.com/es/"
+  ],
+  "signals": {
+    "iframes": [],
+    "videos": [],
+    "forms": [],
+    "canvases": 0,
+    "lottie": 0,
+    "copyright": [
+      "© 2026 Hungry House Media · Miami, FL"
+    ],
+    "featureHints": [
+      "language toggle"
+    ]
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [],
+    "mixedContent": [],
+    "brokenImages": [],
+    "emptyHashLinks": [],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 12264,
+      "mobile": 11544
+    },
+    "modes": {
+      "full": "reduced",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "reduced"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 0,
+      "mobile": 0,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 63844,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 27386,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 7200,
+        "bytes": 327116,
+        "quality": 72,
+        "sourceHeight": 8640
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 49750,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 176146,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  }
+}

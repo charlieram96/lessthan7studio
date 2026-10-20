@@ -1,0 +1,402 @@
+{
+  "slug": "jany-did-my-hair",
+  "name": "Jany Did My Hair",
+  "captureUrl": "https://janydidmyhair.com/",
+  "liveUrl": "https://janydidmyhair.com/",
+  "auditedAt": "2026-10-20T22:23:50.774Z",
+  "finalUrl": "https://janydidmyhair.com/",
+  "status": 200,
+  "redirects": [],
+  "title": "Home - Jany Did My Hair",
+  "metaDescription": null,
+  "canonical": null,
+  "htmlLang": "en",
+  "ogImage": null,
+  "favicon": "https://janydidmyhair.com/media/favicon.png",
+  "headings": {
+    "h1": [
+      "Indulge in a Lavish Bridal Beauty Experience"
+    ],
+    "h2": [
+      "LUXURY BRIDAL HAIRSTYLING",
+      "As seen on",
+      "experience",
+      "Touch ups",
+      "Inquire about your date",
+      "Client's love letters"
+    ],
+    "h3": [
+      "Hair",
+      "Makeup",
+      "Education"
+    ]
+  },
+  "navLabels": [
+    "Portfolio",
+    "Meet Jany",
+    "Education",
+    "Blog",
+    "Contact"
+  ],
+  "ctas": [
+    "Learn more",
+    "Contact me"
+  ],
+  "contact": {
+    "phones": [],
+    "emails": [],
+    "address": [],
+    "social": [
+      "https://www.instagram.com/janydidmyhair/",
+      "https://www.pinterest.com/janydidmyhair/",
+      "https://www.facebook.com/janydidmyhair/"
+    ],
+    "mapLinks": []
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "Aktiv, sans-serif",
+      "body": {
+        "family": "Aktiv, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "lineHeight": "32px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "AktivGrotesk-Regular"
+        ]
+      },
+      "h1": {
+        "family": "Sauvage, serif",
+        "weight": "100",
+        "size": "70px",
+        "lineHeight": "normal",
+        "letterSpacing": "3px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Sauvage"
+        ]
+      },
+      "h2": {
+        "family": "Sauvage, serif",
+        "weight": "100",
+        "size": "60px",
+        "lineHeight": "90px",
+        "letterSpacing": "4px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Sauvage"
+        ]
+      },
+      "button": {
+        "family": "Sauvage, serif",
+        "weight": "800",
+        "size": "12px",
+        "lineHeight": "normal",
+        "letterSpacing": "3px",
+        "textTransform": "uppercase",
+        "fontStyle": "italic",
+        "rendered": [
+          "Sauvage"
+        ]
+      }
+    },
+    "loadedFonts": [
+      "Sauvage",
+      "Aktiv",
+      "Termina"
+    ],
+    "googleFonts": [],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "body": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "header": {
+        "background": "transparent",
+        "text": "#ffffff"
+      },
+      "primaryButton": {
+        "background": "transparent",
+        "text": "#1e1e1e",
+        "label": "Learn more"
+      },
+      "link": {
+        "text": "#1e1e1e",
+        "label": "Learn more"
+      }
+    },
+    "palette": [
+      "#5c5c5c",
+      "#bfbfbf",
+      "#a1a1a1",
+      "#e0e0e0",
+      "#858585"
+    ],
+    "paletteShare": [
+      0.496,
+      0.287,
+      0.079,
+      0.072,
+      0.065
+    ],
+    "cssColorTokens": {
+      "--main-bg-color": "#ffffff",
+      "--hero-sec-text": "#ffffff",
+      "--nav-text": "#ffffff",
+      "--accent-color": "#f2f0ee",
+      "--dark-text": "#1e1e1e",
+      "--light-border": "#f6eee9"
+    }
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [],
+    "libraries": [
+      "GSAP",
+      "ScrollTrigger"
+    ],
+    "hosting": [
+      "Netlify"
+    ],
+    "services": [
+      "cdnjs"
+    ],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Netlify",
+      "x-nf-request-id": "01M5DPETQ1J1KWGMG3S4SYH0TY",
+      "strict-transport-security": "max-age=31536000",
+      "cache-control": "public,max-age=0,must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": [
+      "cdnjs.cloudflare.com"
+    ]
+  },
+  "seo": {
+    "jsonLdTypes": [],
+    "jsonLdBlocks": 0,
+    "jsonLdParseErrors": 0,
+    "hreflang": [],
+    "robotsMeta": null,
+    "viewport": "width=device-width, initial-scale=1.0",
+    "ogTitle": false,
+    "ogDescription": false,
+    "ogImage": false,
+    "twitterCard": null,
+    "images": {
+      "count": 30,
+      "withAlt": 29,
+      "emptyAlt": 1,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 30,
+      "internal": 24,
+      "internalUnique": 6,
+      "external": 6
+    },
+    "robotsTxt": {
+      "present": false,
+      "status": 404,
+      "sitemaps": [],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": false,
+      "url": null,
+      "sitemapXmlStatus": 404,
+      "isIndex": false,
+      "locCount": 0,
+      "urlCount": 0
+    }
+  },
+  "perf": {
+    "transferBytes": 4674686,
+    "requests": 40,
+    "ttfbMs": 1008,
+    "serverResponseMs": 649,
+    "domContentLoadedMs": 1704,
+    "loadMs": 4302,
+    "documentTransferBytes": 4929,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy. Excludes 1 video request(s), transcoded locally for capture."
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 63,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 82,
+      "lcp": "4.4 s",
+      "cls": "0.004",
+      "tbt": "1,010 ms",
+      "fcp": "1.0 s",
+      "speedIndex": "2.1 s",
+      "totalByteWeight": 4841563,
+      "requests": 39,
+      "serverResponseMs": 69,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [],
+        "seo": [
+          "meta-description",
+          "link-text"
+        ]
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://janydidmyhair.com/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 82,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 82,
+      "lcp": "2.5 s",
+      "cls": "0",
+      "tbt": "100 ms",
+      "fcp": "1.1 s",
+      "speedIndex": "1.5 s",
+      "totalByteWeight": 5122732,
+      "requests": 39,
+      "serverResponseMs": 69,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [],
+        "seo": [
+          "meta-description",
+          "link-text"
+        ]
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://janydidmyhair.com/",
+      "warnings": []
+    }
+  },
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [],
+    "toggles": [],
+    "translateWidgets": [],
+    "spanishLinks": [],
+    "elementsLangEs": 0,
+    "spanishWordShare": 0,
+    "spanishLines": []
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [
+    "https://janydidmyhair.com/portfolio",
+    "https://janydidmyhair.com/about",
+    "https://janydidmyhair.com/education",
+    "https://janydidmyhair.com/blog",
+    "https://janydidmyhair.com/contact"
+  ],
+  "signals": {
+    "iframes": [],
+    "videos": [
+      {
+        "src": "https://janydidmyhair.com/media/horizontal-main.mp4",
+        "autoplay": true,
+        "muted": true,
+        "loop": true,
+        "poster": true,
+        "width": 1440,
+        "height": 900,
+        "top": 0,
+        "playing": true
+      }
+    ],
+    "forms": [],
+    "canvases": 0,
+    "lottie": 0,
+    "copyright": [
+      "© 2024 Jany Did My Hair."
+    ],
+    "featureHints": [
+      "autoplaying background video"
+    ]
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [],
+    "mixedContent": [],
+    "brokenImages": [],
+    "emptyHashLinks": [],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 8246,
+      "mobile": 9958
+    },
+    "modes": {
+      "full": "forced",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "forced"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 1,
+      "mobile": 1,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 70036,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 29406,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 6872,
+        "bytes": 268540,
+        "quality": 72,
+        "sourceHeight": 8246
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 37980,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 169468,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  }
+}

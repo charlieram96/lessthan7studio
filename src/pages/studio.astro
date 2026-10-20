@@ -1,0 +1,423 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { breadcrumbs, webPage } from '../lib/schema';
+
+const title = 'The studio: a Miami web design studio obsessed with details | lessthan7';
+const description =
+  'lessthan7 is a small design and development studio in Miami. Learn how we work, what we believe about speed and search, and the story behind our mark.';
+
+const steps = [
+  {
+    key: 'apart',
+    title: 'Two strokes.',
+    body: 'Our mark is an L, and the same L turned upside down. Flipped, it reads as a 7.',
+  },
+  {
+    key: 'square',
+    title: 'One square.',
+    body: 'Put them together on a five-by-five grid and they close into a square, the shape of every screen we design for. Old slang has a name for it: L7.',
+  },
+  {
+    key: 'lean',
+    title: 'A lean of 31.7°.',
+    body: 'Tilted to the angle whose tangent is the golden ratio’s inverse, the L becomes a less-than sign. Read it again: &lt;7.',
+  },
+  {
+    key: 'sun',
+    title: 'Less than seven.',
+    body: 'The name came first, years ago, and it means something personal to us. Today it’s also a promise: we design for the few seconds a visitor gives you before deciding to stay.',
+  },
+];
+
+const principles = [
+  {
+    title: 'Speed is a design decision.',
+    body: 'Every font, image and script has to earn its weight. A beautiful page that loads slowly is a page most people never see.',
+  },
+  {
+    title: 'Details compound.',
+    body: 'Optical alignment, honest focus states, numbers that line up. No one detail sells a site, but hundreds of them make it feel trustworthy.',
+  },
+  {
+    title: 'Search starts at the first line.',
+    body: 'Structure, speed, metadata and schema are part of the build. Retrofitting SEO costs more and works worse.',
+  },
+  {
+    title: 'Plain words win.',
+    body: 'We write the way your customers talk. Clear beats clever, especially in the first seven seconds.',
+  },
+];
+
+const tools = ['Figma', 'Astro', 'Next.js', 'React', 'TypeScript', 'GSAP', 'WebGL', 'Netlify', 'Vercel', 'Supabase', 'Stripe', 'Search Console', 'Lighthouse', 'Claude'];
+const lines = [0, 20, 40, 60, 80, 100];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/studio/"
+  image="/og/studio.png"
+  jsonLd={[
+    webPage({ path: '/studio/', name: title, description, type: 'AboutPage' }),
+    breadcrumbs([
+      { name: 'Home', path: '/' },
+      { name: 'Studio', path: '/studio/' },
+    ]),
+  ]}
+>
+  <PageHero
+    eyebrow="The studio"
+    lines={['Small studio.', 'Big on details.']}
+    lede="lessthan7 is a design and development studio in Miami. We make websites for businesses that care how they come across, and we sweat the parts most people never notice."
+  />
+
+  <section class="story" aria-labelledby="story-title" data-story>
+    <h2 id="story-title" class="sr-only">The story behind our mark</h2>
+    <div class="story__wrap">
+      <ol class="story__steps" role="list">
+        {
+          steps.map((s) => (
+            <li class="story__step" data-story-step={s.key}>
+              <h3 class="story__title">{s.title}</h3>
+              <p class="story__body" set:html={s.body} />
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="story__visual" aria-hidden="true">
+        <div class="story__sticky">
+          <svg class="story__svg" viewBox="-40 -30 180 160" overflow="visible" data-story-svg>
+            <defs>
+              <linearGradient id="st-sun" gradientUnits="userSpaceOnUse" x1="0" y1="100" x2="100" y2="0">
+                <stop offset="0" stop-color="#ff8a1e"></stop>
+                <stop offset=".38" stop-color="#ff4a3a"></stop>
+                <stop offset=".7" stop-color="#f02c6e"></stop>
+                <stop offset="1" stop-color="#c8238f"></stop>
+              </linearGradient>
+            </defs>
+            <g data-story-rot>
+              <g class="story__grid" data-story-grid fill="none" stroke="rgba(243,241,247,.2)" stroke-width=".3">
+                {lines.map((v) => <path d={`M0 ${v}H100`} />)}
+                {lines.map((v) => <path d={`M${v} 0V100`} />)}
+              </g>
+              <g class="story__dims" data-story-dims fill="rgba(243,241,247,.7)" stroke="rgba(243,241,247,.45)" stroke-width=".3" font-size="4.2">
+                <path d="M0 108H100M0 106v4M100 106v4" fill="none"></path>
+                <text x="50" y="115" text-anchor="middle" stroke="none">5 units</text>
+                <path d="M-8 20V0M-10 20h4M-10 0h4" fill="none"></path>
+                <text x="-11" y="12" text-anchor="end" stroke="none">1</text>
+              </g>
+              <polygon data-story-l points="0,20 20,20 20,80 60,80 60,100 0,100" fill="#f3f1f7"></polygon>
+              <polygon data-story-7 points="100,80 80,80 80,20 40,20 40,0 100,0" fill="#f3f1f7"></polygon>
+            </g>
+            <g data-story-angle fill="none" stroke-width=".45">
+              <path d="M50 50H128" stroke="rgba(243,241,247,.4)" stroke-dasharray="1.6 1.6"></path>
+              <path d="M110 50A60 60 0 0 1 101.04 81.53" stroke="#ff4a3a"></path>
+              <text x="114" y="76" fill="#f3f1f7" stroke="none" font-size="6">31.7°</text>
+              <text x="114" y="84" fill="rgba(243,241,247,.6)" stroke="none" font-size="4">tan θ = 1/φ</text>
+            </g>
+          </svg>
+          <p class="story__caption" data-story-caption>L + 7</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles paper" aria-labelledby="principles-title">
+    <div class="principles__wrap">
+      <h2 id="principles-title" class="principles__title display">
+        <span class="line-mask"><span data-split-line>What we</span></span>
+        <span class="line-mask"><span data-split-line>believe.</span></span>
+      </h2>
+      <ul class="principles__list" role="list">
+        {
+          principles.map((p) => (
+            <li data-reveal>
+              <h3>{p.title}</h3>
+              <p>{p.body}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="kit" aria-labelledby="kit-title">
+    <div class="kit__wrap">
+      <div>
+        <p class="eyebrow">Toolkit</p>
+        <h2 id="kit-title" class="kit__title">Chosen for each project, never by habit.</h2>
+      </div>
+      <ul class="kit__list" role="list">
+        {tools.map((t) => <li data-reveal>{t}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="place paper" aria-labelledby="place-title">
+    <div class="place__wrap">
+      <p class="eyebrow">Where</p>
+      <h2 id="place-title" class="place__title display">
+        Miami, Florida.<br /><span class="sun-text">Working everywhere.</span>
+      </h2>
+      <p class="place__body" data-reveal>
+        We’re rooted in South Florida and fluent in its businesses, from Allapattah fish markets to Coral Gables law
+        offices. Clients outside Miami work with us the same way: video calls, shared links and clear timelines.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .story {
+    position: relative;
+    background: var(--ink);
+  }
+
+  .story__wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-xl);
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .story__steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .story__step {
+    min-height: 90vh;
+    display: grid;
+    align-content: center;
+    gap: var(--space-s);
+    opacity: 0.25;
+    transition: opacity 0.6s ease;
+  }
+
+  .story__step.is-active,
+  :global(.reduced-motion) .story__step {
+    opacity: 1;
+  }
+
+  .story__title {
+    font-size: var(--step-5);
+  }
+
+  .story__body {
+    max-width: 36ch;
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--text-mute);
+  }
+
+  .story__sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: var(--space-s);
+  }
+
+  .story__svg {
+    width: min(100%, 640px);
+    height: auto;
+  }
+
+  .story__caption {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-stretch: 62%;
+    font-size: var(--step-3);
+    color: var(--text-mute);
+  }
+
+  .principles {
+    padding-block: var(--space-3xl);
+  }
+
+  .principles__wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: var(--space-xl);
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .principles__title {
+    font-size: var(--step-5);
+  }
+
+  .principles__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-l) var(--space-m);
+    padding: 0;
+    list-style: none;
+  }
+
+  .principles__list li {
+    display: grid;
+    gap: 0.7rem;
+    align-content: start;
+    padding-top: var(--space-s);
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .principles__list h3 {
+    font-size: var(--step-2);
+    letter-spacing: -0.03em;
+  }
+
+  .principles__list p {
+    color: var(--text-mute);
+  }
+
+  .kit {
+    padding-block: var(--space-2xl);
+  }
+
+  .kit__wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: var(--space-xl);
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .kit__title {
+    margin-top: 0.8rem;
+    font-size: var(--step-3);
+    max-width: 14ch;
+  }
+
+  .kit__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    gap: 0.6rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .kit__list li {
+    padding: 0.6em 1em;
+    border: 1px solid var(--line-strong);
+    font-weight: 500;
+  }
+
+  .place {
+    padding-block: var(--space-3xl);
+  }
+
+  .place__wrap {
+    display: grid;
+    gap: var(--space-m);
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .place__title {
+    font-size: var(--step-5);
+  }
+
+  .place__body {
+    max-width: 52ch;
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--text-mute);
+  }
+
+  @media (max-width: 900px) {
+    .story__wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .story__visual {
+      order: -1;
+      position: sticky;
+      top: var(--header-h);
+      z-index: 1;
+      height: 52vh;
+      background: var(--ink);
+    }
+
+    .story__sticky {
+      height: 52vh;
+    }
+
+    .story__svg {
+      width: min(78vw, 420px);
+    }
+
+    .story__step {
+      min-height: 70vh;
+    }
+
+    .principles__wrap,
+    .kit__wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .principles__list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  import { gsap, ScrollTrigger, reducedMotion } from '../scripts/core';
+  import { LEAN } from '../config';
+
+  const root = document.querySelector<HTMLElement>('[data-story]');
+  if (root) {
+    const rot = root.querySelector('[data-story-rot]')!;
+    const l = root.querySelector('[data-story-l]')!;
+    const s7 = root.querySelector('[data-story-7]')!;
+    const grid = root.querySelector('[data-story-grid]')!;
+    const dims = root.querySelector('[data-story-dims]')!;
+    const angle = root.querySelector('[data-story-angle]')!;
+    const caption = root.querySelector<HTMLElement>('[data-story-caption]')!;
+    const steps = Array.from(root.querySelectorAll<HTMLElement>('[data-story-step]'));
+    const captions = ['L + 7', 'L + 7 = □', '<7', 'lessthan7'];
+
+    const show = (i: number) => {
+      steps.forEach((s, j) => s.classList.toggle('is-active', j === i));
+      caption.textContent = captions[i];
+      const d = reducedMotion() ? 0 : 1;
+      const apart = i === 0;
+      gsap.to(l, { x: apart ? -22 : 0, y: apart ? 22 : 0, duration: 0.9 * d, ease: 'expo.out' });
+      gsap.to(s7, { x: apart ? 22 : 0, y: apart ? -22 : 0, duration: 0.9 * d, ease: 'expo.out' });
+      gsap.to(rot, { rotation: i >= 2 ? LEAN : 0, svgOrigin: '50 50', duration: 1.1 * d, ease: 'power3.inOut' });
+      gsap.to([grid, dims], { opacity: i <= 1 ? 1 : i === 2 ? 0.45 : 0, duration: 0.6 * d });
+      gsap.to(angle, { opacity: i === 2 ? 1 : 0, duration: 0.6 * d });
+      gsap.set([l, s7], { attr: { fill: i === 3 ? 'url(#st-sun)' : '#f3f1f7' } });
+    };
+
+    gsap.set(angle, { opacity: 0 });
+    show(0);
+    steps.forEach((step, i) => {
+      ScrollTrigger.create({
+        trigger: step,
+        start: 'top 55%',
+        end: 'bottom 55%',
+        onToggle: (self) => self.isActive && show(i),
+      });
+    });
+  }
+</script>

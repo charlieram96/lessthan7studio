@@ -1,0 +1,55 @@
+---
+/**
+ * The lessthan7 mark: an L and a 7 (the same shape turned 180°) that close into a square.
+ * Drawn on a 5×5 unit grid (1 unit = 20) and leaning atan(1/φ) ≈ 31.7°.
+ */
+interface Props {
+  variant?: 'sun' | 'paper' | 'ink' | 'current';
+  label?: string;
+  class?: string;
+  id?: string;
+  /** Extra room around the mark, in grid units, for animations that move the pieces. */
+  bleed?: number;
+}
+
+const { variant = 'sun', label, class: className, id, bleed = 0 } = Astro.props;
+const gid = `mk-${Math.random().toString(36).slice(2, 9)}`;
+const pad = bleed * 20;
+const viewBox = `${-19 - pad} ${-2 - pad} ${138 + pad * 2} ${104 + pad * 2}`;
+const fill =
+  variant === 'sun'
+    ? `url(#${gid})`
+    : variant === 'paper'
+      ? 'var(--paper)'
+      : variant === 'ink'
+        ? 'var(--ink)'
+        : 'currentColor';
+---
+
+<svg
+  id={id}
+  class:list={['mark', className]}
+  viewBox={viewBox}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : 'true'}
+  focusable="false"
+  overflow="visible"
+>
+  {
+    variant === 'sun' && (
+      <defs>
+        <linearGradient id={gid} gradientUnits="userSpaceOnUse" x1="0" y1="100" x2="100" y2="0">
+          <stop offset="0" stop-color="#ff8a1e" />
+          <stop offset=".38" stop-color="#ff4a3a" />
+          <stop offset=".7" stop-color="#f02c6e" />
+          <stop offset="1" stop-color="#c8238f" />
+        </linearGradient>
+      </defs>
+    )
+  }
+  <g class="mark__lean" transform="rotate(31.7175 50 50)" fill={fill}>
+    <polygon class="mark__l" points="0,20 20,20 20,80 60,80 60,100 0,100" />
+    <polygon class="mark__7" points="100,80 80,80 80,20 40,20 40,0 100,0" />
+  </g>
+</svg>

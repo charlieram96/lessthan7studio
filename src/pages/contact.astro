@@ -1,0 +1,372 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { SITE } from '../config';
+import { breadcrumbs, webPage } from '../lib/schema';
+
+const title = 'Contact: start a website project | lessthan7, Miami';
+const description =
+  'Tell us about your project. lessthan7 designs and builds fast, search-ready websites for businesses in Miami and beyond. Email hello@lessthan7.studio or call (786) 970-2109.';
+
+const services = ['Web design', 'Development', 'SEO', 'Brand identity', 'E-commerce'];
+const budgets = ['Under $5k', '$5k–$10k', '$10k–$25k', '$25k+', 'Not sure yet'];
+const timelines = ['As soon as possible', 'In 1–3 months', 'In 3–6 months', 'Just exploring'];
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/contact/"
+  image="/og/contact.png"
+  quietFooter
+  jsonLd={[
+    webPage({ path: '/contact/', name: title, description, type: 'ContactPage' }),
+    breadcrumbs([
+      { name: 'Home', path: '/' },
+      { name: 'Contact', path: '/contact/' },
+    ]),
+  ]}
+>
+  <PageHero eyebrow="Contact" lines={['Let’s make your', 'first impression.']} compact />
+
+  <section class="contact" aria-label="Contact details and form">
+    <div class="contact__wrap">
+      <aside class="contact__aside">
+        <div class="contact__block">
+          <p class="contact__label">Email</p>
+          <a href={`mailto:${SITE.email}`} class="contact__big link">{SITE.email}</a>
+        </div>
+        <div class="contact__block">
+          <p class="contact__label">Phone</p>
+          <a href={SITE.phoneHref} class="contact__big link">{SITE.phone}</a>
+        </div>
+        <div class="contact__block">
+          <p class="contact__label">Studio</p>
+          <p>Miami, Florida <span aria-hidden="true">·</span> <time class="tnum" data-miami-clock>--:--</time> local time</p>
+        </div>
+        <div class="contact__block">
+          <p class="contact__label">What happens next</p>
+          <ol class="contact__next" role="list">
+            <li>We read your message and reply personally.</li>
+            <li>A 30-minute call to understand your goals.</li>
+            <li>A proposal with scope, schedule and price.</li>
+          </ol>
+        </div>
+      </aside>
+
+      <form
+        class="form"
+        name="contact"
+        method="POST"
+        action="/contact/thanks/"
+        data-netlify="true"
+        netlify-honeypot="company-url"
+        data-forms
+        novalidate
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="form__hp" aria-hidden="true">
+          <label>Leave this empty <input name="company-url" tabindex="-1" autocomplete="off" /></label>
+        </p>
+
+        <div class="form__row form__row--2">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required />
+            <p class="field__error" id="f-name-err" hidden>Please tell us your name.</p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required />
+            <p class="field__error" id="f-email-err" hidden>Please enter an email we can reply to.</p>
+          </div>
+        </div>
+
+        <div class="form__row form__row--2">
+          <div class="field">
+            <label for="f-company">Company <span class="field__opt">optional</span></label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" />
+          </div>
+          <div class="field">
+            <label for="f-site">Current website <span class="field__opt">optional</span></label>
+            <input id="f-site" name="website" type="text" inputmode="url" placeholder="yourbusiness.com" autocomplete="url" />
+          </div>
+        </div>
+
+        <fieldset class="field field--choices">
+          <legend>What do you need?</legend>
+          <div class="choices">
+            {
+              services.map((s, i) => (
+                <label class="choice">
+                  <input type="checkbox" name="services" value={s} id={`f-svc-${i}`} />
+                  <span>{s}</span>
+                </label>
+              ))
+            }
+          </div>
+        </fieldset>
+
+        <div class="form__row form__row--2">
+          <div class="field">
+            <label for="f-budget">Budget</label>
+            <select id="f-budget" name="budget">
+              <option value="">Choose a range</option>
+              {budgets.map((b) => <option>{b}</option>)}
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-timeline">Timeline</label>
+            <select id="f-timeline" name="timeline">
+              <option value="">When do you want to launch?</option>
+              {timelines.map((t) => <option>{t}</option>)}
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-message">Tell us about the project</label>
+          <textarea id="f-message" name="message" rows="6" required></textarea>
+          <p class="field__error" id="f-message-err" hidden>A sentence or two about the project helps us reply properly.</p>
+        </div>
+
+        <div class="form__footer">
+          <button type="submit" class="btn btn--sun" data-magnetic="0.2">
+            <span data-submit-label>Send message</span>
+            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+          </button>
+          <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact {
+    padding-bottom: var(--space-3xl);
+  }
+
+  .contact__wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    gap: var(--space-xl);
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .contact__aside {
+    display: grid;
+    align-content: start;
+    gap: var(--space-l);
+  }
+
+  .contact__label {
+    margin-bottom: 0.5rem;
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .contact__big {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--step-2);
+    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+  }
+
+  .contact__next {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: next;
+    color: var(--text-mute);
+  }
+
+  .contact__next li {
+    counter-increment: next;
+    display: grid;
+    grid-template-columns: 1.6rem 1fr;
+  }
+
+  .contact__next li::before {
+    content: counter(next);
+    font-weight: 700;
+    color: var(--sun-2);
+  }
+
+  .form {
+    display: grid;
+    gap: var(--space-m);
+    padding: clamp(20px, 3.4vw, 48px);
+    background: var(--ink-raised);
+    box-shadow: 0 0 0 1px var(--line);
+  }
+
+  .form__hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .form__row--2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-m);
+  }
+
+  .field {
+    display: grid;
+    gap: 0.5rem;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .field label,
+  .field legend {
+    padding: 0;
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .field__opt {
+    margin-left: 0.35rem;
+    font-weight: 400;
+    color: var(--text-faint);
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    background: var(--ink);
+    border: 1px solid var(--line-strong);
+    border-radius: 2px;
+    color: var(--text);
+    font-size: 1rem;
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .field textarea {
+    resize: vertical;
+    min-height: 9rem;
+  }
+
+  .field select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--text-mute) 50%),
+      linear-gradient(135deg, var(--text-mute) 50%, transparent 50%);
+    background-position:
+      calc(100% - 22px) 52%,
+      calc(100% - 16px) 52%;
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+  }
+
+  .field input:focus-visible,
+  .field select:focus-visible,
+  .field textarea:focus-visible {
+    outline: none;
+    border-color: var(--sun-1);
+    box-shadow: 0 0 0 3px rgb(255 138 30 / 0.25);
+  }
+
+  .field [aria-invalid='true'] {
+    border-color: #ff6b6b;
+  }
+
+  .field__error {
+    font-size: var(--step--1);
+    color: #ff8f8f;
+  }
+
+  .choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .choice {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .choice input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .choice span {
+    display: inline-block;
+    padding: 0.6em 1em;
+    border: 1px solid var(--line-strong);
+    font-size: 0.95rem;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .choice input:checked + span {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--paper);
+  }
+
+  .choice input:focus-visible + span {
+    outline: 2px solid var(--sun-1);
+    outline-offset: 2px;
+  }
+
+  .form__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+  }
+
+  .form__status {
+    color: var(--text-mute);
+  }
+
+  .form__status.is-error {
+    color: #ff8f8f;
+  }
+
+  @media (max-width: 900px) {
+    .contact__wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .contact__aside {
+      order: 2;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .form__row--2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

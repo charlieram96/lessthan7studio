@@ -1,0 +1,496 @@
+{
+  "slug": "bland-law",
+  "name": "Bland Law",
+  "captureUrl": "https://blandlaw.netlify.app/",
+  "liveUrl": "https://blandlaw.legal/",
+  "auditedAt": "2026-10-20T22:17:29.990Z",
+  "finalUrl": "https://blandlaw.netlify.app/",
+  "status": 200,
+  "redirects": [],
+  "title": "Bland Law, P.A. | Family, Traffic & Criminal Defense · Miami & Boca Raton",
+  "metaDescription": "Family law, traffic and criminal defense for Miami-Dade, Broward and Palm Beach counties. Attorney Gerald R. Bland, in English and Spanish since 2013.",
+  "canonical": "https://blandlaw.legal/",
+  "htmlLang": "en",
+  "ogImage": "https://blandlaw.legal/og/og-default.jpg",
+  "favicon": "https://blandlaw.netlify.app/favicon.svg",
+  "headings": {
+    "h1": [
+      "Focused on solutions. Driven by results."
+    ],
+    "h2": [
+      "Know your rights. Don’t go at it alone.",
+      "Where we can help.",
+      "One incident. Two courtrooms.",
+      "Gerald R. Bland, Esq.",
+      "Hiring us is simple.",
+      "In their words.",
+      "Missed a court date or forgot about a ticket?",
+      "Tell us what happened."
+    ],
+    "h3": [
+      "Family Law",
+      "Traffic & Criminal Traffic",
+      "Criminal Defense",
+      "Injunctions for protection",
+      "Battery charges",
+      "Reach out",
+      "Talk it through",
+      "We take it from there",
+      "Miami",
+      "Boca Raton",
+      "Request a consultation"
+    ]
+  },
+  "navLabels": [
+    "The Firm",
+    "Practice Areas",
+    "Reviews",
+    "Contact",
+    "Music",
+    "EN / ES",
+    "Miami office (305) 819-7066",
+    "Consultation"
+  ],
+  "ctas": [
+    "Practice Areas",
+    "Music",
+    "Consultation",
+    "Schedule a consultation",
+    "Send request"
+  ],
+  "contact": {
+    "phones": [
+      "(305) 819-7066",
+      "(561) 245-4604",
+      "(786) 513-3949"
+    ],
+    "emails": [
+      "office@blandlawoffice.com"
+    ],
+    "address": [
+      "3191 Coral Way, Suite 1005 Miami, FL 33145",
+      "7777 Glades Road, Suite 110 Boca Raton, FL 33434",
+      "3191 Coral Way, Suite 1005, Miami, FL 33145 · (305) 819-7066",
+      "7777 Glades Road, Suite 110, Boca Raton, FL 33434 · (561) 245-4604"
+    ],
+    "social": [
+      "https://www.instagram.com/blandlaw/",
+      "https://www.facebook.com/blandlawfirm/"
+    ],
+    "mapLinks": [
+      "https://www.google.com/maps/search/?api=1&query=3191+Coral+Way+Suite+1005+Miami+FL+33145",
+      "https://www.google.com/maps/search/?api=1&query=7777+Glades+Road+Suite+110+Boca+Raton+FL+33434"
+    ]
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "Manrope, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "body": {
+        "family": "Manrope, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "weight": "400",
+        "size": "16.64px",
+        "lineHeight": "26.624px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Manrope ExtraLight"
+        ]
+      },
+      "h1": {
+        "family": "Marcellus, \"Cormorant Garamond\", Georgia, \"Times New Roman\", serif",
+        "weight": "400",
+        "size": "49.12px",
+        "lineHeight": "51.0848px",
+        "letterSpacing": "-0.2456px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Marcellus"
+        ]
+      },
+      "h2": {
+        "family": "Marcellus, \"Cormorant Garamond\", Georgia, \"Times New Roman\", serif",
+        "weight": "400",
+        "size": "88.64px",
+        "lineHeight": "89.5264px",
+        "letterSpacing": "-0.4432px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Marcellus"
+        ]
+      },
+      "button": {
+        "family": "Manrope, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+        "weight": "700",
+        "size": "12.48px",
+        "lineHeight": "12.48px",
+        "letterSpacing": "1.872px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Manrope ExtraLight"
+        ]
+      }
+    },
+    "loadedFonts": [
+      "Marcellus",
+      "Manrope"
+    ],
+    "googleFonts": [],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "body": {
+        "background": "#0f1724",
+        "text": "#18233a"
+      },
+      "header": {
+        "background": "transparent",
+        "text": "#edeff3"
+      },
+      "primaryButton": {
+        "background": "#d49563",
+        "text": "#0f1724",
+        "label": "Schedule a consultation"
+      },
+      "link": {
+        "text": "#81899e",
+        "label": "Scroll"
+      }
+    },
+    "palette": [
+      "#131d2d",
+      "#23325d",
+      "#3a3e47",
+      "#da8f67",
+      "#845742",
+      "#697080"
+    ],
+    "paletteShare": [
+      0.877,
+      0.039,
+      0.035,
+      0.019,
+      0.013,
+      0.011
+    ],
+    "cssColorTokens": {
+      "--ink": "#0f1724",
+      "--ink-2": "#0b111c",
+      "--navy": "#1a2b45",
+      "--navy-2": "#22365a",
+      "--slate": "#81899e",
+      "--slate-lite": "#aab1c1",
+      "--marble": "#f1f2f4",
+      "--paper": "#fbfbfc",
+      "--copper": "#b87333",
+      "--copper-hi": "#d49563",
+      "--copper-deep": "#8e5422",
+      "--text": "#18233a",
+      "--text-mute": "#596276",
+      "--on-dark": "#edeff3",
+      "--error": "#a3342b",
+      "--seam-dark": "#aeaebc13",
+      "--seam-light": "#2233440f",
+      "--line-dark": "#acb1c22e",
+      "--line-light": "#172e4621",
+      "--logo-b": "#1a2b45",
+      "--logo-l": "#81899e",
+      "--logo-w": "#1a2b45",
+      "--logo-s": "#81899e"
+    }
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [
+      "Astro"
+    ],
+    "libraries": [],
+    "hosting": [
+      "Netlify"
+    ],
+    "services": [],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Netlify",
+      "x-nf-request-id": "01M5DP5CVTVZ1Z4964H8A59ADX",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "x-frame-options": "SAMEORIGIN",
+      "cache-control": "public,max-age=0,must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": []
+  },
+  "seo": {
+    "jsonLdTypes": [
+      "LegalService",
+      "Person",
+      "Place",
+      "PostalAddress"
+    ],
+    "jsonLdBlocks": 1,
+    "jsonLdParseErrors": 0,
+    "hreflang": [
+      {
+        "lang": "en",
+        "href": "https://blandlaw.legal/"
+      },
+      {
+        "lang": "es",
+        "href": "https://blandlaw.legal/es/"
+      },
+      {
+        "lang": "x-default",
+        "href": "https://blandlaw.legal/"
+      }
+    ],
+    "robotsMeta": null,
+    "viewport": "width=device-width, initial-scale=1, viewport-fit=cover",
+    "ogTitle": true,
+    "ogDescription": true,
+    "ogImage": true,
+    "twitterCard": "summary_large_image",
+    "images": {
+      "count": 11,
+      "withAlt": 2,
+      "emptyAlt": 9,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 45,
+      "internal": 32,
+      "internalUnique": 6,
+      "external": 8
+    },
+    "robotsTxt": {
+      "present": true,
+      "status": 200,
+      "sitemaps": [
+        "https://blandlaw.legal/sitemap-index.xml"
+      ],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": true,
+      "url": "https://blandlaw.netlify.app/sitemap-index.xml",
+      "sitemapXmlStatus": 404,
+      "isIndex": true,
+      "locCount": 1,
+      "urlCount": 0
+    }
+  },
+  "perf": {
+    "transferBytes": 365103,
+    "requests": 17,
+    "ttfbMs": 313,
+    "serverResponseMs": 35,
+    "domContentLoadedMs": 1265,
+    "loadMs": 1268,
+    "documentTransferBytes": 19230,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 99,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "1.6 s",
+      "cls": "0",
+      "tbt": "110 ms",
+      "fcp": "1.2 s",
+      "speedIndex": "1.5 s",
+      "totalByteWeight": 191303,
+      "requests": 10,
+      "serverResponseMs": 37,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://blandlaw.netlify.app/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 100,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "0.5 s",
+      "cls": "0.011",
+      "tbt": "10 ms",
+      "fcp": "0.4 s",
+      "speedIndex": "0.5 s",
+      "totalByteWeight": 222309,
+      "requests": 9,
+      "serverResponseMs": 60,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://blandlaw.netlify.app/",
+      "warnings": []
+    }
+  },
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [
+      "en",
+      "es",
+      "x-default"
+    ],
+    "toggles": [
+      "EN/ES (/es/)",
+      "English",
+      "Español"
+    ],
+    "translateWidgets": [
+      "a[hreflang]"
+    ],
+    "spanishLinks": [
+      "https://blandlaw.netlify.app/es/"
+    ],
+    "elementsLangEs": 1,
+    "spanishWordShare": 0.036,
+    "spanishLines": []
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [
+    "https://blandlaw.netlify.app/about/",
+    "https://blandlaw.netlify.app/es/"
+  ],
+  "signals": {
+    "iframes": [],
+    "videos": [],
+    "forms": [
+      {
+        "id": "form",
+        "action": "/thanks/",
+        "netlify": true,
+        "visible": true,
+        "fields": [
+          "bot-field",
+          "first",
+          "last",
+          "phone",
+          "email",
+          "topic",
+          "topic",
+          "topic",
+          "topic",
+          "topic",
+          "topic",
+          "office",
+          "office",
+          "lang",
+          "lang"
+        ],
+        "submit": "SEND REQUEST"
+      }
+    ],
+    "canvases": 0,
+    "lottie": 0,
+    "copyright": [
+      "© 2026 Bland Law, P.A. All rights reserved."
+    ],
+    "featureHints": [
+      "form: bot-field, first, last, phone, email, topic, topic, topic, topic, topic, topic, office, office, lang, lang (Netlify Forms)",
+      "language toggle"
+    ]
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [],
+    "mixedContent": [],
+    "brokenImages": [],
+    "emptyHashLinks": [],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 10046,
+      "mobile": 14167
+    },
+    "modes": {
+      "full": "forced",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "normal"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 0,
+      "mobile": 0,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 69116,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 25080,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 7200,
+        "bytes": 310920,
+        "quality": 72,
+        "sourceHeight": 8640
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 50312,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 148280,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  },
+  "liveSite": {
+    "url": "https://blandlaw.legal/",
+    "finalUrl": "https://blandlaw.legal/",
+    "status": 200,
+    "title": "Gerald Bland Law",
+    "generator": null,
+    "server": "Netlify",
+    "hosting": [
+      "Netlify"
+    ],
+    "differsFromCapture": true,
+    "heroDifference": 0.129,
+    "beforeHero": "before-hero.webp"
+  }
+}

@@ -1,0 +1,183 @@
+---
+import { PROCESS } from '../../data/services';
+---
+
+<section class="process" aria-labelledby="process-title" data-process>
+  <div class="process__wrap">
+    <div class="process__aside">
+      <div class="process__sticky">
+        <p class="eyebrow">How we work</p>
+        <h2 id="process-title" class="process__title display">
+          <span class="line-mask"><span data-split-line>Six steps.</span></span>
+          <span class="line-mask"><span data-split-line>Fewer than</span></span>
+          <span class="line-mask"><span data-split-line>seven, naturally.</span></span>
+        </h2>
+        <p class="process__note" data-reveal>
+          Most websites take six to ten weeks from first call to launch. You’ll know what happens next at every step.
+        </p>
+      </div>
+    </div>
+
+    <div class="process__list">
+    <span class="process__rail" aria-hidden="true"><span data-process-rail></span></span>
+    <ol class="process__steps" role="list">
+      {
+        PROCESS.map((step, i) => (
+          <li class="step" data-step>
+            <span class="step__num tnum" aria-hidden="true">
+              {i + 1}
+            </span>
+            <div class="step__body">
+              <h3 class="step__name">{step.name}</h3>
+              <p class="step__text">{step.body}</p>
+              <p class="step__output">
+                <span>You get</span> {step.output}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process {
+    position: relative;
+    padding-block: var(--space-3xl);
+    background: var(--ink);
+  }
+
+  .process__wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-xl);
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .process__sticky {
+    position: sticky;
+    top: calc(var(--header-h) + 32px);
+    display: grid;
+    gap: var(--space-m);
+  }
+
+  .process__title {
+    font-size: var(--step-5);
+  }
+
+  .process__note {
+    max-width: 36ch;
+    color: var(--text-mute);
+  }
+
+  .process__list {
+    position: relative;
+    padding-left: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .process__steps {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .process__rail {
+    position: absolute;
+    left: 0.85rem;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    width: 1px;
+    background: var(--line);
+  }
+
+  .process__rail span {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--sun-1), var(--sun-3) 60%, var(--sun-4));
+    transform-origin: 50% 0;
+    transform: scaleY(0);
+  }
+
+  .step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-block: var(--space-l);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .step:first-of-type {
+    padding-top: 0;
+  }
+
+  .step__num {
+    position: absolute;
+    left: calc(-1 * clamp(3rem, 5vw, 4.5rem));
+    top: var(--space-l);
+    display: grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: var(--ink);
+    border: 1px solid var(--line-strong);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-mute);
+    transition:
+      border-color 0.4s ease,
+      color 0.4s ease,
+      background-color 0.4s ease;
+  }
+
+  .step:first-of-type .step__num {
+    top: 0;
+  }
+
+  .step.is-active .step__num {
+    border-color: transparent;
+    background: var(--sun-2);
+    color: var(--ink);
+  }
+
+  .step__name {
+    font-size: var(--step-4);
+    letter-spacing: -0.04em;
+    transition: color 0.4s ease;
+  }
+
+  .step__text {
+    margin-top: var(--space-xs);
+    max-width: 50ch;
+    color: var(--text-mute);
+  }
+
+  .step__output {
+    margin-top: var(--space-s);
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .step__output span {
+    margin-right: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+  }
+
+  @media (max-width: 900px) {
+    .process__wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .process__sticky {
+      position: static;
+    }
+  }
+</style>

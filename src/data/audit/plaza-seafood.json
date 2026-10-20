@@ -1,0 +1,475 @@
+{
+  "slug": "plaza-seafood",
+  "name": "Plaza Seafood Market",
+  "captureUrl": "https://plazaseafood.netlify.app/",
+  "liveUrl": "https://plazaseafoodmarket.com/",
+  "auditedAt": "2026-10-20T22:20:39.476Z",
+  "finalUrl": "https://plazaseafood.netlify.app/",
+  "status": 200,
+  "redirects": [],
+  "title": "Plaza Seafood Market · Fresh fish & fried seafood in Allapattah, Miami since 1980",
+  "metaDescription": "Plaza Seafood Market, Allapattah, Miami. Fresh fish from our own fishermen, cleaned at the counter or fried to order at the window since 1980.",
+  "canonical": "https://plazaseafoodmarket.com/",
+  "htmlLang": "en",
+  "ogImage": "https://plazaseafoodmarket.com/assets/og/plaza-seafood.jpg",
+  "favicon": "https://plazaseafood.netlify.app/assets/icons/favicon.ico",
+  "headings": {
+    "h1": [
+      "From the dock to your door."
+    ],
+    "h2": [
+      "From the dock to your door",
+      "One fish, four ways.",
+      "Today's catch",
+      "menu",
+      "Visit the market",
+      "Serve our seafood to your customers.",
+      "Find us",
+      "Order",
+      "Explore"
+    ],
+    "h3": [
+      "The Dock",
+      "On Ice",
+      "The Cut",
+      "The Kitchen",
+      "Your Door",
+      "Red Snapper",
+      "Yellowtail Snapper",
+      "Grouper",
+      "Hogfish",
+      "Spiny Lobster",
+      "Wild Shrimp",
+      "Queen Conch"
+    ]
+  },
+  "navLabels": [
+    "Our Story",
+    "Menu",
+    "Today's Catch",
+    "Wholesale",
+    "Visit",
+    "EN / ES",
+    "(305) 636-1695"
+  ],
+  "ctas": [
+    "(305) 636-1695",
+    "Call to order",
+    "Get directions",
+    "Order online",
+    "Whole Entero",
+    "Steak Rueda",
+    "Filet Filete",
+    "Butterfly Minuta",
+    "Whole",
+    "Steak",
+    "Filet",
+    "Butterfly"
+  ],
+  "contact": {
+    "phones": [
+      "(305) 636-1695"
+    ],
+    "emails": [
+      "plazaseafood@comcast.net"
+    ],
+    "address": [
+      "3114 NW 17th Ave Miami, FL 33142",
+      "3114 NW 17th Ave, Miami, FL 33142",
+      "3114 NW 17th Ave, Miami, FL, 33142",
+      "2026 Plaza Seafood Market"
+    ],
+    "social": [],
+    "mapLinks": [
+      "https://www.google.com/maps/dir/?api=1&destination=Plaza+Seafood+Market+3114+NW+17th+Ave+Miami+FL+33142",
+      "https://www.google.com/maps/search/?api=1&query=Plaza+Seafood+Market+3114+NW+17th+Ave+Miami+FL",
+      "https://www.google.com/maps/search/?api=1&query=Plaza+Seafood+Market+3114+NW+17th+Ave+Miami+FL+33142"
+    ]
+  },
+  "design": {
+    "fonts": {
+      "bodyElement": "Jost, \"Avenir Next\", Avenir, Futura, \"Helvetica Neue\", system-ui, sans-serif",
+      "body": {
+        "family": "Jost, \"Avenir Next\", Avenir, Futura, \"Helvetica Neue\", system-ui, sans-serif",
+        "weight": "500",
+        "size": "24px",
+        "lineHeight": "36px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "Jost"
+        ]
+      },
+      "h1": {
+        "family": "\"Old Newspaper Types\", \"Century Schoolbook\", Georgia, serif",
+        "weight": "400",
+        "size": "72px",
+        "lineHeight": "67.68px",
+        "letterSpacing": "-0.72px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "OldNewspaperTypes"
+        ]
+      },
+      "h2": {
+        "family": "\"Old Newspaper Types\", \"Century Schoolbook\", Georgia, serif",
+        "weight": "400",
+        "size": "66.24px",
+        "lineHeight": "59.616px",
+        "letterSpacing": "-0.6624px",
+        "textTransform": "none",
+        "fontStyle": "normal",
+        "rendered": [
+          "OldNewspaperTypes"
+        ]
+      },
+      "button": {
+        "family": "Jost, \"Avenir Next\", Avenir, Futura, \"Helvetica Neue\", system-ui, sans-serif",
+        "weight": "600",
+        "size": "13px",
+        "lineHeight": "13px",
+        "letterSpacing": "1.82px",
+        "textTransform": "uppercase",
+        "fontStyle": "normal",
+        "rendered": [
+          "Jost"
+        ]
+      }
+    },
+    "loadedFonts": [
+      "Jost",
+      "Old Newspaper Types"
+    ],
+    "googleFonts": [
+      "Jost"
+    ],
+    "adobeFonts": false,
+    "colors": {
+      "html": {
+        "background": "transparent",
+        "text": "#000000"
+      },
+      "body": {
+        "background": "#f6f0e1",
+        "text": "#262a4c"
+      },
+      "header": {
+        "background": "transparent",
+        "text": "#f6f0e1"
+      },
+      "primaryButton": {
+        "background": "#b5121b",
+        "text": "#f6f0e1",
+        "label": "Call to order"
+      },
+      "link": {
+        "text": "#f6f0e1",
+        "label": "Order online"
+      }
+    },
+    "palette": [
+      "#112316",
+      "#42452b",
+      "#2b5967",
+      "#7c591d",
+      "#88988a",
+      "#cf9011"
+    ],
+    "paletteShare": [
+      0.253,
+      0.211,
+      0.184,
+      0.117,
+      0.103,
+      0.075
+    ],
+    "cssColorTokens": {
+      "--navy": "#262a4c",
+      "--navy-deep": "#191c36",
+      "--navy-2": "#323863",
+      "--deepsea": "#08162a",
+      "--deepsea-mid": "#0b1f3b",
+      "--deepsea-glow": "#123259",
+      "--deepsea-2": "#1a3a5c",
+      "--deepsea-deep": "#050f1d",
+      "--cream": "#f6f0e1",
+      "--paper": "#eee4cc",
+      "--paper-2": "#e3d6b8",
+      "--red": "#b5121b",
+      "--red-bright": "#d8232f",
+      "--pink": "#f2a6b3",
+      "--gold": "#e9b54a",
+      "--ice": "#e6eef0",
+      "--ice-2": "#cfdde1",
+      "--sea": "#9db4bf",
+      "--ok": "#57c98a",
+      "--line": "#252c4b29",
+      "--line-cream": "#f4eee32e",
+      "--sea-top": "#5cc3cf"
+    }
+  },
+  "tech": {
+    "generator": null,
+    "frameworks": [],
+    "libraries": [
+      "GSAP",
+      "ScrollTrigger"
+    ],
+    "hosting": [
+      "Netlify"
+    ],
+    "services": [
+      "cdnjs",
+      "Google Fonts"
+    ],
+    "https": true,
+    "hsts": true,
+    "headers": {
+      "server": "Netlify",
+      "x-nf-request-id": "01M5DPAP0PT9CPPT1F6RCHPZQF",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "cache-control": "public,max-age=0,must-revalidate",
+      "content-encoding": "br"
+    },
+    "thirdPartyHosts": [
+      "cdnjs.cloudflare.com",
+      "fonts.googleapis.com"
+    ]
+  },
+  "seo": {
+    "jsonLdTypes": [
+      "Restaurant",
+      "PostalAddress"
+    ],
+    "jsonLdBlocks": 1,
+    "jsonLdParseErrors": 0,
+    "hreflang": [],
+    "robotsMeta": null,
+    "viewport": "width=device-width, initial-scale=1, viewport-fit=cover",
+    "ogTitle": true,
+    "ogDescription": true,
+    "ogImage": true,
+    "twitterCard": "summary_large_image",
+    "images": {
+      "count": 28,
+      "withAlt": 19,
+      "emptyAlt": 9,
+      "missingAlt": 0
+    },
+    "links": {
+      "total": 34,
+      "internal": 21,
+      "internalUnique": 5,
+      "external": 4
+    },
+    "robotsTxt": {
+      "present": true,
+      "status": 200,
+      "sitemaps": [
+        "https://plazaseafoodmarket.com/sitemap.xml"
+      ],
+      "disallowAll": false
+    },
+    "sitemap": {
+      "present": true,
+      "url": "https://plazaseafood.netlify.app/sitemap.xml",
+      "sitemapXmlStatus": 200,
+      "isIndex": false,
+      "locCount": 5,
+      "urlCount": 5
+    }
+  },
+  "perf": {
+    "transferBytes": 2127436,
+    "requests": 41,
+    "ttfbMs": 546,
+    "serverResponseMs": 253,
+    "domContentLoadedMs": 1374,
+    "loadMs": 1451,
+    "documentTransferBytes": 47516,
+    "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "mobile": {
+      "performance": 61,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "5.9 s",
+      "cls": "0.104",
+      "tbt": "300 ms",
+      "fcp": "2.3 s",
+      "speedIndex": "6.1 s",
+      "totalByteWeight": 900037,
+      "requests": 26,
+      "serverResponseMs": 151,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://plazaseafood.netlify.app/",
+      "warnings": []
+    },
+    "desktop": {
+      "performance": 86,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcp": "1.5 s",
+      "cls": "0",
+      "tbt": "50 ms",
+      "fcp": "1.2 s",
+      "speedIndex": "2.6 s",
+      "totalByteWeight": 871982,
+      "requests": 26,
+      "serverResponseMs": 49,
+      "failingAudits": {
+        "accessibility": [],
+        "bestPractices": [],
+        "seo": []
+      },
+      "consoleErrors": [],
+      "finalUrl": "https://plazaseafood.netlify.app/",
+      "warnings": []
+    }
+  },
+  "languages": {
+    "htmlLang": "en",
+    "hreflang": [],
+    "toggles": [
+      "EN/ES"
+    ],
+    "translateWidgets": [
+      "[data-lang]"
+    ],
+    "spanishLinks": [],
+    "elementsLangEs": 0,
+    "spanishWordShare": 0.025,
+    "spanishLines": []
+  },
+  "notableFeatures": [],
+  "designNotes": null,
+  "businessSummary": null,
+  "keyCopy": [],
+  "pages": [
+    "https://plazaseafood.netlify.app/story",
+    "https://plazaseafood.netlify.app/menu",
+    "https://plazaseafood.netlify.app/wholesale",
+    "https://plazaseafood.netlify.app/visit"
+  ],
+  "signals": {
+    "iframes": [],
+    "videos": [
+      {
+        "src": "https://plazaseafood.netlify.app/assets/video/ice.mp4",
+        "autoplay": false,
+        "muted": true,
+        "loop": true,
+        "poster": true,
+        "width": 1440,
+        "height": 900,
+        "top": 10017,
+        "playing": false
+      }
+    ],
+    "forms": [],
+    "canvases": 0,
+    "lottie": 0,
+    "copyright": [
+      "© 2026 Plaza Seafood Market · From the dock to your door."
+    ],
+    "featureHints": [
+      "1 video element(s)",
+      "language toggle"
+    ]
+  },
+  "issues": {
+    "lorem": [],
+    "placeholders": [],
+    "mixedContent": [],
+    "brokenImages": [
+      "data:image/gif;base64,R0lGODlhAQABAAAAACw="
+    ],
+    "emptyHashLinks": [],
+    "httpErrors": [],
+    "failedRequests": [],
+    "insecureRequests": [],
+    "consoleErrors": [],
+    "mobileOverflowPx": 0
+  },
+  "screenshots": {
+    "pageHeight": {
+      "desktop": 12435,
+      "mobile": 17153
+    },
+    "modes": {
+      "full": "forced",
+      "hero": "normal",
+      "mobile": "normal",
+      "mobileFull": "normal"
+    },
+    "hiddenBlocks": {
+      "full": 0,
+      "hero": 0,
+      "mobile": 0,
+      "mobileFull": 0
+    },
+    "dismissed": [],
+    "files": {
+      "hero.webp": {
+        "width": 1920,
+        "height": 1200,
+        "bytes": 246500,
+        "quality": 80,
+        "sourceHeight": 1800
+      },
+      "hero-960.webp": {
+        "width": 960,
+        "height": 600,
+        "bytes": 81164,
+        "quality": 78,
+        "sourceHeight": 1800
+      },
+      "full.webp": {
+        "width": 1200,
+        "height": 7200,
+        "bytes": 595538,
+        "quality": 72,
+        "sourceHeight": 8640
+      },
+      "mobile.webp": {
+        "width": 780,
+        "height": 1688,
+        "bytes": 166852,
+        "quality": 78,
+        "sourceHeight": 2532
+      },
+      "mobile-full.webp": {
+        "width": 600,
+        "height": 6000,
+        "bytes": 277156,
+        "quality": 70,
+        "sourceHeight": 7800
+      }
+    }
+  },
+  "liveSite": {
+    "url": "https://plazaseafoodmarket.com/",
+    "finalUrl": "https://plazaseafoodmarket.com/",
+    "status": 200,
+    "title": "Home - Plaza Seafood Market",
+    "generator": null,
+    "server": "nginx/1.11.9",
+    "hosting": [
+      "nginx"
+    ],
+    "differsFromCapture": true,
+    "heroDifference": 0.395,
+    "beforeHero": "before-hero.webp"
+  }
+}

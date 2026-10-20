@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-19 -19 138 138"><defs>
+  <linearGradient id="f" gradientUnits="userSpaceOnUse" x1="0" y1="100" x2="100" y2="0">
+    <stop offset="0" stop-color="#ff8a1e"/><stop offset=".38" stop-color="#ff4a3a"/>
+    <stop offset=".7" stop-color="#f02c6e"/><stop offset="1" stop-color="#c8238f"/>
+  </linearGradient></defs>
+  <g transform="rotate(31.7175 50 50)" fill="url(#f)" >
+    <polygon points="0,20 20,20 20,80 60,80 60,100 0,100"/>
+    <polygon points="100,80 80,80 80,20 40,20 40,0 100,0"/>
+  </g></svg>

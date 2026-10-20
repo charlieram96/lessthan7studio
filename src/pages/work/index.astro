@@ -1,0 +1,251 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import { PROJECTS, img } from '../../data/projects';
+import { breadcrumbs, webPage } from '../../lib/schema';
+
+const title = 'Work: website case studies | lessthan7, Miami web design';
+const description =
+  'Case studies from lessthan7: websites for law firms, clinics, villas, academies, artists and Miami businesses, designed and built to load fast and rank.';
+
+const groups = Array.from(new Set(PROJECTS.map((p) => p.group))).filter(Boolean);
+const itemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: PROJECTS.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `https://lessthan7.studio/work/${p.slug}/`,
+    name: p.name,
+  })),
+};
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/work/"
+  image="/og/work.png"
+  jsonLd={[
+    webPage({ path: '/work/', name: title, description, type: 'CollectionPage' }),
+    itemList,
+    breadcrumbs([
+      { name: 'Home', path: '/' },
+      { name: 'Work', path: '/work/' },
+    ]),
+  ]}
+>
+  <PageHero
+    eyebrow="Work"
+    lines={['Recent first', 'impressions.']}
+    lede={`${PROJECTS.length} websites we designed and built, each one fast, readable and ready for search. Pick one to see what we did and how it performs.`}
+  />
+
+  <section class="wi" data-work-index aria-label="Projects">
+    <div class="wi__wrap">
+      <div class="wi__filters" role="group" aria-label="Filter by industry">
+        <button type="button" class="wi__filter" aria-pressed="true" data-filter="all">All <span class="tnum">{PROJECTS.length}</span></button>
+        {
+          groups.map((g) => (
+            <button type="button" class="wi__filter" aria-pressed="false" data-filter={g}>
+              {g} <span class="tnum">{PROJECTS.filter((p) => p.group === g).length}</span>
+            </button>
+          ))
+        }
+      </div>
+
+      <ul class="wi__list" role="list" data-wi-list>
+        {
+          PROJECTS.map((p) => (
+            <li class="wi__item" data-group={p.group} style={`--accent:${p.accent}`}>
+              <a href={`/work/${p.slug}/`} class="wi__row" data-cursor="View" data-preview={img(p.slug, 'hero-960.webp')}>
+                <span class="wi__thumb">
+                  <img src={img(p.slug, 'hero-960.webp')} alt="" width="960" height="600" loading="lazy" decoding="async" />
+                </span>
+                <span class="wi__name">{p.name}</span>
+                <span class="wi__industry">{p.industry}</span>
+                <span class="wi__services">{p.services.slice(0, 3).join(' · ')}</span>
+                <span class="wi__arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="wi__preview" aria-hidden="true" data-wi-preview><img alt="" data-wi-preview-img /></div>
+  </section>
+</Base>
+
+<style>
+  .wi {
+    position: relative;
+    padding-bottom: var(--space-3xl);
+  }
+
+  .wi__wrap {
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .wi__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: var(--space-l);
+  }
+
+  .wi__filter {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    padding: 0.6em 1em;
+    border: 1px solid var(--line-strong);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .wi__filter span {
+    font-size: 0.75rem;
+    color: var(--text-faint);
+  }
+
+  .wi__filter[aria-pressed='true'] {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--paper);
+  }
+
+  .wi__filter[aria-pressed='true'] span {
+    color: var(--ink);
+  }
+
+  .wi__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+
+  .wi__item[hidden] {
+    display: none;
+  }
+
+  .wi__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--space-m);
+    padding: clamp(1.1rem, 2.2vw, 1.8rem) 0;
+    border-bottom: 1px solid var(--line);
+    isolation: isolate;
+  }
+
+  .wi__row::before {
+    content: '';
+    position: absolute;
+    inset: 0 calc(-1 * var(--gutter));
+    z-index: -1;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .wi__row:hover::before,
+  .wi__row:focus-visible::before {
+    opacity: 1;
+  }
+
+  .wi__thumb {
+    display: none;
+  }
+
+  .wi__name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-stretch: 110%;
+    font-size: clamp(1.7rem, 1rem + 2.8vw, 3.6rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    transition: transform 0.6s var(--ease-out);
+  }
+
+  .wi__row:hover .wi__name,
+  .wi__row:focus-visible .wi__name {
+    transform: translateX(0.75rem);
+  }
+
+  .wi__industry,
+  .wi__services {
+    color: var(--text-mute);
+    font-size: var(--step--1);
+  }
+
+  .wi__arrow svg {
+    width: 1.8rem;
+    transition: transform 0.5s var(--ease-out);
+  }
+
+  .wi__row:hover .wi__arrow svg {
+    transform: translateX(0.4rem);
+  }
+
+  .wi__preview {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    width: min(30vw, 440px);
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.85);
+    box-shadow: 0 40px 80px -30px rgb(0 0 0 / 0.85);
+  }
+
+  .wi__preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  @media (max-width: 900px) {
+    .wi__row {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    .wi__thumb {
+      display: block;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 0 0 1px var(--line);
+    }
+
+    .wi__thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .wi__services,
+    .wi__arrow {
+      display: none;
+    }
+
+    .wi__preview {
+      display: none;
+    }
+  }
+</style>

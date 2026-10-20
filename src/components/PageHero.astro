@@ -1,0 +1,102 @@
+---
+interface Props {
+  eyebrow: string;
+  /** Lines of the title; each animates up from its own mask */
+  lines: string[];
+  lede?: string;
+  compact?: boolean;
+}
+
+const { eyebrow, lines, lede, compact = false } = Astro.props;
+---
+
+<header class:list={['page-hero', { 'page-hero--compact': compact }]}>
+  <div class="page-hero__glow" aria-hidden="true"></div>
+  <div class="page-hero__inner">
+    <p class="eyebrow" data-reveal>{eyebrow}</p>
+    <h1 class="page-hero__title display">
+      {
+        lines.map((line) => (
+          <span class="line-mask">
+            <span class="page-hero__line">{line}</span>
+          </span>
+        ))
+      }
+    </h1>
+    {lede && <p class="page-hero__lede" data-reveal>{lede}</p>}
+    <slot />
+  </div>
+</header>
+
+<style>
+  .page-hero {
+    position: relative;
+    padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + var(--space-2xl));
+    padding-bottom: var(--space-2xl);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .page-hero--compact {
+    padding-bottom: var(--space-xl);
+  }
+
+  .page-hero__glow {
+    position: absolute;
+    right: -20vmax;
+    top: -30vmax;
+    width: 80vmax;
+    height: 80vmax;
+    z-index: -1;
+    background: radial-gradient(closest-side, rgb(255 74 58 / 0.2), rgb(200 35 143 / 0.08) 50%, transparent);
+    pointer-events: none;
+  }
+
+  .page-hero__inner {
+    display: grid;
+    gap: var(--space-m);
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .page-hero__title {
+    font-size: var(--step-6);
+  }
+
+  .page-hero__line {
+    display: block;
+  }
+
+  /* Visible on first paint (good LCP); the settle animation only moves it. */
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.js) .page-hero__line {
+      animation: hero-settle 1.2s var(--ease-out) both;
+    }
+
+    :global(.js) .line-mask:nth-child(2) .page-hero__line {
+      animation-delay: 0.08s;
+    }
+
+    :global(.js) .line-mask:nth-child(3) .page-hero__line {
+      animation-delay: 0.16s;
+    }
+  }
+
+  @keyframes hero-settle {
+    from {
+      transform: translate3d(0, 60%, 0) skewY(4deg);
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  .page-hero__lede {
+    max-width: 46ch;
+    font-size: var(--step-1);
+    line-height: 1.45;
+    color: var(--text-mute);
+  }
+</style>

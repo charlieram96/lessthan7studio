@@ -1,0 +1,310 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const steps = [
+  { key: 'fetch', label: 'Read the homepage' },
+  { key: 'audit', label: 'Measure speed, SEO and accessibility' },
+  { key: 'research', label: 'Research the business and competitors' },
+  { key: 'strategy', label: 'Write the analysis and three directions' },
+  { key: 'concepts', label: 'Design concepts A, B and C' },
+  { key: 'done', label: 'Assemble the report' },
+];
+---
+
+<Base
+  title="Lab | lessthan7"
+  description="Internal tools."
+  path="/lab/"
+  noindex
+  quietFooter
+>
+  <section class="lab" data-lab>
+    <div class="lab__wrap">
+      <header class="lab__head">
+        <p class="eyebrow">lessthan7 lab · internal</p>
+        <h1 class="lab__title display">Revamp report generator</h1>
+        <p class="lab__lede">
+          Paste a prospect’s website. Claude Opus 5.5 reads it, measures it, researches the business and designs three
+          redesign directions. You get a report to present and export as a PDF.
+        </p>
+      </header>
+
+      <div class="lab__grid">
+        <form class="lab__form" data-lab-form novalidate>
+          <div class="lfield">
+            <label for="lab-url">Website address</label>
+            <input id="lab-url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="prospectbusiness.com" required />
+          </div>
+          <div class="lab__row">
+            <div class="lfield">
+              <label for="lab-name">Business name <span>optional</span></label>
+              <input id="lab-name" name="businessName" type="text" autocomplete="organization" />
+            </div>
+            <div class="lfield">
+              <label for="lab-for">Prepared for <span>optional</span></label>
+              <input id="lab-for" name="preparedFor" type="text" placeholder="Contact name on the cover" />
+            </div>
+          </div>
+          <div class="lfield">
+            <label for="lab-notes">Notes for the analysis <span>optional</span></label>
+            <textarea id="lab-notes" name="notes" rows="4" placeholder="Goals, audience, services to emphasize, what they asked for…"></textarea>
+          </div>
+          <div class="lfield">
+            <label for="lab-code">Access code</label>
+            <input id="lab-code" name="code" type="password" autocomplete="current-password" required />
+          </div>
+          <div class="lab__submit">
+            <button type="submit" class="btn btn--sun" data-lab-go>
+              <span data-lab-go-label>Generate report</span>
+            </button>
+            <p class="lab__hint">Takes about 4 to 8 minutes and roughly $1–2 of API usage.</p>
+          </div>
+          <p class="lab__error" role="alert" data-lab-error></p>
+        </form>
+
+        <aside class="lab__side">
+          <div class="lab__progress" data-lab-progress hidden>
+            <p class="lab__progress-title">Generating <span class="tnum" data-lab-elapsed>0:00</span></p>
+            <div class="lab__bar"><span data-lab-bar></span></div>
+            <ol class="lab__steps" role="list">
+              {steps.map((s) => <li data-step={s.key}><i aria-hidden="true"></i>{s.label}</li>)}
+            </ol>
+            <p class="lab__msg" aria-live="polite" data-lab-msg></p>
+            <p class="lab__keep">You can close this tab. The report will be at <a class="link" href="#" data-lab-link>this link</a>.</p>
+          </div>
+
+          <div class="lab__recent">
+            <p class="lab__recent-title">Reports</p>
+            <ul role="list" data-lab-recent>
+              <li><a href="/lab/report/?id=sample" class="lab__item"><b>Sample report</b><span>Seagrape Family Dental (fictional)</span></a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .lab {
+    padding-top: calc(var(--header-h) + var(--space-xl));
+    padding-bottom: var(--space-3xl);
+  }
+
+  .lab__wrap {
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .lab__head {
+    display: grid;
+    gap: var(--space-s);
+    margin-bottom: var(--space-xl);
+  }
+
+  .lab__title {
+    font-size: var(--step-5);
+  }
+
+  .lab__lede {
+    max-width: 58ch;
+    color: var(--text-mute);
+    font-size: var(--step-1);
+    line-height: 1.5;
+  }
+
+  .lab__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: var(--space-l);
+    align-items: start;
+  }
+
+  .lab__form {
+    display: grid;
+    gap: var(--space-m);
+    padding: clamp(20px, 3vw, 40px);
+    background: var(--ink-raised);
+    box-shadow: 0 0 0 1px var(--line);
+  }
+
+  .lab__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-m);
+  }
+
+  .lfield {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .lfield label {
+    font-size: var(--step--1);
+    font-weight: 600;
+  }
+
+  .lfield label span {
+    margin-left: 0.3rem;
+    font-weight: 400;
+    color: var(--text-faint);
+  }
+
+  .lfield input,
+  .lfield textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: var(--ink);
+    border: 1px solid var(--line-strong);
+    border-radius: 2px;
+    font-size: 1rem;
+  }
+
+  .lfield input:focus-visible,
+  .lfield textarea:focus-visible {
+    outline: none;
+    border-color: var(--sun-1);
+    box-shadow: 0 0 0 3px rgb(255 138 30 / 0.25);
+  }
+
+  .lab__submit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+  }
+
+  .lab__hint {
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .lab__error {
+    min-height: 1.2em;
+    color: #ff8f8f;
+  }
+
+  .lab__side {
+    display: grid;
+    gap: var(--space-m);
+  }
+
+  .lab__progress,
+  .lab__recent {
+    padding: clamp(20px, 2.4vw, 32px);
+    border: 1px solid var(--line);
+  }
+
+  .lab__progress-title,
+  .lab__recent-title {
+    margin-bottom: 1rem;
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .lab__bar {
+    height: 3px;
+    margin-bottom: 1.2rem;
+    background: var(--line);
+  }
+
+  .lab__bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--sun);
+    transition: width 0.8s var(--ease-out);
+  }
+
+  .lab__steps {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--text-faint);
+  }
+
+  .lab__steps li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .lab__steps i {
+    flex: none;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid currentColor;
+    transform: rotate(var(--lean));
+  }
+
+  .lab__steps li.is-active {
+    color: var(--paper);
+  }
+
+  .lab__steps li.is-active i {
+    border-color: var(--sun-2);
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+
+  .lab__steps li.is-done {
+    color: var(--text-mute);
+  }
+
+  .lab__steps li.is-done i {
+    background: var(--sun-2);
+    border-color: var(--sun-2);
+  }
+
+  @keyframes pulse {
+    50% { opacity: 0.3; }
+  }
+
+  .lab__msg {
+    margin-top: 1rem;
+    min-height: 1.4em;
+  }
+
+  .lab__keep {
+    margin-top: 0.6rem;
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .lab__recent ul {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .lab__item {
+    display: grid;
+    gap: 0.1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .lab__item span {
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .lab__item:hover b {
+    color: var(--sun-1);
+  }
+
+  @media (max-width: 900px) {
+    .lab__grid,
+    .lab__row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

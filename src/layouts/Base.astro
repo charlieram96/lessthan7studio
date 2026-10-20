@@ -1,0 +1,175 @@
+---
+import '../styles/global.css';
+import archivoUrl from '../assets/fonts/archivo-var.woff2?url';
+import instrumentUrl from '../assets/fonts/instrument-sans-var.woff2?url';
+import Seo, { type SeoProps } from '../components/Seo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Loader from '../components/Loader.astro';
+import { organization, website } from '../lib/schema';
+
+interface Props extends SeoProps {
+  /** Show the first-visit construction intro (home page only). */
+  intro?: boolean;
+  bodyClass?: string;
+  /** Hide the big footer call to action (e.g. on the contact page). */
+  quietFooter?: boolean;
+}
+
+const { intro = false, bodyClass, quietFooter = false, jsonLd = [], ...seo } = Astro.props;
+const schema = [organization(), website(), ...jsonLd];
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d0b14" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preload" href={archivoUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={instrumentUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Seo {...seo} jsonLd={schema} />
+    <script is:inline define:vars={{ intro }}>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add('js');
+        var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (rm) d.classList.add('reduced-motion');
+        var seen = false;
+        try {
+          seen = sessionStorage.getItem('lt7-intro') === '1';
+        } catch (e) {}
+        if (!intro || seen || rm || navigator.webdriver) d.classList.add('no-intro');
+        else d.classList.add('is-loading');
+        setTimeout(function () {
+          if (!window.__lt7) d.classList.add('reveal-failsafe');
+        }, 3500);
+      })();
+    </script>
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    {intro && <Loader />}
+    <Header />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer quiet={quietFooter} />
+    <div class="cursor" aria-hidden="true" data-cursor-el>
+      <div class="cursor__dot"></div>
+      <div class="cursor__frame"><span class="cursor__label" data-cursor-label></span></div>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+    <script>
+      import '../scripts/app';
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  html.is-loading,
+  html.is-loading body {
+    overflow: hidden;
+  }
+
+  main:focus {
+    outline: none;
+  }
+
+  .cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 300;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .has-cursor .cursor {
+    opacity: 1;
+  }
+
+  .cursor__dot,
+  .cursor__frame {
+    position: absolute;
+    left: 0;
+    top: 0;
+    will-change: transform;
+  }
+
+  .cursor__dot {
+    width: 6px;
+    height: 6px;
+    margin: -3px 0 0 -3px;
+    border-radius: 50%;
+    background: var(--paper);
+    mix-blend-mode: difference;
+  }
+
+  .cursor__frame {
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+    display: grid;
+    place-items: center;
+  }
+
+  .cursor__frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgb(243 241 247 / 0.55);
+    transform: rotate(var(--lean)) scale(var(--cursor-scale, 1));
+    transition:
+      transform 0.45s var(--ease-out),
+      background-color 0.35s ease,
+      border-color 0.35s ease;
+  }
+
+  .cursor.is-link .cursor__frame::before {
+    --cursor-scale: 1.6;
+    border-color: transparent;
+    background: rgb(255 74 58 / 0.18);
+  }
+
+  .cursor.is-view .cursor__frame::before {
+    --cursor-scale: 2.9;
+    border-color: transparent;
+    background: var(--sun);
+  }
+
+  .cursor__label {
+    position: relative;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0;
+    transform: scale(0.6);
+    transition:
+      opacity 0.3s ease,
+      transform 0.4s var(--ease-out);
+    white-space: nowrap;
+  }
+
+  .cursor.is-view .cursor__label {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    .cursor {
+      display: none;
+    }
+  }
+</style>

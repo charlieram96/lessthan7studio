@@ -1,0 +1,604 @@
+---
+import Mark from '../Mark.astro';
+import { MILESTONES } from '../../data/milestones';
+
+const ticks = [0, 1, 2, 3, 4, 5, 6, 7];
+---
+
+<section class="scene" data-scene aria-label="Introduction">
+  <!-- Layer B: the hero. Sits on top; scrolling dives through the mark's square. -->
+  <div class="scene__b hero" data-scene-b>
+    <div class="hero__bg" data-hero-bg aria-hidden="true">
+      <div class="hero__glow"></div>
+      <canvas class="hero__gl" data-hero-gl></canvas>
+    </div>
+
+    <div class="hero__mark-wrap" data-hero-mark-wrap aria-hidden="true">
+      <div class="hero__mark-tilt" data-hero-tilt>
+        <Mark class="hero__mark" />
+      </div>
+    </div>
+
+    <div class="hero__content">
+      <p class="eyebrow hero__eyebrow" data-hero-in>Design · Development · SEO <span aria-hidden="true">—</span> Miami</p>
+      <h1 class="hero__title display" data-hero-title>
+        <span class="hero__line">Make the first</span>
+        <span class="hero__line">seven seconds</span>
+        <span class="hero__line">count.</span>
+      </h1>
+      <p class="hero__lede" data-hero-in>
+        We design and build fast, detail-obsessed websites for businesses that can’t afford a forgettable first
+        impression. SEO is built in from the first line of code.
+      </p>
+      <div class="hero__ctas" data-hero-in>
+        <a href="/work/" class="btn btn--sun" data-magnetic="0.25">
+          See the work
+          <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+        </a>
+        <a href="/contact/" class="btn btn--ghost" data-magnetic="0.2">Start a project</a>
+      </div>
+    </div>
+
+    <div class="hero__bar" data-hero-in>
+      <p class="hero__bar-item">Websites for law, health, hospitality, real estate and more</p>
+      <p class="hero__bar-item hero__impression" aria-live="off">
+        <span data-impression>Your first impression of this page is forming.</span>
+      </p>
+      <p class="hero__bar-item hero__scrollhint"><span class="hero__scrollline" aria-hidden="true"></span>Scroll</p>
+    </div>
+  </div>
+
+  <!-- Layer A: the first seven seconds. Revealed through the mark. -->
+  <div class="scene__a paper" data-scene-a>
+    <div class="t7">
+      <div class="t7__head">
+        <p class="eyebrow">The first seven seconds</p>
+        <h2 class="t7__title">What happens before a visitor decides to stay.</h2>
+      </div>
+
+      <div class="t7__clock" aria-hidden="true">
+        <span class="t7__num tnum" data-t7-num>0.00</span><span class="t7__unit">s</span>
+      </div>
+
+      <ol class="t7__list" role="list">
+        {
+          MILESTONES.map((m, i) => (
+            <li class="t7__item" data-t7-item data-time={m.t} data-index={i}>
+              <p class="t7__time">{m.label}</p>
+              <h3 class="t7__h">{m.title}</h3>
+              <p class="t7__body">{m.body}</p>
+              {m.source && <p class="t7__source">Source: {m.source}</p>}
+              <p class="t7__answer">
+                <span class="t7__answer-label">Our answer</span>
+                <span>{m.answer}</span>
+              </p>
+              <a href={m.link.href} class="t7__link link">
+                {m.link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="t7__bar" aria-hidden="true">
+        <div class="t7__track">
+          <div class="t7__fill" data-t7-fill></div>
+          {MILESTONES.map((m) => <span class="t7__marker" style={`left:${(m.t / 7) * 100}%`} data-t7-marker />)}
+          <span class="t7__head-dot" data-t7-playhead></span>
+        </div>
+        <div class="t7__ticks">
+          {
+            ticks.map((t) => (
+              <span class="t7__tick" style={`left:${(t / 7) * 100}%`}>
+                {t}s
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ---------- Static layout (no JS, reduced motion): hero, then the seven seconds ---------- */
+  .scene {
+    position: relative;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+    background: var(--ink);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    background: var(--ink);
+  }
+
+  .hero__gl {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+
+  .hero__gl.is-ready {
+    opacity: 1;
+  }
+
+  .hero__glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(42% 52% at 74% 44%, rgb(255 90 46 / 0.32), transparent 70%),
+      radial-gradient(36% 44% at 88% 72%, rgb(214 38 143 / 0.26), transparent 70%),
+      radial-gradient(60% 60% at 10% 100%, rgb(255 138 30 / 0.07), transparent 70%);
+  }
+
+  .hero__mark-wrap {
+    position: absolute;
+    left: 71%;
+    top: 47%;
+    width: min(46vw, 760px);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    perspective: 1200px;
+    pointer-events: none;
+  }
+
+  .hero__mark-tilt {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .hero__mark-wrap :global(.hero__mark) {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 30px 80px rgb(255 74 58 / 0.25));
+  }
+
+  .hero__content {
+    align-self: center;
+    display: grid;
+    gap: var(--space-m);
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding: var(--space-xl) var(--gutter-r) var(--space-l) var(--gutter);
+  }
+
+  .hero__title {
+    font-size: min(clamp(2.9rem, 1rem + 6.4vw, 8.4rem), 14.5vh);
+  }
+
+  .hero__line {
+    display: block;
+    transform-origin: 0 100%;
+  }
+
+  /* Initial states for the intro; the failsafe and reduced motion keep everything visible. */
+  :global(.js.no-intro:not(.reduced-motion)) .hero__line,
+  :global(.js:not(.reduced-motion)) [data-hero-in],
+  :global(.js:not(.reduced-motion)) .hero__mark-wrap :global(.mark__l),
+  :global(.js:not(.reduced-motion)) .hero__mark-wrap :global(.mark__7) {
+    opacity: 0;
+  }
+
+  :global(.js.reveal-failsafe) .hero__line,
+  :global(.js.reveal-failsafe) [data-hero-in],
+  :global(.js.reveal-failsafe) .hero__mark-wrap :global(.mark__l),
+  :global(.js.reveal-failsafe) .hero__mark-wrap :global(.mark__7) {
+    opacity: 1;
+  }
+
+  .hero__lede {
+    max-width: 44ch;
+    font-size: var(--step-1);
+    line-height: 1.45;
+    color: #c9c3d4;
+  }
+
+  .hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero__bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    gap: var(--space-s);
+    width: 100%;
+    max-width: var(--max);
+    margin-inline: auto;
+    padding: 0 var(--gutter-r) calc(var(--space-m) + env(safe-area-inset-bottom, 0px)) var(--gutter);
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .hero__impression {
+    text-align: center;
+    color: var(--text-mute);
+  }
+
+  .hero__impression :global(b) {
+    color: var(--paper);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hero__scrollhint {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero__scrollline {
+    position: relative;
+    width: 42px;
+    height: 1px;
+    background: var(--line-strong);
+    overflow: hidden;
+  }
+
+  .hero__scrollline::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--sun);
+    transform: translateX(-100%);
+    animation: scrollhint 2.4s var(--ease-in-out) infinite;
+  }
+
+  @keyframes scrollhint {
+    0% { transform: translateX(-100%); }
+    55% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+  }
+
+  @media (max-width: 900px) {
+    .hero__mark-wrap {
+      left: 76%;
+      top: 30%;
+      width: 78vw;
+      opacity: 0.85;
+    }
+
+    .hero__content {
+      align-self: end;
+    }
+
+    .hero__bar {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__bar-item:first-child,
+    .hero__scrollhint {
+      display: none;
+    }
+
+    .hero__impression {
+      text-align: left;
+    }
+  }
+
+  /* ---------- The seven seconds (static) ---------- */
+  .scene__a {
+    position: relative;
+  }
+
+  .t7 {
+    display: grid;
+    gap: var(--space-l);
+    max-width: var(--max);
+    margin-inline: auto;
+    padding: var(--space-3xl) var(--gutter-r) var(--space-2xl) var(--gutter);
+  }
+
+  .t7__title {
+    font-size: var(--step-4);
+    max-width: 16ch;
+  }
+
+  .t7__clock {
+    display: none;
+  }
+
+  .t7__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap: var(--space-l) var(--space-m);
+  }
+
+  .t7__item {
+    display: grid;
+    align-content: start;
+    gap: 0.7rem;
+    padding-top: var(--space-s);
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .t7__time {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-stretch: 62%;
+    font-size: var(--step-4);
+    line-height: 0.9;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .t7__h {
+    font-size: var(--step-2);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  .t7__body {
+    color: var(--text-mute);
+    max-width: 46ch;
+  }
+
+  .t7__source {
+    font-size: var(--step--1);
+    color: var(--text-faint);
+  }
+
+  .t7__answer {
+    display: grid;
+    gap: 0.2rem;
+    font-weight: 600;
+  }
+
+  .t7__answer-label {
+    font-size: var(--step--2);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+  }
+
+  .t7__link {
+    justify-self: start;
+    font-weight: 600;
+  }
+
+  .t7__bar {
+    display: none;
+  }
+
+  /* ---------- Pinned scene (JS + motion) ---------- */
+  .scene.is-pinned {
+    height: 100vh;
+    height: 100lvh;
+    overflow: hidden;
+  }
+
+  .scene.is-pinned .scene__b,
+  .scene.is-pinned .scene__a {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene.is-pinned .scene__b {
+    z-index: 2;
+    min-height: 0;
+    height: 100%;
+    background: transparent;
+  }
+
+  .scene.is-pinned .hero__bg {
+    will-change: clip-path;
+  }
+
+  .scene.is-pinned .scene__a {
+    z-index: 1;
+  }
+
+  .scene.is-pinned .t7 {
+    position: relative;
+    height: 100%;
+    max-width: none;
+    padding: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 1rem) var(--gutter-r)
+      calc(var(--space-m) + env(safe-area-inset-bottom, 0px)) var(--gutter);
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    column-gap: var(--space-xl);
+    row-gap: var(--space-s);
+  }
+
+  .scene.is-pinned .t7__head {
+    grid-column: 1 / -1;
+  }
+
+  .scene.is-pinned .t7__title {
+    font-size: var(--step-1);
+    letter-spacing: -0.02em;
+    color: var(--text-mute);
+    font-family: var(--font-body);
+    font-weight: 500;
+    max-width: none;
+    margin-top: 0.35rem;
+  }
+
+  .scene.is-pinned .t7__clock {
+    display: flex;
+    align-items: baseline;
+    align-self: center;
+    font-family: var(--font-display);
+    font-weight: 820;
+    font-stretch: 62%;
+    font-size: min(29vw, 50vh);
+    line-height: 0.76;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .scene.is-pinned .t7__unit {
+    font-size: 0.32em;
+    margin-left: 0.05em;
+    color: var(--accent-text);
+  }
+
+  .scene.is-pinned .t7__clock.is-seven .t7__num {
+    background: linear-gradient(100deg, #e0570f, #d22a2a 40%, #c01d5a 70%, #a11a78);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .scene.is-pinned .t7__list {
+    position: relative;
+    display: block;
+    align-self: stretch;
+    min-height: 18rem;
+  }
+
+  .scene.is-pinned .t7__item {
+    position: absolute;
+    inset: 0;
+    align-content: center;
+    border-top: 0;
+    padding-top: 0;
+    gap: 0.8rem;
+    visibility: hidden;
+  }
+
+  .scene.is-pinned .t7__time {
+    font-size: var(--step-1);
+    font-family: var(--font-body);
+    font-stretch: 100%;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--accent-text);
+  }
+
+  .scene.is-pinned .t7__h {
+    font-size: min(var(--step-4), 6.4vh);
+  }
+
+  .scene.is-pinned .t7__bar {
+    display: block;
+    grid-column: 1 / -1;
+    padding-bottom: 1.6rem;
+  }
+
+  .t7__track {
+    position: relative;
+    height: 2px;
+    background: var(--line-strong);
+  }
+
+  .t7__fill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #e0570f, #d22a2a 40%, #c01d5a 70%, #a11a78);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+  }
+
+  .t7__marker {
+    position: absolute;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    margin: -4.5px 0 0 -4.5px;
+    background: var(--bg);
+    border: 1.5px solid var(--text-faint);
+    transform: rotate(var(--lean));
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .t7__marker.is-passed {
+    background: var(--accent-text);
+    border-color: var(--accent-text);
+  }
+
+  .t7__head-dot {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    margin: -7.5px 0 0 -7.5px;
+    background: var(--text);
+    transform: rotate(var(--lean));
+  }
+
+  .t7__ticks {
+    position: relative;
+    height: 1.4rem;
+    margin-top: 0.7rem;
+    font-size: var(--step--1);
+    color: var(--text-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .t7__tick {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  .t7__tick:first-child {
+    transform: none;
+  }
+
+  .t7__tick:last-child {
+    transform: translateX(-100%);
+  }
+
+  @media (max-width: 900px) {
+    .scene.is-pinned .t7 {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr auto;
+      row-gap: var(--space-xs);
+    }
+
+    .scene.is-pinned .t7__clock {
+      font-size: min(40vw, 30vh);
+      align-self: start;
+    }
+
+    .scene.is-pinned .t7__list {
+      align-self: stretch;
+      min-height: 0;
+    }
+
+    .scene.is-pinned .t7__item {
+      align-content: start;
+    }
+
+    .scene.is-pinned .t7__h {
+      font-size: var(--step-3);
+    }
+
+    .scene.is-pinned .t7__body {
+      font-size: 0.98rem;
+    }
+  }
+
+  @media (max-width: 900px) and (max-height: 760px) {
+    .scene.is-pinned .t7__source,
+    .scene.is-pinned .t7__head .t7__title {
+      display: none;
+    }
+  }
+</style>

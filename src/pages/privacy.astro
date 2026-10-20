@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { SITE } from '../config';
+---
+
+<Base
+  title="Privacy policy | lessthan7"
+  description="How lessthan7 handles the information you share through this website."
+  path="/privacy/"
+>
+  <PageHero eyebrow="Legal" lines={['Privacy policy']} compact lede="Last updated October 2026." />
+  <section class="legal">
+    <div class="legal__wrap prose">
+      <h2>What we collect</h2>
+      <p>
+        When you send a message through our contact form, we receive the details you enter: your name, email address and
+        anything else you choose to share. Form submissions are processed by our hosting provider, Netlify, and delivered
+        to the studio inbox.
+      </p>
+      <h2>How we use it</h2>
+      <p>
+        We use your details only to reply to you and to discuss your project. We don’t sell or rent personal information,
+        and we don’t add you to a mailing list without asking.
+      </p>
+      <h2>Analytics and advertising</h2>
+      <p>
+        This site may load a Google tag to measure visits and the performance of our advertising. Google may set cookies
+        for this purpose. You can control ad personalization at
+        <a class="link" href="https://adssettings.google.com" rel="noopener" target="_blank">adssettings.google.com</a>
+        and block cookies in your browser settings.
+      </p>
+      <h2>Retention</h2>
+      <p>We keep project correspondence for as long as it’s useful for our working relationship, then delete it.</p>
+      <h2>Your choices</h2>
+      <p>
+        To see, correct or delete the information we hold about you, email
+        <a class="link" href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .legal {
+    padding-bottom: var(--space-3xl);
+  }
+
+  .legal__wrap {
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .legal h2 {
+    margin-top: var(--space-l);
+    margin-bottom: 0.6rem;
+    font-size: var(--step-2);
+    color: var(--text);
+  }
+
+  .legal p {
+    max-width: 62ch;
+  }
+</style>

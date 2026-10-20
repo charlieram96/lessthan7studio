@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import Scene from '../components/home/Scene.astro';
+import WorkReel from '../components/home/WorkReel.astro';
+import Marquee from '../components/home/Marquee.astro';
+import Services from '../components/home/Services.astro';
+import Process from '../components/home/Process.astro';
+import Details from '../components/home/Details.astro';
+import { SITE } from '../config';
+import { webPage } from '../lib/schema';
+
+const title = 'lessthan7 | Web design, development and SEO studio in Miami';
+const description = SITE.description;
+---
+
+<Base
+  title={title}
+  description={description}
+  path="/"
+  intro
+  jsonLd={[webPage({ path: '/', name: title, description })]}
+>
+  <div data-home>
+    <Scene />
+    <WorkReel />
+    <Marquee />
+    <Services />
+    <Process />
+    <Details />
+  </div>
+</Base>

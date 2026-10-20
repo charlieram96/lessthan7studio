@@ -1,0 +1,87 @@
+---
+const words = [
+  'Law',
+  'Healthcare',
+  'Real estate',
+  'Hospitality',
+  'Music education',
+  'Photography',
+  'Bridal beauty',
+  'Trading education',
+  'Marketing',
+  'Media',
+  'Seafood',
+];
+---
+
+<section class="marquee" aria-label="Industries we have designed for" data-marquee>
+  <p class="sr-only">Industries we have designed for: {words.join(', ')}.</p>
+  <div class="marquee__row" aria-hidden="true" data-marquee-row>
+    {
+      [0, 1].map(() => (
+        <div class="marquee__set">
+          {words.map((w) => (
+            <span class="marquee__item">
+              {w}
+              <svg class="marquee__sep" viewBox="-19 -2 138 104">
+                <g transform="rotate(31.7175 50 50)">
+                  <polygon points="0,20 20,20 20,80 60,80 60,100 0,100" />
+                  <polygon points="100,80 80,80 80,20 40,20 40,0 100,0" />
+                </g>
+              </svg>
+            </span>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .marquee {
+    position: relative;
+    padding-block: var(--space-xl);
+    background: var(--ink);
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .marquee__row {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+  }
+
+  .marquee__set {
+    display: flex;
+    flex: none;
+  }
+
+  .marquee__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding-right: 0.5em;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-stretch: 118%;
+    font-size: clamp(2.6rem, 7vw, 6.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(243 241 247 / 0.42);
+  }
+
+  .marquee__item:nth-child(3n + 1) {
+    color: var(--paper);
+    -webkit-text-stroke: 0;
+  }
+
+  .marquee__sep {
+    width: 0.62em;
+    height: auto;
+    fill: var(--sun-2);
+  }
+</style>

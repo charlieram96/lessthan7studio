@@ -1,0 +1,303 @@
+---
+/** Six small things we sweat. Each tile demonstrates its own detail on hover or focus. */
+---
+
+<section class="details paper" aria-labelledby="details-title">
+  <div class="details__wrap">
+    <header class="details__head">
+      <p class="eyebrow">The details</p>
+      <h2 id="details-title" class="details__title display">
+        <span class="line-mask"><span data-split-line>Nobody notices them.</span></span>
+        <span class="line-mask"><span data-split-line>Until they’re missing.</span></span>
+      </h2>
+      <p class="details__lede" data-reveal>
+        Six of the hundreds of small decisions behind every site we ship. Hover or tab through them.
+      </p>
+    </header>
+
+    <ul class="details__grid" role="list">
+      <li class="tile" tabindex="0" data-reveal>
+        <div class="tile__demo demo-optical" aria-hidden="true">
+          <span class="demo-optical__btn"><svg viewBox="0 0 40 40"><path d="M15 11 29 20 15 29Z"></path></svg></span>
+        </div>
+        <h3 class="tile__title">Optical alignment</h3>
+        <p class="tile__text">A triangle centered by the numbers looks off-center. We nudge it until it looks right.</p>
+      </li>
+
+      <li class="tile" tabindex="0" data-reveal>
+        <div class="tile__demo demo-hang" aria-hidden="true">
+          <p class="demo-hang__quote"><span class="demo-hang__mark">“</span>First impressions are made in milliseconds.”</p>
+        </div>
+        <h3 class="tile__title">Hanging punctuation</h3>
+        <p class="tile__text">Quote marks sit outside the text edge, so the left margin stays perfectly straight.</p>
+      </li>
+
+      <li class="tile" tabindex="0" data-reveal>
+        <div class="tile__demo demo-cls" aria-hidden="true">
+          <div class="demo-cls__frame"><span class="demo-cls__img"></span><span class="demo-cls__line"></span><span class="demo-cls__line demo-cls__line--short"></span></div>
+          <p class="demo-cls__score">CLS <b class="tnum">0.00</b></p>
+        </div>
+        <h3 class="tile__title">Zero layout shift</h3>
+        <p class="tile__text">Images reserve their space before they load, so nothing jumps while you read.</p>
+      </li>
+
+      <li class="tile" tabindex="0" data-reveal>
+        <div class="tile__demo demo-tnum" aria-hidden="true">
+          <div class="demo-tnum__col"><span>$1,111.11</span><span>$8,409.50</span><span>$2,999.00</span></div>
+        </div>
+        <h3 class="tile__title">Tabular figures</h3>
+        <p class="tile__text">Digits that line up in columns make prices and stats easy to compare at a glance.</p>
+      </li>
+
+      <li class="tile" tabindex="0" data-reveal>
+        <div class="tile__demo demo-focus" aria-hidden="true">
+          <span class="demo-focus__btn">Book a consultation</span>
+        </div>
+        <h3 class="tile__title">Focus you can see</h3>
+        <p class="tile__text">Keyboard users always know where they are. Accessibility is part of the build, never a patch.</p>
+      </li>
+
+      <li class="tile" tabindex="0" data-reveal>
+        <div class="tile__demo demo-schema" aria-hidden="true">
+          <pre class="demo-schema__code"><span class="k">"@type"</span>: <span class="s">"LocalBusiness"</span>,
+<span class="k">"name"</span>: <span class="s">"Your business"</span>,
+<span class="k">"areaServed"</span>: <span class="s">"Miami"</span>,
+<span class="k">"openingHours"</span>: <span class="s">"Mo-Sa 08:00-18:00"</span></pre>
+        </div>
+        <h3 class="tile__title">Structured data</h3>
+        <p class="tile__text">Schema markup tells Google exactly who you are, where you are and when you’re open.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .details {
+    padding-block: var(--space-3xl);
+  }
+
+  .details__wrap {
+    max-width: var(--max);
+    margin-inline: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter-r);
+  }
+
+  .details__head {
+    display: grid;
+    gap: var(--space-s);
+    margin-bottom: var(--space-xl);
+  }
+
+  .details__title {
+    font-size: var(--step-5);
+  }
+
+  .details__lede {
+    max-width: 44ch;
+    color: var(--text-mute);
+  }
+
+  .details__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: var(--line-strong);
+    border: 1px solid var(--line-strong);
+  }
+
+  .tile {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 0.6rem;
+    padding: clamp(20px, 2.4vw, 36px);
+    background: var(--bg);
+    outline-offset: -3px;
+  }
+
+  .tile__demo {
+    display: grid;
+    place-items: center;
+    height: clamp(150px, 15vw, 200px);
+    margin-bottom: var(--space-s);
+    background: #e9e6ef;
+    overflow: hidden;
+  }
+
+  .tile__title {
+    font-size: var(--step-2);
+    letter-spacing: -0.03em;
+  }
+
+  .tile__text {
+    color: var(--text-mute);
+    max-width: 38ch;
+  }
+
+  /* Optical alignment */
+  .demo-optical__btn {
+    display: grid;
+    place-items: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+
+  .demo-optical__btn svg {
+    width: 40px;
+    fill: var(--paper);
+    transform: translateX(-3px);
+    transition: transform 0.6s var(--ease-snap);
+  }
+
+  .tile:hover .demo-optical__btn svg,
+  .tile:focus-visible .demo-optical__btn svg {
+    transform: translateX(0.5px);
+  }
+
+  /* Hanging punctuation */
+  .demo-hang__quote {
+    position: relative;
+    width: 72%;
+    padding-left: 0;
+    border-left: 2px solid #b81e52;
+    padding-inline-start: 14px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .demo-hang__mark {
+    display: inline-block;
+    transition: margin 0.6s var(--ease-snap);
+  }
+
+  .tile:hover .demo-hang__mark,
+  .tile:focus-visible .demo-hang__mark {
+    margin-left: -0.42em;
+  }
+
+  /* Layout shift */
+  .demo-cls {
+    gap: 0.6rem;
+  }
+
+  .demo-cls__frame {
+    display: grid;
+    gap: 8px;
+    width: 64%;
+    padding: 12px;
+    background: #fff;
+    box-shadow: 0 10px 30px -18px rgb(20 17 28 / 0.4);
+  }
+
+  .demo-cls__img {
+    display: block;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(110deg, #e2dee9 30%, #f4f2f7 50%, #e2dee9 70%) 0 0 / 200% 100%;
+    animation: shimmer 1.8s linear infinite;
+  }
+
+  .tile:hover .demo-cls__img,
+  .tile:focus-visible .demo-cls__img {
+    animation: none;
+    background: var(--sun);
+  }
+
+  .demo-cls__line {
+    height: 7px;
+    background: #d9d4e2;
+  }
+
+  .demo-cls__line--short {
+    width: 60%;
+  }
+
+  .demo-cls__score {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-mute);
+  }
+
+  .demo-cls__score b {
+    color: #16794a;
+  }
+
+  @keyframes shimmer {
+    to { background-position: -200% 0; }
+  }
+
+  /* Tabular figures */
+  .demo-tnum__col {
+    display: grid;
+    justify-items: end;
+    gap: 0.25rem;
+    font-family: var(--font-display);
+    font-weight: 650;
+    font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+    font-variant-numeric: proportional-nums;
+    transition: none;
+  }
+
+  .tile:hover .demo-tnum__col,
+  .tile:focus-visible .demo-tnum__col {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Focus */
+  .demo-focus__btn {
+    padding: 0.9rem 1.3rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 600;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+    transition:
+      outline-color 0.3s ease,
+      outline-offset 0.4s var(--ease-snap);
+  }
+
+  .tile:hover .demo-focus__btn,
+  .tile:focus-visible .demo-focus__btn {
+    outline-color: #b81e52;
+    outline-offset: 5px;
+  }
+
+  /* Schema */
+  .demo-schema__code {
+    margin: 0;
+    padding: 0 1rem;
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: clamp(0.66rem, 0.9vw, 0.78rem);
+    line-height: 1.7;
+    color: #3f3a4c;
+    white-space: pre;
+    overflow: hidden;
+  }
+
+  .demo-schema__code .k {
+    color: #b81e52;
+  }
+
+  .demo-schema__code .s {
+    color: #16794a;
+  }
+
+  @media (max-width: 1100px) {
+    .details__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .details__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

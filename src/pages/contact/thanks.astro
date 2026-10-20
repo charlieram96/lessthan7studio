@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+---
+
+<Base
+  title="Message sent | lessthan7"
+  description="Thanks for reaching out to lessthan7. We read every message and reply personally."
+  path="/contact/thanks/"
+  noindex
+  quietFooter
+>
+  <PageHero
+    eyebrow="Message sent"
+    lines={['Thank you.', 'We’ll be in touch.']}
+    lede="Your message reached the studio. We read every one and reply personally, usually with a few questions and a time to talk."
+  >
+    <div class="actions">
+      <a href="/work/" class="btn btn--sun">Browse the work</a>
+      <a href="/" class="btn btn--ghost">Back home</a>
+    </div>
+  </PageHero>
+</Base>
+
+<style>
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: var(--space-s);
+  }
+</style>
