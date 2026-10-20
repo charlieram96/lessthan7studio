@@ -312,10 +312,22 @@
     "spanishWordShare": 0,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Property cards for eight estates with bedroom, bathroom, guest and bed counts",
+    "Amenity icon row (lazy river, pickleball, volleyball, basketball, mini golf, private estate, group friendly)",
+    "\"Book Now\" call to action in the header",
+    "Gallery page in the nav"
+  ],
+  "designNotes": "Resort-luxury styling on a deep-navy base (#0d1b2a) with cream (#fff8f0), gold (#d4af37) and a coral \"Book Now\" button. The hero is a full-bleed photo of a villa's pool lawn under palms, overlaid with very thin, widely tracked \"MIAMI VILLAS\" in Poiret One, a gold \"Luxury Redefined\" line and an outlined \"Explore our properties\" button. Listings are clean cream cards with a photo, the villa name in thin display type, a short description and coral stat figures, followed by a line-icon amenity row and a \"Ready to Experience Luxury?\" booking band. Outfit Thin and DM Sans carry headings and body copy, keeping the look airy and minimal.",
+  "businessSummary": "Miami Villas rents private luxury estates in Miami for families, celebrations and corporate retreats. The site lists eight properties, from Lux Grove Villa in Coconut Grove to a 40,000 sq ft, 15-bedroom compound, with amenities such as heated pools, lazy rivers, pickleball courts and mini golf.",
+  "keyCopy": [
+    "Luxury Redefined",
+    "Experience Miami's Finest Rental Estates",
+    "Where Luxury Meets Comfort",
+    "More Than a Stay",
+    "Ready to Experience Luxury?",
+    "Book your private Miami estate today and create memories that last a lifetime."
+  ],
   "pages": [
     "https://miamivillas.com/properties",
     "https://miamivillas.com/about",

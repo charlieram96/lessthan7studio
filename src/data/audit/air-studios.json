@@ -277,10 +277,22 @@
     "spanishWordShare": 0,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Full-screen video hero (cinematography credited to Gamut Cine)",
+    "Looping black-and-white video portrait in the \"Meet Abner Isaias Reyes\" section",
+    "Numbered sections (01 About, 02 Portfolio, 03 Experience)",
+    "Client testimonial",
+    "Instagram feed widget"
+  ],
+  "designNotes": "Quiet, gallery-like luxury: a full-screen cinematic video hero of a bride in a voluminous pink tulle gown in ornate, old-world interiors, a centered stacked \"The AIR Studios Experience\" wordmark, and widely spaced serif caps for the menu and headline. Below, the site moves to pale stone and warm-grey panels (#f7f7f5, #efeee9) with charcoal text (#2f2f2f), numbered sections and offset image-and-card compositions. Headlines use Orpheus with Meno for body copy, italics add emphasis inside sentences, and a looping black-and-white video portrait introduces photographer Abner Isaias Reyes. The page closes with an Instagram feed and an \"AIR.\" monogram footer.",
+  "businessSummary": "AIR Studios (\"The AIR Studios Experience\") is the studio of Abner Isaias Reyes, a luxury destination wedding and editorial photographer. The site describes a painterly, old-world, fashion-forward style focused on each couple's story, with a portfolio, an \"Experience\" overview and a contact page.",
+  "keyCopy": [
+    "Luxury Destination Wedding & Editorial Photographer",
+    "With a painterly old-world appeal, my photography is personal, intimate, and fashion-forward.",
+    "I care deeply for each couple's love story as a worthy and unique piece of art.",
+    "I believe your Wedding Heirlooms should be works of art.",
+    "My mission is to create images that enable the gift of human connection."
+  ],
   "pages": [
     "https://airstudiosexperience.com/about",
     "https://airstudiosexperience.com/portfolio",

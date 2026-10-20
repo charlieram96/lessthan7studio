@@ -3,7 +3,7 @@
   "name": "Perez Realty Team",
   "captureUrl": "https://perezrealtyteam.com/",
   "liveUrl": "https://perezrealtyteam.com/",
-  "auditedAt": "2026-10-20T22:36:02.973Z",
+  "auditedAt": "2026-10-20T23:33:34.942Z",
   "finalUrl": "https://perezrealtyteam.com/",
   "status": 200,
   "redirects": [],
@@ -37,18 +37,16 @@
     ]
   },
   "navLabels": [
-    "Perez Realty Team Perez Realty Team",
     "Search homes",
     "Buy",
     "Sell",
     "Mortgage",
     "Our team",
     "About",
-    "ES Ver en español",
     "305-781-8552"
   ],
   "ctas": [
-    "ES Ver en español",
+    "Search",
     "Tell us what you want",
     "Meet the family",
     "Start the conversation"
@@ -60,11 +58,7 @@
     "emails": [
       "contact@perezrealtyteam.com"
     ],
-    "address": [
-      "135 Cadima Ave, Coral Gables, FL 33134",
-      "13710 SW 32nd St, Miami, FL 33175",
-      "19230 SW 2nd St, Pembroke Pines, FL 33029"
-    ],
+    "address": [],
     "social": [
       "https://www.instagram.com/perezrealtyteam/",
       "https://www.facebook.com/perezrealtyteam21/"
@@ -145,7 +139,7 @@
       "primaryButton": {
         "background": "#0a5a67",
         "text": "#ffffff",
-        "label": "Tell us what you want"
+        "label": "Search"
       },
       "link": {
         "text": "#0a5a67",
@@ -188,8 +182,8 @@
     "headers": {
       "server": "Vercel",
       "x-powered-by": "Next.js",
-      "x-vercel-id": "iad1::iad1::q2mzh-1792535713488-08e264129421",
-      "x-vercel-cache": "STALE",
+      "x-vercel-id": "iad1::iad1::mmwf8-1792539162279-ccc69c5637c0",
+      "x-vercel-cache": "HIT",
       "strict-transport-security": "max-age=63072000",
       "x-frame-options": "SAMEORIGIN",
       "cache-control": "public, max-age=0, must-revalidate",
@@ -256,12 +250,12 @@
     }
   },
   "perf": {
-    "transferBytes": 791587,
-    "requests": 70,
-    "ttfbMs": 298,
-    "serverResponseMs": 45,
-    "domContentLoadedMs": 1141,
-    "loadMs": 1144,
+    "transferBytes": 802851,
+    "requests": 73,
+    "ttfbMs": 529,
+    "serverResponseMs": 51,
+    "domContentLoadedMs": 1042,
+    "loadMs": 1205,
     "documentTransferBytes": 23735,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
@@ -330,10 +324,24 @@
     "spanishWordShare": 0.007,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Home search bar with location field and price filter (the site notes its live MLS search is \"being connected\")",
+    "Spanish version link (\"Ver en español\")",
+    "Neighborhood guide grid (8 Miami neighborhoods with one-line descriptions)",
+    "Recent closings with \"Just sold\" stamps",
+    "Testimonials",
+    "Click-to-call phone number in the header"
+  ],
+  "designNotes": "Editorial real-estate design with a magazine feel: off-white (#fcfbf8) and charcoal (#3e4542) with deep-teal (#0a5a67) buttons and dark band sections. Headlines are high-contrast Bodoni Moda in caps with italic accents (\"WHERE IN Miami?\"), while Archivo handles body copy and tracked uppercase labels with thin rules. The hero pairs a full-bleed photo of a white two-story house and pool with a wide search bar (location field, price dropdown, teal Search button), and the page continues with a family team photo, a neighborhood grid with one-line character sketches, \"Just sold\" stamped closings and pull-quote testimonials.",
+  "businessSummary": "Perez Realty Team is a family team of licensed real estate agents serving Miami-Dade and Broward since 2006, in English and Spanish. It helps clients buy and sell homes, with mortgage financing handled alongside Jenny Perez at Blue Harbor Lending, and says almost every client came from a referral.",
+  "keyCopy": [
+    "Where in Miami?",
+    "Almost every client came from a referral",
+    "A family business that grew because you talked about it.",
+    "Miami, block by block",
+    "Homes we handed over.",
+    "The people who sent us the next family"
+  ],
   "pages": [
     "https://perezrealtyteam.com/search",
     "https://perezrealtyteam.com/buy",
@@ -378,6 +386,7 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -403,6 +412,10 @@
       "full": 0,
       "hero": 0,
       "mobile": 0,
+      "mobileFull": 0
+    },
+    "blankShare": {
+      "full": 0,
       "mobileFull": 0
     },
     "dismissed": [],

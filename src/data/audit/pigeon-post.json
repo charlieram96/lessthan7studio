@@ -327,10 +327,24 @@
     "spanishWordShare": 0,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Scroll-driven elevator ride through seven illustrated floors, one per department",
+    "Elevator floor-dial navigation (R, 6–1, L)",
+    "Sound toggle (\"Sound off\")",
+    "\"Add to my letter\" service picker that collects choices into a letter-style contact form",
+    "\"Take the stairs\" static one-page version of the whole building (/stairs/)",
+    "Postage-stamp CTAs and a closing film-credits sequence"
+  ],
+  "designNotes": "An illustrated, cinematic world set in 1970s New York: the hero is a rooftop at dusk with water towers, Art Deco skyline silhouettes and a pigeon coop full of pigeons, in plum, peach, brass and cream (#4a1a20, #b8923e, #f1e8d6) under a film-grain overlay. Navigation is a brass elevator dial, and scrolling rides the elevator down through seven dioramas (the Writers' Room, Darkroom, Screening Room, Drafting Room, Switchboard, Mailroom and the Street), each room split by the elevator shaft. Fraunces in heavy and italic weights carries the headlines, with Jost small caps for labels and Courier Prime for typewritten copy. CTAs are postage stamps (\"Send a letter\"), the lead form is a letter addressed \"Dear Pigeon Post\", and the page ends on movie-style closing credits.",
+  "businessSummary": "Pigeon Post Media is a Miami \"media house\" and full-service social media agency. Its services are organized as seven departments: scripts and creative direction, photography, video and content, design and websites, Google reviews and reputation, social media management, and advertising and growth.",
+  "keyCopy": [
+    "Social media, sent first class.",
+    "A full-service social media agency — seven departments, one roof.",
+    "We write, shoot, design, post and grow your brand — one well-addressed message at a time.",
+    "Every post starts as a sentence.",
+    "Not a fan of fun? Take the stairs",
+    "No pigeons were harmed in the making of this website. Several were promoted."
+  ],
   "pages": [],
   "signals": {
     "iframes": [],

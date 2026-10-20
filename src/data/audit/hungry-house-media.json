@@ -343,10 +343,26 @@
     "spanishWordShare": 0,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Bilingual EN/ES toggle",
+    "Process shown as four kitchen order tickets (Prep, Fire, Plate, Serve)",
+    "Illustrated sample reels in phone mockups",
+    "Pricing laid out as a printed restaurant menu with three monthly packages",
+    "Booking form styled as a restaurant reservation slip",
+    "FAQ accordion (\"House rules\")",
+    "Copy-to-clipboard buttons for Instagram handle and email",
+    "Rotating \"Book a call\" badge and brand marquees"
+  ],
+  "designNotes": "A bold, illustrated restaurant identity: an oxblood hero (#7c150a) with pale-sky display type in Gasoek One and a moka pot drawn as a house, flanked by tilted phone mockups of food reels. Barlow Condensed in tracked uppercase handles labels and buttons, with Instrument Serif for accents, on a cream (#fbf2dc), butter and deep-teal palette. The whole site runs on a kitchen metaphor: nav items are rooms (The Kitchen, Dining Room, The Menu, House Rules), the process is four order tickets clipped to a rail on a teal grid, pricing is a printed menu with a \"Chef's pick\" stamp, and the contact form is a reservation slip. Brand marquees and a rotating \"Book a call\" badge keep it moving between sections.",
+  "businessSummary": "Hungry House Media is a Miami studio that makes short-form Instagram video only for South Florida restaurants. It plans, shoots, edits and delivers Reels on three monthly packages (Content Assist $650, Signature Content $1,450, Growth Partner $2,650); the top tier adds captions, posting, analytics and Miami food-creator partnerships.",
+  "keyCopy": [
+    "We feed your feed.",
+    "Short-form video for restaurants that want full tables, not just likes.",
+    "We plan it, shoot it, cut it and serve it.",
+    "Great food deserves a feed that makes Miami hungry.",
+    "Every reel moves down the same line your kitchen does.",
+    "Your table is ready."
+  ],
   "pages": [
     "https://hungryhousemedia.com/es/"
   ],

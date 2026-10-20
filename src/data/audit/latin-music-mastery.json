@@ -312,10 +312,27 @@
     "spanishWordShare": 0.011,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Bilingual EN/ES toggle",
+    "Waitlist email capture",
+    "Interactive salsa-orchestra stage plot used as an instrument picker",
+    "In-browser clave groove sequencer (play, mute lanes, tempo, pattern presets; synthesized in the browser)",
+    "PlaySense demo performance (rhythm-game view on a Miami pier, hits simulated)",
+    "Country-by-country style matrix with live / coming-soon status",
+    "Instructor carousel (18 maestros)",
+    "Pricing configurator (instrument, number of styles, monthly / yearly billing)",
+    "Video hero"
+  ],
+  "designNotes": "A nightclub-dark interface (#0e0c0b, #120c15) lit by a sunset gradient from orange to red (#ffa524 → #ff324d) on buttons and accents. Headlines pair tall condensed Big Shoulders caps with Instrument Serif italics (\"of la música latina.\", \"in the orquesta.\"), with DM Mono for spec-sheet labels and Hanken Grotesk for interface text. The page is built from playable set pieces: a salsa-orchestra stage plot that works as an instrument picker, a country-by-country style matrix, a five-lane clave groove sequencer, and a rhythm-game PlaySense demo staged on a pier over Biscayne Bay at dusk. A scrolling style marquee, an instructor portrait carousel and an oversized \"TU TURNO\" gradient wordmark round out its music-poster energy.",
+  "businessSummary": "Latin Music Mastery is an online school, currently taking waitlist sign-ups, that teaches Latin styles such as son, mambo, timba, bolero, bomba and plena through instrument-specific courses from 18 working musicians. Its PlaySense feature listens through the microphone while you practice and scores each hit; founding-member pricing starts at $19.99/month for one instrument and one style.",
+  "keyCopy": [
+    "Learn from the masters of la música latina.",
+    "PlaySense listens while you practice and tells you, note by note, whether you're in clave.",
+    "Take your seat in the orquesta.",
+    "Everything starts with the clave.",
+    "Step into the session. Miami, at dusk.",
+    "The band is ready. Your part is missing."
+  ],
   "pages": [
     "https://latinmusicmastery.com/explore",
     "https://latinmusicmastery.com/instructors",

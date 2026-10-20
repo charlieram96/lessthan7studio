@@ -3,7 +3,7 @@
   "name": "Newbula",
   "captureUrl": "https://newbula.ai/",
   "liveUrl": "https://newbula.ai/",
-  "auditedAt": "2026-10-20T23:09:35.986Z",
+  "auditedAt": "2026-10-20T23:34:57.811Z",
   "finalUrl": "https://newbula.ai/",
   "status": 200,
   "redirects": [],
@@ -154,18 +154,18 @@
     "palette": [
       "#f0f3f9",
       "#bad4f1",
-      "#222d44",
-      "#2f4466",
-      "#b1b6be",
-      "#0b1221"
+      "#11182a",
+      "#2a4158",
+      "#b2b7bf",
+      "#30365a"
     ],
     "paletteShare": [
       0.728,
       0.061,
-      0.06,
-      0.043,
-      0.04,
-      0.037
+      0.059,
+      0.051,
+      0.039,
+      0.035
     ],
     "cssColorTokens": {
       "--slate-50": "#f8fafc",
@@ -217,7 +217,7 @@
     "hsts": true,
     "headers": {
       "server": "Vercel",
-      "x-vercel-id": "iad1::g67jx-1792537756287-aa1e4e69b479",
+      "x-vercel-id": "iad1::vbgqc-1792539278334-9c7e01e77506",
       "x-vercel-cache": "HIT",
       "strict-transport-security": "max-age=63072000",
       "cache-control": "public, max-age=0, must-revalidate",
@@ -266,12 +266,12 @@
     }
   },
   "perf": {
-    "transferBytes": 695620,
+    "transferBytes": 695619,
     "requests": 72,
-    "ttfbMs": 411,
-    "serverResponseMs": 64,
-    "domContentLoadedMs": 727,
-    "loadMs": 785,
+    "ttfbMs": 380,
+    "serverResponseMs": 39,
+    "domContentLoadedMs": 665,
+    "loadMs": 803,
     "documentTransferBytes": 26016,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
@@ -348,10 +348,24 @@
       "Hola, le llamo de Bayside Medical Group para confirmar su cita del jueves a las 9:30."
     ]
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Product film (\"A morning in Newbula… in 36 seconds\")",
+    "Animated activity-feed ticker of operations events",
+    "Tabbed product suite (medical centers, health plans, pharmacies, adult day cares, patient app) with UI mockups on sample data",
+    "AI voice-agent call transcript shown in Spanish",
+    "Customer sign-in and account creation",
+    "FAQ accordion"
+  ],
+  "designNotes": "A calm, product-led SaaS look: a pale blue-white hero (#f1f4f9) with soft blue gradient light, a large Geist headline and two rows of animated activity chips (confirmed, urgent, booked) that read like a live operations feed. Below, the page drops into a deep-navy canvas (#0b1221) where product UI mockups float in glowing dark frames: a front-desk dashboard, a risk-and-quality table, a pharmacy inventory, an AI call transcript in Spanish and a patient app. Everything is set in Geist, with Geist Mono for small labels, in a restrained palette of slate greys and two brand blues (#57aee9, #277ab4). A tabbed \"complete suite\" section and a scroll-lit mission statement tie the modules together before the \"Give your team the day back.\" close.",
+  "businessSummary": "Newbula is a healthcare operations platform for medical centers, health plans, pharmacies and adult day cares, built around one shared patient record. It covers front-desk and scheduling tools, an ambient scribe, fax and email intake, risk and quality analytics, pharmacy inventory, transportation, a patient app and AI voice agents that call patients in English and Spanish.",
+  "keyCopy": [
+    "Healthcare operations, handled.",
+    "Newbula runs the calls, faxes, notes, rides and reports behind patient care, so your team can spend the day with patients.",
+    "Every tool shares one patient record, so nothing gets typed twice and every call, fax and visit lands where it belongs.",
+    "Calls every patient, in their language",
+    "The visit note writes itself",
+    "Give your team the day back."
+  ],
   "pages": [
     "https://newbula.ai/security",
     "https://newbula.ai/about",
@@ -438,35 +452,35 @@
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 70358,
+        "bytes": 70286,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 29036,
+        "bytes": 29072,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 7200,
-        "bytes": 301712,
+        "bytes": 301722,
         "quality": 72,
         "sourceHeight": 8640
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 53430,
+        "bytes": 53600,
         "quality": 78,
         "sourceHeight": 2532
       },
       "mobile-full.webp": {
         "width": 600,
         "height": 6000,
-        "bytes": 158808,
+        "bytes": 158740,
         "quality": 70,
         "sourceHeight": 7800
       }

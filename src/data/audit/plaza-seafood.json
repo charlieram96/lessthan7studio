@@ -345,10 +345,28 @@
     "spanishWordShare": 0.026,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Bilingual EN/ES toggle",
+    "Live open/closed status (e.g. \"Closed · Opens 8 AM tomorrow\") plus a weekly hours table",
+    "Google rating badge (4.5 from 1,053 reviews)",
+    "Preloader that counts up the years since 1980",
+    "Five-stop \"dock to door\" story sequence",
+    "Fish-cut explainer (whole, steak, filet, butterfly)",
+    "Today's-catch species cards with Spanish and Latin names",
+    "Illustrated street map of Allapattah with coordinates and a Google Maps link",
+    "\"Beat the line\" busy-times graphic",
+    "Wholesale inquiry section and click-to-call ordering"
+  ],
+  "designNotes": "A nautical, old-Miami look built on deep-sea navy (#08162a, #262a4c), paper cream (#f6f0e1) and fish-market red (#b5121b). Headlines use Old Newspaper Types, a distressed letterpress face, against Jost in tracked uppercase for labels and buttons, and the hero is a full-bleed aerial shot of turquoise water and fishing boats (fish on crushed ice on mobile) with live open/closed and Google-rating badges. The page tells a dock-to-door story in five numbered stops, then switches to reference sections: a four-cut fish explainer, species cards with Spanish and Latin names, a menu set off by a pink-sauce marquee, and an illustrated street map of Allapattah. A preloader counts up the years since 1980 before the page opens.",
+  "businessSummary": "Plaza Seafood Market is a fish market and walk-up kitchen at 3114 NW 17th Avenue in Allapattah, Miami, open since 1980. Its fishermen bring in local catch, cutters clean fish at the counter and the kitchen fries plates to order; it also sells wholesale to South Florida restaurants, hotels, markets and caterers.",
+  "keyCopy": [
+    "From the dock to your door.",
+    "Plaza Seafood has been Allapattah's fish market and walk-up kitchen since 1980.",
+    "One fish, four ways.",
+    "Fresh every morning since 1980.",
+    "Serve our seafood to your customers.",
+    "Come hungry"
+  ],
   "pages": [
     "https://plazaseafood.netlify.app/story",
     "https://plazaseafood.netlify.app/menu",

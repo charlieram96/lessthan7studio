@@ -361,10 +361,25 @@
     "spanishWordShare": 0.036,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Bilingual EN/ES toggle",
+    "\"Music\" audio toggle in the header",
+    "Practice-area tabs annotated with Florida Statutes chapters (Ch. 61, 316, 784)",
+    "\"One incident. Two courtrooms.\" explainer linking family and criminal cases",
+    "Client review excerpts with a link to all Google reviews",
+    "Two office cards (Miami, Boca Raton) with directions links",
+    "Consultation request form with case type, preferred office and language"
+  ],
+  "designNotes": "A dark, authoritative palette of ink and navy (#0f1724, #1a2b45) with copper accents (#b87333, #d49563) and marble-white text. The hero layers a giant, faint serif \"BLAND\" watermark over a night view of the Miami skyline, with a cut-out portrait of Gerald R. Bland on the right and the two-line promise \"Focused on solutions. / Driven by results.\" set in Marcellus, the second line in copper. Manrope handles body copy and tracked-uppercase buttons, while thin vertical rules and a vertical name caption give the page a structured, editorial feel. Practice areas sit in tabs annotated with Florida Statutes chapters, and the page closes with review excerpts, two office cards and a detailed consultation form.",
+  "businessSummary": "Bland Law, P.A. is a family law, traffic and criminal defense firm led by Gerald R. Bland, Esq., with offices on Coral Way in Miami and Glades Road in Boca Raton. It serves Miami-Dade, Broward and Palm Beach counties in English and Spanish and has practiced since 2013.",
+  "keyCopy": [
+    "Focused on solutions. Driven by results.",
+    "Know your rights. Don’t go at it alone.",
+    "Your family, your license, your freedom.",
+    "One incident. Two courtrooms.",
+    "Hiring us is simple.",
+    "Se habla español."
+  ],
   "pages": [
     "https://blandlaw.netlify.app/about/",
     "https://blandlaw.netlify.app/es/"

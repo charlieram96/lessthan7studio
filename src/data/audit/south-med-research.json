@@ -342,10 +342,24 @@
     "spanishWordShare": 0.027,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Bilingual EN/ES toggle",
+    "Pinned, scroll-driven photo hero with a four-column fact bar (address, CLIA lab ID, team, languages)",
+    "Mission statement that lights up word by word on scroll",
+    "Animated canvas background (\"silk\" and gold threads) in the laboratory section",
+    "Lab capability figures (CLIA, −80 °C, 2–8 °C, IATA)",
+    "Google Maps directions link"
+  ],
+  "designNotes": "A warm, hospitality-grade take on a clinical-research site: ivory (#f6f1e7) and espresso (#1f1712) with champagne and gold (#b08a3e) accents, and gold-gradient pill buttons. Headlines are set in Cormorant Garamond Light with italic flourishes (\"South Miami\"), paired with Hanken Grotesk for body copy and tracked uppercase labels. The hero is a full-bleed, darkened photo of the clinic reception with its gold SM monogram, pinned while you scroll, above a four-column fact bar. Below, a statement lights up word by word, a four-row index routes patients, sponsors, team and visitors, and the lab section sits on an espresso panel with an animated silk-and-gold-thread canvas behind its stats.",
+  "businessSummary": "South Miami Medical & Research Group runs clinical studies with pharmaceutical companies at 7400 SW 50th Terrace, Suite 201, in South Miami, with physicians, nurses, a research staff and an in-house CLIA-certified laboratory. The site recruits patients for studies in English and Spanish and pitches the site to sponsors and CROs.",
+  "keyCopy": [
+    "Clinical research in the heart of South Miami",
+    "Our physicians lead clinical studies with pharmaceutical companies, supported by nurses, a research staff and an in-house CLIA laboratory.",
+    "We bring clinical studies to South Miami.",
+    "The team behind every study",
+    "Samples processed and stored on site",
+    "Come see us in South Miami"
+  ],
   "pages": [
     "https://southmedandresearch.com/research.html",
     "https://southmedandresearch.com/sponsors.html",

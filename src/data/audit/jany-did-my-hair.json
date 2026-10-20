@@ -297,10 +297,23 @@
     "spanishWordShare": 0,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Full-bleed cinematic video hero (credited to Gamut Cine)",
+    "Rotating \"Keep scrolling\" seal",
+    "\"As seen on\" press logos (The Lovely List, Haute Living, Style Me Pretty, Martha Stewart, The Knot, WeddingWire)",
+    "Service columns for hair, makeup and stylist education",
+    "Client testimonials (\"love letters\")",
+    "Blog and education sections in the nav"
+  ],
+  "designNotes": "A fashion-editorial aesthetic: a full-bleed cinematic bridal video hero, a centered JH monogram splitting the navigation, and huge hairline uppercase headlines in Sauvage. Body copy is set in Aktiv Grotesk on white and warm off-white (#f2f0ee) bands, with italic uppercase \"Learn more\" links and generous whitespace. A faint oversized JH monogram watermarks the \"Luxury Bridal Hairstyling\" intro, followed by an \"As seen on\" press row, three service columns (Hair, Makeup, Education), image-and-text \"Experience\" panels and testimonial cards framed as client love letters. A rotating peacock \"Keep scrolling\" seal sits over the hero.",
+  "businessSummary": "Jany Did My Hair is a luxury bridal hairstyling business for Miami and destination weddings, offering bridal hair, makeup through partner artists, and an education program for hairstylists. The site emphasizes a consultation call before the wedding and touch-ups guaranteed for a minimum of 8 hours on the day.",
+  "keyCopy": [
+    "Indulge in a Lavish Bridal Beauty Experience",
+    "Luxury Bridal Hairstyling",
+    "Welcome to the world of exquisite elegance and timeless beauty, where every strand tells a story of romance and sophistication.",
+    "It's not just about great hair—it's about the attention, care, and dedication we provide",
+    "Inquire about your date"
+  ],
   "pages": [
     "https://janydidmyhair.com/portfolio",
     "https://janydidmyhair.com/about",

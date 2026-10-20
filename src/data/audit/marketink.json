@@ -3,7 +3,7 @@
   "name": "Market Ink Strategies",
   "captureUrl": "https://www.marketinkstrategies.com/",
   "liveUrl": "https://www.marketinkstrategies.com/",
-  "auditedAt": "2026-10-20T22:41:46.874Z",
+  "auditedAt": "2026-10-20T23:31:14.442Z",
   "finalUrl": "https://www.marketinkstrategies.com/",
   "status": 200,
   "redirects": [],
@@ -14,7 +14,9 @@
   "ogImage": null,
   "favicon": "https://www.marketinkstrategies.com/favicon.svg",
   "headings": {
-    "h1": [],
+    "h1": [
+      "Leave your mark on the market."
+    ],
     "h2": [
       "Ten disciplines. One atelier.",
       "Imagine it's your brand.",
@@ -38,8 +40,11 @@
     ]
   },
   "navLabels": [
-    "Let's talk",
-    "Menu"
+    "About",
+    "Services",
+    "Work",
+    "Process",
+    "Contact"
   ],
   "ctas": [
     "Let's talk",
@@ -57,8 +62,7 @@
       "success@marketinkstrategies.com"
     ],
     "address": [
-      "5717 NW 102nd Pl, Doral, FL 33178",
-      "5717 NW 102nd Pl, Doral, FL, 33178"
+      "5717 NW 102nd Pl, Doral, FL 33178"
     ],
     "social": [
       "https://www.instagram.com/marketinkstrategies/",
@@ -150,20 +154,20 @@
       }
     },
     "palette": [
-      "#eeeae3",
-      "#bab9cc",
-      "#6a6dbe",
-      "#9697cb",
-      "#4a4c95",
-      "#121217"
+      "#ece8e3",
+      "#bfbcd9",
+      "#575bae",
+      "#8589c8",
+      "#1a1a21",
+      "#929090"
     ],
     "paletteShare": [
-      0.477,
-      0.125,
-      0.115,
-      0.096,
-      0.081,
-      0.054
+      0.458,
+      0.176,
+      0.15,
+      0.083,
+      0.066,
+      0.038
     ],
     "cssColorTokens": {
       "--ink": "#0c0c10",
@@ -197,7 +201,7 @@
     "hsts": true,
     "headers": {
       "server": "Netlify",
-      "x-nf-request-id": "01M5DQHJ27DVZ0J36WCZK3BZS6",
+      "x-nf-request-id": "01M5DTBEJD2PV79E7M452T9FAR",
       "strict-transport-security": "max-age=31536000",
       "cache-control": "public,max-age=0,must-revalidate",
       "content-encoding": "br"
@@ -246,13 +250,13 @@
     }
   },
   "perf": {
-    "transferBytes": 208225,
+    "transferBytes": 208134,
     "requests": 8,
-    "ttfbMs": 999,
-    "serverResponseMs": 549,
-    "domContentLoadedMs": 1543,
-    "loadMs": 1545,
-    "documentTransferBytes": 10810,
+    "ttfbMs": 311,
+    "serverResponseMs": 39,
+    "domContentLoadedMs": 710,
+    "loadMs": 743,
+    "documentTransferBytes": 10769,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
   "lighthouse": {
@@ -321,10 +325,24 @@
     "spanishWordShare": 0,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Cursor-reactive fluid ink simulation in the hero (\"Move your cursor — stir the ink\")",
+    "Live Doral local-time clock in the header",
+    "Tilted, scrolling services marquee",
+    "Pinned scroll sequences, including a horizontally scrolling deck of 7 numbered service cards",
+    "Four fictional brand concept studies (Soleado Cafetería, Halden Realty, Lirio Skin Studio, Alisio Events), labeled as fictional",
+    "Contact form with service-interest and monthly-budget options"
+  ],
+  "designNotes": "An editorial, studio-style layout on a warm paper background (#f2eee6) with near-black type and one electric blue (#2f3cff) that plays the role of ink. The hero sets \"Leave your mark on the market\" in very large Inter Tight, with \"mark\" in blue Instrument Serif italic, over a cursor-reactive fluid-ink simulation; Geist Mono micro-labels, a live Doral clock and parenthetical section numbers (\"(01) — Where it begins\") give it an atelier voice. Sections alternate between paper and near-black: a tilted blue services marquee, a pinned \"single drop\" sequence, a dark horizontally scrolling deck of numbered service cards, then four full-color concept-study cards (orange, navy, blush, green), each with its own mini identity. The ink-drop metaphor runs from \"It all starts with a single drop\" to \"From the first drop to the full spread.\"",
+  "businessSummary": "Market Ink Strategies is a marketing atelier in Doral, Miami that handles strategy, brand identity, websites, Google Ads and SEO, social media, content and email, events, and photo and video production under one roof. Because, as the site says, client work stays confidential, the homepage shows four fictional \"concept studies\" of how it would approach a brand.",
+  "keyCopy": [
+    "Leave your mark on the market.",
+    "Market Ink is a marketing atelier for business growth.",
+    "Ten disciplines. One atelier.",
+    "Imagine it's your brand.",
+    "The brands are fictional. The thinking is real.",
+    "From the first drop to the full spread."
+  ],
   "pages": [],
   "signals": {
     "iframes": [],
@@ -341,16 +359,8 @@
           "company",
           "phone",
           "services",
-          "services",
-          "services",
-          "services",
-          "services",
-          "services",
-          "services",
-          "services",
           "budget",
-          "budget",
-          "budget"
+          "message"
         ],
         "submit": "Send message Send message"
       }
@@ -361,7 +371,7 @@
       "© 2026 Market Ink Strategies"
     ],
     "featureHints": [
-      "form: name, email, company, phone, services, services, services, services, services, services, services, services, budget, budget, budget",
+      "form: name, email, company, phone, services, budget, message",
       "1 large canvas element(s) (WebGL/2D)"
     ]
   },
@@ -380,14 +390,14 @@
   },
   "screenshots": {
     "pageHeight": {
-      "desktop": 13764,
-      "mobile": 16806
+      "desktop": 11170,
+      "mobile": 11981
     },
     "modes": {
-      "full": "forced",
+      "full": "reduced",
       "hero": "normal",
       "mobile": "normal",
-      "mobileFull": "forced"
+      "mobileFull": "reduced"
     },
     "hiddenBlocks": {
       "full": 0,
@@ -396,43 +406,43 @@
       "mobileFull": 0
     },
     "blankShare": {
-      "full": 0.142,
-      "mobileFull": 0.5
+      "full": 0,
+      "mobileFull": 0
     },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 125166,
+        "bytes": 123460,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 50384,
+        "bytes": 49372,
         "quality": 78,
         "sourceHeight": 1800
       },
       "full.webp": {
         "width": 1200,
         "height": 7200,
-        "bytes": 230786,
+        "bytes": 270062,
         "quality": 72,
         "sourceHeight": 8640
       },
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 86856,
+        "bytes": 89920,
         "quality": 78,
         "sourceHeight": 2532
       },
       "mobile-full.webp": {
         "width": 600,
         "height": 6000,
-        "bytes": 88626,
+        "bytes": 144290,
         "quality": 70,
         "sourceHeight": 7800
       }

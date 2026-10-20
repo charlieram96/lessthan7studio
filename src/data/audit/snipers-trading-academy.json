@@ -3,7 +3,7 @@
   "name": "Snipers Trading Academy",
   "captureUrl": "https://www.sniperstradingacademy.com/",
   "liveUrl": "https://www.sniperstradingacademy.com/",
-  "auditedAt": "2026-10-20T22:29:51.686Z",
+  "auditedAt": "2026-10-20T23:32:41.583Z",
   "finalUrl": "https://www.sniperstradingacademy.com/",
   "status": 200,
   "redirects": [],
@@ -15,7 +15,7 @@
   "favicon": "https://www.sniperstradingacademy.com/favicon.ico?favicon.7d34b509.ico",
   "headings": {
     "h1": [
-      "Learn to trade trade read size the market like a sniper."
+      "Learn to trade the market like a sniper."
     ],
     "h2": [
       "From your first lesson to your first team.",
@@ -49,11 +49,7 @@
   ],
   "ctas": [
     "Join",
-    "Join the academy",
-    "Do I need trading experience?",
-    "How do the live classes work?",
-    "How much does it cost?",
-    "How do referral commissions work?"
+    "Join the academy"
   ],
   "contact": {
     "phones": [],
@@ -76,7 +72,7 @@
         "textTransform": "none",
         "fontStyle": "normal",
         "rendered": [
-          "Inter"
+          "Inter (local system font)"
         ]
       },
       "h1": {
@@ -112,7 +108,7 @@
         "textTransform": "none",
         "fontStyle": "normal",
         "rendered": [
-          "Inter SemiBold"
+          "Inter SemiBold (local system font)"
         ]
       }
     },
@@ -148,20 +144,20 @@
       }
     },
     "palette": [
-      "#0b0e17",
-      "#2d261b",
-      "#111f39",
-      "#4b5363",
-      "#6b522d",
-      "#d0d4de"
+      "#0a0d15",
+      "#111b32",
+      "#28211a",
+      "#353f53",
+      "#5d4828",
+      "#c09e5b"
     ],
     "paletteShare": [
-      0.646,
-      0.141,
-      0.117,
-      0.032,
-      0.025,
-      0.02
+      0.477,
+      0.251,
+      0.153,
+      0.04,
+      0.027,
+      0.023
     ],
     "cssColorTokens": {
       "--color-emerald-dim": "#31d69c1f",
@@ -214,7 +210,7 @@
     "headers": {
       "server": "Vercel",
       "x-powered-by": "Next.js",
-      "x-vercel-id": "iad1::iad1::7c2z8-1792535322844-a970fd576b3a",
+      "x-vercel-id": "iad1::iad1::rbfmk-1792539075042-cba164249f14",
       "x-vercel-cache": "STALE",
       "strict-transport-security": "max-age=63072000",
       "cache-control": "public, max-age=0, must-revalidate",
@@ -261,12 +257,12 @@
     }
   },
   "perf": {
-    "transferBytes": 1722480,
+    "transferBytes": 1722699,
     "requests": 30,
-    "ttfbMs": 413,
-    "serverResponseMs": 40,
-    "domContentLoadedMs": 778,
-    "loadMs": 976,
+    "ttfbMs": 415,
+    "serverResponseMs": 39,
+    "domContentLoadedMs": 959,
+    "loadMs": 1319,
     "documentTransferBytes": 12686,
     "note": "Playwright, desktop 1440x900, cold cache, after scrolling the full page (lazy content included); measured from a cloud container through an egress proxy."
   },
@@ -335,10 +331,25 @@
     "spanishWordShare": 0,
     "spanishLines": []
   },
-  "notableFeatures": [],
-  "designNotes": null,
-  "businessSummary": null,
-  "keyCopy": [],
+  "notableFeatures": [
+    "Spanish version toggle (ES)",
+    "Rotating headline word (trade / read / size)",
+    "Member login",
+    "App dashboard preview with example data (next live class countdown, rank, team pool, commissions)",
+    "Bento grid explaining curriculum, live classes, rank ladder (10%–16%) and USDC payouts on Polygon",
+    "Single membership pricing card and FAQ accordion",
+    "Risk disclaimer in the footer"
+  ],
+  "designNotes": "A dark fintech look: near-black navy (#05080f) with layered navy surfaces, glassy cards and a gold gradient reserved for highlights and the primary button. The hero sets \"Learn to trade the market like a sniper.\" in wide, heavy Unbounded, with \"sniper.\" in gold and a rotating verb, beside a gold lion crest ringed by a dial of words (Discipline, Precision, Patience, Risk first) and floating status chips (live class, next topic unlocked, payout sent). Below, an app dashboard preview with example data, a bento grid of curriculum, live classes, ranks and payouts, and a single pricing card keep the same navy-and-gold system. Body text uses the system UI font stack, with monospace accents for stats.",
+  "businessSummary": "Snipers Trading Academy is an options-trading education membership with a six-topic curriculum, three live classes a week in its app, and progress tracking. Membership is $199/month plus a one-time $499 activation (or $49.75 a week), and members earn referral commissions of 10% to 16% on their team's volume, paid monthly in USDC on Polygon.",
+  "keyCopy": [
+    "Learn to trade the market like a sniper.",
+    "An options trading academy with a clear path from the fundamentals to your own strategy.",
+    "A path, not a pile of videos",
+    "Six topics. Each one builds on the last.",
+    "One membership. Everything included.",
+    "Your seat is waiting."
+  ],
   "pages": [
     "https://www.sniperstradingacademy.com/login",
     "https://www.sniperstradingacademy.com/register"
@@ -356,6 +367,7 @@
   },
   "issues": {
     "lorem": [],
+    "fictionalPhones": [],
     "placeholders": [],
     "mixedContent": [],
     "brokenImages": [],
@@ -383,19 +395,23 @@
       "mobile": 0,
       "mobileFull": 0
     },
+    "blankShare": {
+      "full": 0,
+      "mobileFull": 0
+    },
     "dismissed": [],
     "files": {
       "hero.webp": {
         "width": 1920,
         "height": 1200,
-        "bytes": 103576,
+        "bytes": 101776,
         "quality": 80,
         "sourceHeight": 1800
       },
       "hero-960.webp": {
         "width": 960,
         "height": 600,
-        "bytes": 40616,
+        "bytes": 40576,
         "quality": 78,
         "sourceHeight": 1800
       },
@@ -409,7 +425,7 @@
       "mobile.webp": {
         "width": 780,
         "height": 1688,
-        "bytes": 77586,
+        "bytes": 78894,
         "quality": 78,
         "sourceHeight": 2532
       },
