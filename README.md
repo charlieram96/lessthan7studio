@@ -65,8 +65,10 @@ submissions (`revamp-choice`) with a link back to the report.
 | `PAGESPEED_API_KEY` | no | Adds real Lighthouse scores and a phone screenshot to each report. |
 | `LAB_SIGNING_SECRET` | no | Signs internal job tokens. Falls back to the API key. |
 
-Each report makes five Claude calls (research, strategy, one mockup per concept) and
-typically costs $1–2 at Opus 5.5 rates. Server-side refusal fallbacks are enabled
+Each report makes five Claude calls (research, strategy, one mockup per concept) on
+Opus 5.5 at high effort. Expect roughly $2–4 per report (an estimate: web research and
+three full-page mockups dominate); each report stores its measured cost in Netlify Blobs,
+and the Anthropic Console shows actual spend. Server-side refusal fallbacks are enabled
 (`fallbacks: "default"`).
 
 The pipeline runs as a chain of background-function invocations (research → strategy →
