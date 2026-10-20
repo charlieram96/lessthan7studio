@@ -482,19 +482,11 @@
   font-size: 15px;
   line-height: 1.4;
   color: var(--text-mute);
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .fd-fix {
   font-size: 15px;
   line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .fd-fix b {

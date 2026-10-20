@@ -280,12 +280,15 @@ import { SITE } from '../../config';
     font-variant-numeric: tabular-nums;
   }
 
+  /* --fit < 1 (set by the report script) shrinks a body that holds more text than the
+     layout planned for. Offsets are divided by it so the margins stay put. */
   .rp-body-area {
     position: absolute;
-    left: var(--pad);
-    right: var(--pad);
-    top: 100px;
-    bottom: 80px;
+    left: calc(var(--pad) / var(--fit, 1));
+    right: calc(var(--pad) / var(--fit, 1));
+    top: calc(100px / var(--fit, 1));
+    bottom: calc(80px / var(--fit, 1));
+    zoom: var(--fit, 1);
   }
 
   .rp-eyebrow {

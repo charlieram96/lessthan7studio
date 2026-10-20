@@ -9,8 +9,9 @@ export default defineConfig({
   trailingSlash: 'always',
   build: {
     format: 'directory',
-    // Keep generated asset names short and predictable.
-    assets: '_astro',
+    // Keep generated asset names short and predictable. The artifact preview host
+    // reserves names that start with "_".
+    assets: isArtifact ? 'assets' : '_astro',
     inlineStylesheets: 'auto',
   },
   // HTML-aware whitespace compression (Astro 7 defaults to JSX rules).

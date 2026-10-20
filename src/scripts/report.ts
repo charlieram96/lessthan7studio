@@ -324,6 +324,15 @@ function conceptOverview(ctx: Ctx, c: Concept): string {
   );
 }
 
+// Each mockup is its own document, so it needs its own rule to keep backgrounds in print.
+const PRINT_EXACT = '<style>*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}</style>';
+
+function printable(doc: string): string {
+  if (/<\/head>/i.test(doc)) return doc.replace(/<\/head>/i, `${PRINT_EXACT}</head>`);
+  if (/<html[^>]*>/i.test(doc)) return doc.replace(/<html[^>]*>/i, (tag) => tag + PRINT_EXACT);
+  return PRINT_EXACT + doc;
+}
+
 /** A browser frame showing a vertical slice of a mockup. */
 function frame(conceptId: string, url: string, width: number, height: number, offset: number): string {
   const scale = width / 1440;
@@ -441,6 +450,7 @@ function render(report: Report): void {
 
   // Mount each mockup slice as a sandboxed iframe (no scripts, no same-origin access).
   const html = new Map(report.mockups.map((m) => [m.conceptId, m.html]));
+  const frames: HTMLIFrameElement[] = [];
   pagesEl.querySelectorAll<HTMLElement>('[data-mockup]').forEach((view) => {
     const doc = html.get(view.dataset.mockup as Concept['id']);
     if (!doc) {
@@ -456,13 +466,46 @@ function render(report: Report): void {
     const scale = Number(view.dataset.scale);
     const offset = Number(view.dataset.offset);
     iframe.style.transform = `scale(${scale}) translateY(${-offset}px)`;
-    iframe.srcdoc = doc;
+    iframe.addEventListener('load', () => (iframe.dataset.loaded = '1'), { once: true });
+    iframe.srcdoc = printable(doc);
     view.appendChild(iframe);
+    frames.push(iframe);
   });
+  // Lazy for the first paint, then load the rest so printing never catches an empty frame.
+  setTimeout(() => frames.forEach((f) => (f.loading = 'eager')), 2000);
+
+  fitSheets();
+  // Web fonts change line breaks, so fit again once they (and each concept's fonts) arrive.
+  document.fonts.ready.then(fitSheets);
+  document.fonts.addEventListener('loadingdone', fitSheets);
 
   document.title = `${name} · Revamp proposal · lessthan7`;
   document.querySelector('[data-rp-title]')!.textContent = `${name} · ${host(report.input.url)}`;
   fit();
+}
+
+/** Shrinks a sheet's body a little when the report holds more text than the layout planned for. */
+function fitSheets(): void {
+  document.querySelectorAll<HTMLElement>('.rp-body-area').forEach((area) => {
+    area.style.removeProperty('--fit');
+    for (let fit = 1; area.scrollHeight > area.clientHeight + 1 && fit > 0.74; ) {
+      fit -= 0.04;
+      area.style.setProperty('--fit', fit.toFixed(2));
+    }
+  });
+}
+
+/** Resolves once every mockup frame has loaded, or after `timeout` ms. */
+function framesReady(timeout = 8000): Promise<void> {
+  const frames = Array.from(document.querySelectorAll<HTMLIFrameElement>('[data-mockup] iframe'));
+  const pending = frames
+    .filter((f) => !f.dataset.loaded)
+    .map((f) => {
+      f.loading = 'eager';
+      return new Promise((r) => f.addEventListener('load', r, { once: true }));
+    });
+  if (!pending.length) return Promise.resolve();
+  return Promise.race([Promise.all(pending), new Promise((r) => setTimeout(r, timeout))]).then(() => undefined);
 }
 
 function fit(): void {
@@ -575,7 +618,15 @@ async function load(): Promise<void> {
         alertInline('PDF export works on the live site: it opens your browser’s print dialog, where you choose “Save as PDF”.');
         return;
       }
-      window.print();
+      if (!document.querySelector('[data-mockup] iframe:not([data-loaded])')) {
+        window.print();
+        return;
+      }
+      printBtn.disabled = true;
+      framesReady().then(() => {
+        printBtn.disabled = false;
+        window.print();
+      });
     });
   };
 

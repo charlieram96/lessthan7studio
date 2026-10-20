@@ -4,7 +4,7 @@
  * absolute links become relative, the root page loses its document wrapper (the
  * artifact host adds its own), and files the preview never uses are left out.
  */
-import { cp, mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -73,7 +73,10 @@ function unwrapRoot(html) {
   const head = html.match(/<head[^>]*>([\s\S]*?)<\/head>/i)?.[1] ?? '';
   const body = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? html;
   const bodyClass = html.match(/<body[^>]*class="([^"]*)"/i)?.[1];
-  const keepHead = head.replace(/<meta charset[^>]*>/i, '').replace(/<meta name="viewport"[^>]*>/i, '');
+  const keepHead = head
+    .replace(/<meta charset[^>]*>/i, '')
+    .replace(/<meta name="viewport"[^>]*>/i, '')
+    .replace(/<title>[^<]*<\/title>/i, '<title>lessthan7 site preview</title>');
   const classScript = bodyClass ? `<script>document.body.className=${JSON.stringify(bodyClass)}</script>` : '';
   return `${keepHead}\n${body}\n${classScript}`;
 }
@@ -81,6 +84,20 @@ function unwrapRoot(html) {
 await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 await cp(src, out, { recursive: true });
+
+// The artifact host reserves names that start with "_" (Astro names route chunks `_slug_`).
+const renames = new Map();
+for (const file of await walk(out)) {
+  const base = path.basename(file);
+  if (!base.startsWith('_')) continue;
+  const next = base.replace(/^_+/, '');
+  await rename(file, path.join(path.dirname(file), next));
+  renames.set(base, next);
+}
+const applyRenames = (text) => {
+  for (const [from, to] of renames) text = text.split(from).join(to);
+  return text;
+};
 
 const all = await walk(out);
 for (const file of all) {
@@ -90,17 +107,18 @@ for (const file of all) {
     continue;
   }
   if (file.endsWith('.html')) {
-    let html = await rewriteHtml(await readFile(file, 'utf8'), file);
+    let html = await rewriteHtml(applyRenames(await readFile(file, 'utf8')), file);
     if (rel === 'index.html') html = unwrapRoot(html);
     await writeFile(file, html);
   } else if (file.endsWith('.css')) {
-    let css = await readFile(file, 'utf8');
-    css = css.replace(/url\((["']?)\/_astro\/([^)"']+)\1\)/g, 'url($1./$2$1)');
+    let css = applyRenames(await readFile(file, 'utf8'));
+    css = css.replace(/url\((["']?)\/assets\/([^)"']+)\1\)/g, 'url($1./$2$1)');
     await writeFile(file, css);
   } else if (file.endsWith('.js')) {
-    // Vite's preload helper resolves dependencies against "/"; make it page-relative.
-    let js = await readFile(file, 'utf8');
-    js = js.replace(/(["'`])\/_astro\//g, '$1./_astro/');
+    // Vite's preload helper prefixes dependencies with "/". Resolve them against the
+    // helper's own URL instead (it lives in assets/, one level below the site root).
+    let js = applyRenames(await readFile(file, 'utf8'));
+    js = js.replace(/function\((\w)\)\{return`\/`\+\1\}/g, 'function($1){return new URL(`../`+$1,import.meta.url).href}');
     await writeFile(file, js);
   }
 }

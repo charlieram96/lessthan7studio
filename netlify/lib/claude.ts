@@ -15,6 +15,12 @@ export function emptyUsage(): Usage {
   return { inputTokens: 0, outputTokens: 0, cacheReadTokens: 0, cacheWriteTokens: 0, webSearches: 0, costUsd: 0 };
 }
 
+export function sumUsage(parts: Usage[]): Usage {
+  const total = emptyUsage();
+  for (const u of parts) for (const k of Object.keys(total) as (keyof Usage)[]) total[k] += u[k];
+  return total;
+}
+
 function addUsage(total: Usage, msg: Msg): void {
   const u = msg.usage;
   total.inputTokens += u.input_tokens ?? 0;
@@ -43,6 +49,21 @@ const text = (msg: Msg) =>
 export class ModelDeclined extends Error {}
 
 /**
+ * The content to send back when resuming a paused turn. After a mid-output fallback, only text
+ * and paired server-tool blocks from before the last `fallback` marker may be echoed.
+ */
+function resumable(content: Msg['content']): Msg['content'] {
+  const cut = content.findLastIndex((b) => b.type === 'fallback');
+  if (cut < 0) return content;
+  const answered = new Set(content.flatMap((b) => ('tool_use_id' in b ? [b.tool_use_id] : [])));
+  return content.filter((b, i) => {
+    if (i >= cut || b.type === 'text') return true;
+    if (b.type === 'server_tool_use') return answered.has(b.id);
+    return b.type.endsWith('_tool_result');
+  });
+}
+
+/**
  * One streamed request on Claude Opus 5.5 at high effort, with server-side fallbacks enabled,
  * resuming server-tool turns that pause.
  */
@@ -63,7 +84,7 @@ async function run(
     const msg = await stream.finalMessage();
     addUsage(usage, msg);
     if (msg.stop_reason === 'pause_turn') {
-      messages = [...messages, { role: 'assistant', content: msg.content }];
+      messages = [...messages, { role: 'assistant', content: resumable(msg.content) }];
       continue;
     }
     if (msg.stop_reason === 'refusal') {
