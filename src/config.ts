@@ -4,7 +4,7 @@ export const SITE = {
   url: 'https://lessthan7.studio',
   tagline: 'Make the first seven seconds count.',
   description:
-    'lessthan7 is a Miami design and development studio. We build fast, detail-obsessed websites with SEO built in, for businesses that need a first impression that sticks.',
+    'lessthan7 is a Miami web design and development studio. Fast, detail-obsessed websites with SEO built in, for businesses that need a lasting first impression.',
   email: 'hello@lessthan7.studio',
   phone: '+1 (786) 970-2109',
   phoneHref: 'tel:+17869702109',

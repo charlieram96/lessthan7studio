@@ -21,7 +21,13 @@ const palette = (audit?.design?.palette ?? []).slice(0, 6);
 const frameworks = [...(audit?.tech?.frameworks ?? []), ...(audit?.tech?.hosting ?? [])];
 const stack = Array.from(new Set([...(p.stack ?? []), ...frameworks])).slice(0, 6);
 
-const title = `${p.name}: ${p.industry} website case study | lessthan7`;
+// Search results show about 60 characters: use the most descriptive title that fits.
+const title =
+  [
+    `${p.name}: ${p.industry} website case study | lessthan7`,
+    `${p.name}: ${p.industry} website | lessthan7`,
+    `${p.name} website case study | lessthan7`,
+  ].find((t) => t.length <= 60) ?? `${p.name} | lessthan7`;
 const description = p.summary;
 const ring = (v: number) => {
   const c = 2 * Math.PI * 26;
