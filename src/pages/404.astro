@@ -28,17 +28,17 @@ import Mark from '../components/Mark.astro';
     position: relative;
     min-height: 100svh;
     display: grid;
-    align-items: center;
+    align-content: center;
     overflow: hidden;
     padding-top: var(--header-h);
   }
 
+  /* Phones and tablets: the mark sits above the text, in the flow, so they never collide. */
   .nf__mark {
-    position: absolute;
-    right: -10vw;
-    top: 50%;
-    width: min(70vw, 900px);
-    transform: translateY(-50%);
+    justify-self: end;
+    width: min(72vw, 420px);
+    margin-right: -12vw;
+    margin-bottom: var(--space-s);
     opacity: 0.9;
   }
 
@@ -76,5 +76,21 @@ import Mark from '../components/Mark.astro';
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+  }
+
+  /* Desktop: the mark bleeds off the right edge beside a headline sized to leave it room. */
+  @media (min-width: 1101px) {
+    .nf__mark {
+      position: absolute;
+      right: -6vw;
+      top: 50%;
+      width: min(52vw, 900px);
+      margin: 0;
+      transform: translateY(-50%);
+    }
+
+    .nf__title {
+      font-size: clamp(2.2rem, 1.1rem + 3.4vw, 6rem);
+    }
   }
 </style>
